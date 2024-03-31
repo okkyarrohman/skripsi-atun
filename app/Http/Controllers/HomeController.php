@@ -9,16 +9,16 @@ use Illuminate\Support\Facades\Auth;
 class HomeController extends Controller
 {
     // public function index() {
-    //     if(Auth::id());
+    //     if(Auth::name());
     //     {
-    //         $id=Auth()->user()->id;
+    //         $name=Auth()->user()->id;
 
-    //         if($id==1)
+    //         if($name=="guru")
     //         {
     //             return view('guru.dashboard');
     //         }
 
-    //         else if($id==2)
+    //         else if($name=="siswa")
     //         {
     //             return view('siswa.dashboard');
     //         }

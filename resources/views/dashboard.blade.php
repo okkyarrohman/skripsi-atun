@@ -1,5 +1,18 @@
 @extends('layouts.master')
 @section('content')
+@push('css')
+<style>
+    .bg-sidebar { background: #FB8A3C;}
+    .cta-btn { color: #3d68ff; }
+    .upgrade-btn { background: #FB8A3C; }
+    .upgrade-btn:hover { background:#FB8A3C; }
+    .active-nav-link { background: #FB8A3C; }
+    .nav-item:hover { background: #ffffff;}
+    .account-link:hover { background: #3d68ff;}
+    .text-color:hover {color: #FB8A3C}
+    .text-size{font-size: 18px;}
+</style>
+@endpush
 <style>
     .bg-orange{ background: #FB8A3C;};
 </style>

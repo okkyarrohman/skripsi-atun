@@ -9,28 +9,28 @@
     <div class="x-3 py-4 overflow-y-auto rounded">
         <ul class="py-2 space-y-2 text-lg items-start" >
           <p class="flex text-white text-sm py-4 pl-6 ">
-            Dashboard Guru 
+            Dashboard  {{ Auth::user()->name }}
           </p>
           <li>
-            <a href="/Home" class="flex text-white py-4 pl-6 text-color nav-item rounded-lg items-center gap-3">
+            <a href="{{ route('dashboard') }}" class="flex text-white py-4 pl-6 text-color nav-item rounded-lg items-center gap-3">
                 <i class="fas fa-th-large fa-1x"></i>
                 Dashboard
             </a>
           </li>
           <li>
-            <a href="/LKPD" class="flex text-white py-4 pl-6 text-color nav-item rounded-lg items-center gap-3">
+            <a href="/guru/LKPD" class="flex text-white py-4 pl-6 text-color nav-item rounded-lg items-center gap-3">
                 <i class="fas fa-book fa-1x"></i>
                 LKPD
             </a>
           </li>
             <li>
-                <a href="/kelompok" class="flex text-white text-color py-4 pl-6 nav-item rounded-lg items-center gap-3">
+                <a href="/guru/kelompok" class="flex text-white text-color py-4 pl-6 nav-item rounded-lg items-center gap-3">
                     <i class="< fas fa-light fa-users fa-1x"></i>
                     Kelompok
                 </a>
             </li>
             <li>
-                <a href="forms.html" class="flex text-white text-color py-4 pl-6 nav-item rounded-lg items-center gap-3">
+                <a href="/guru/kuis" class="flex text-white text-color py-4 pl-6 nav-item rounded-lg items-center gap-3">
                     <i class="fas fa-award fa-1x"></i>
                     Kuis
                 </a>
@@ -42,17 +42,20 @@
                     <svg sidebar-toggle-item class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
               </button>
                       <ul id="dropdown-example" class="hidden py-2 space-y-2">
-                          <li>
+                          <li class="px-4">
                               <a href="#"
-                                  class="flex text-white text-color py-4 pl-6 nav-item rounded-lg">Products</a>
+                                  class="flex text-white text-color py-4 pl-6 nav-item rounded-lg items-center gap-3">
+                                  <i class="fas fa-book-reader"></i>
+                                  Modul
+                                </a>
                           </li>
-                          <li>
+                          <li class="px-4">
                               <a href="#"
-                                  class="flex text-white text-color py-4 pl-6 nav-item rounded-lg">Billing</a>
-                          </li>
-                          <li>
-                              <a href="#"
-                                  class="flex text-white text-color py-4 pl-6 nav-item rounded-lg">Invoice</a>
+                                  class="flex text-white text-color py-4 pl-6 nav-item rounded-lg items-center gap-3">
+                                  <i class="fas fa-play"></i>
+                                    
+                                  Simulasi
+                                </a>
                           </li>
                       </ul>
                   </li>
@@ -72,11 +75,11 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
         </svg>
-            <x-responsive-nav-link :href="route('logout')"
-                                onclick="event.preventDefault();
-                                            this.closest('form').submit();">
-                            {{ __('Log Out') }}
-                        </x-responsive-nav-link>
+        <x-responsive-nav-link :href="route('logout')"
+                            onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                        {{ __('Log Out') }}
+                    </x-responsive-nav-link>
     </div>
     </form>
 </aside>

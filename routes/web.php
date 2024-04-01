@@ -50,6 +50,13 @@ Route::group(['middleware' => 'role:guru'], function () {
         Route::get('/kelompok', function() {
             return view('guru.kelompok');
         });
+        Route::get('/modul', function() {
+            return view('guru.modul');
+        });
+        Route::get('/LKPD/tambah_modul', function() {
+            return view('guru.Tugas.tambah-tugas');
+        });
+        
     });
 });
 

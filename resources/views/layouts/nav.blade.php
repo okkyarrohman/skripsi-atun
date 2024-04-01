@@ -43,14 +43,14 @@
               </button>
                       <ul id="dropdown-example" class="hidden py-2 space-y-2">
                           <li class="px-4">
-                              <a href="#"
+                              <a href="/guru/modul"
                                   class="flex text-white text-color py-4 pl-6 nav-item rounded-lg items-center gap-3">
                                   <i class="fas fa-book-reader"></i>
                                   Modul
                                 </a>
                           </li>
                           <li class="px-4">
-                              <a href="#"
+                              <a href="/guru/materi"
                                   class="flex text-white text-color py-4 pl-6 nav-item rounded-lg items-center gap-3">
                                   <i class="fas fa-play"></i>
                                     

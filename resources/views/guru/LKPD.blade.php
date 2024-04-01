@@ -6,13 +6,15 @@
     <!--absen-->
     <div class="bg-white p-7 m-10">
 
-        <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t ms-auto dark:border-gray-600">
+        <div class="flex items-center justify-between p-4 md:p-5 rounded-t ms-auto dark:border-gray-600 mb-10">
+          <a href="guru/Tugas/tambah-tugas" class="ms-auto py-4 h-14">
             <button type="button" class="text-white bg-[#FF9119] hover:bg-[#FF9119]/80 focus:ring-4 focus:outline-none focus:ring-[#FF9119]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:hover:bg-[#FF9119]/80 dark:focus:ring-[#FF9119]/40 ms-auto px-8 py-4 h-14 gap-3">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 50 50" height="24px" id="Layer_1" version="1.1" viewBox="0 0 50 50" width="24px" xml:space="preserve"><rect fill="none" height="24" width="24"/><line fill="none" stroke="#F6F7F9" stroke-miterlimit="10" stroke-width="4" x1="9" x2="41" y1="25" y2="25"/><line fill="none" stroke="#F6F7F9" stroke-miterlimit="10" stroke-width="4" x1="25" x2="25" y1="9" y2="41"/></svg>
-                Tambah Kuis
-                </button>
+               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 50 50" height="24px" id="Layer_1" version="1.1" viewBox="0 0 50 50" width="24px" xml:space="preserve"><rect fill="none" height="24" width="24"/><line fill="none" stroke="#F6F7F9" stroke-miterlimit="10" stroke-width="4" x1="9" x2="41" y1="25" y2="25"/><line fill="none" stroke="#F6F7F9" stroke-miterlimit="10" stroke-width="4" x1="25" x2="25" y1="9" y2="41"/></svg>
+               Tambah Kuis
+               </button>
+          </a>
         </div>
-        <div class="overflow-x-auto border-x w-full">
+        <div class="overflow-x-auto  w-full">
            <table class="table-auto w-full">
               <thead class="border-b">
                  <tr class="">

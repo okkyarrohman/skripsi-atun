@@ -33,14 +33,45 @@ Route::get('/', function () {
 // Route Guru
 Route::group(['middleware' => 'role:guru'], function () {
     Route::prefix('guru')->group(function () {
-        Route::get('/dashboard', [HomeController::class, 'guru'])->name('dashboard.guru');
+        Route::get('/guru/dashboard', [HomeController::class, 'guru'])->name('dashboard.guru');
+        Route::get('/LKPD', function() {
+            return view('guru.LKPD');
+        });
+        Route::get('/kuis', function() {
+            return view('guru.kuis');
+        });
+        Route::get('/materi', function() {
+            return view('guru.materi');
+        });
+        Route::get('/kelompok', function() {
+            return view('guru.kelompok');
+        });
+        Route::get('/modul', function() {
+            return view('guru.modul');
+        });
+        Route::get('/LKPD/tambah_modul', function() {
+            return view('guru.Tugas.tambah-tugas');
+        });
+        
     });
 });
 
 // Route Siswa
 Route::group(['middleware' => 'role:siswa'], function () {
     Route::prefix('siswa')->group(function () {
-        Route::get('/dashboard', [HomeController::class, 'siswa'])->name('dashboard.siswa');
+        Route::get('/siswa/dashboard', [HomeController::class, 'siswa'])->name('dashboard.siswa');
+        Route::get('/LKPD', function() {
+            return view('siswa.LKPD');
+        });
+        Route::get('/kuis', function() {
+            return view('siswa.kuis');
+        });
+        Route::get('/materi', function() {
+            return view('siswa.materi');
+        });
+        Route::get('/kelompok', function() {
+            return view('siswa.kelompok');
+        });
     });
 });
 

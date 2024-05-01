@@ -29,6 +29,20 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
+<<<<<<< Updated upstream
+=======
+        if (Auth::user()->hasRole('admin')){
+            return redirect()-> to ('admin');
+        }
+        
+        if (Auth::user()->hasRole('siswa')){
+            return redirect()-> to ('siswa');
+        }
+        if (Auth::user()->hasRole('guru')){
+            return redirect()-> to ('guru');
+        }
+
+>>>>>>> Stashed changes
         return redirect()->intended(RouteServiceProvider::HOME);
     }
 

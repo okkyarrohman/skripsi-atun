@@ -13,11 +13,28 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+<<<<<<< Updated upstream
+=======
+
+        <style>
+            /* Custom Tailwind CSS styles */
+            .bg-custom-orange {
+                background-color: #FB8A3C;
+                /* Adjust this to your desired shade of orange */
+            }
+    
+            .text-custom-orange {
+                color: #FB8A3C;
+                /* Adjust this to your desired shade of orange */
+            }
+        </style>
+>>>>>>> Stashed changes
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
             @include('layouts.navigation')
 
+<<<<<<< Updated upstream
             <!-- Page Heading -->
             @if (isset($header))
                 <header class="bg-white shadow">
@@ -27,10 +44,19 @@
                 </header>
             @endif
 
+=======
+            <!--sidebar-->
+>>>>>>> Stashed changes
             <!-- Page Content -->
             <main>
                 {{ $slot }}
             </main>
         </div>
+<<<<<<< Updated upstream
+=======
+
+        <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+
+>>>>>>> Stashed changes
     </body>
 </html>

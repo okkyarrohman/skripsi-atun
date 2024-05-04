@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sinbarangan | Guru</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <!-- Tailwind -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">>
     
     <style>
         /* Custom Tailwind CSS styles */
@@ -15,6 +18,10 @@
         }
 
         .text-custom-orange {
+            color: #FB8A3C;
+            /* Adjust this to your desired shade of orange */
+        }
+        .border-custom-orange {
             color: #FB8A3C;
             /* Adjust this to your desired shade of orange */
         }
@@ -34,14 +41,16 @@
             </path>
         </svg>
     </button>
-
-   @include('partial.sidebar')
+<div class="flex">
+    @include('partial.sidebar')
 
     @include('partial.header')
+</div>
     <div class="px-4 sm:ml-64">
     @yield('content')
     <div class="px-4 sm:ml-64">
     <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 </body>
 
 </html>

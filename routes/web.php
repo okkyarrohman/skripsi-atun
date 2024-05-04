@@ -1,12 +1,6 @@
 <?php
 
-<<<<<<< Updated upstream
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
-use Illuminate\Foundation\Application;
-=======
-use App\Http\Controllers\ProfileController;
->>>>>>> Stashed changes
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
 
@@ -27,85 +21,19 @@ use App\Models\User;
 // });
 
 Route::get('/', function () {
-<<<<<<< Updated upstream
-    return view('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-        'siswa' => User::role('siswa')->first(),
-        'guru' => User::role('guru')->first(),
-    ]);
-
-});
-
-// Route Guru
-Route::group(['middleware' => 'role:guru'], function () {
-    Route::prefix('guru')->group(function () {
-        Route::get('/guru/dashboard', [HomeController::class, 'guru'])->name('dashboard.guru');
-        Route::get('/LKPD', function() {
-            return view('guru.LKPD');
-        });
-        Route::get('/kuis', function() {
-            return view('guru.kuis');
-        });
-        Route::get('/materi', function() {
-            return view('guru.materi');
-        });
-        Route::get('/kelompok', function() {
-            return view('guru.kelompok');
-        });
-        Route::get('/modul', function() {
-            return view('guru.modul');
-        });
-        Route::get('/LKPD/tambah_modul', function() {
-            return view('guru.Tugas.tambah-tugas');
-        });
-        
-    });
-});
-
-// Route Siswa
-Route::group(['middleware' => 'role:siswa'], function () {
-    Route::prefix('siswa')->group(function () {
-        Route::get('/siswa/dashboard', [HomeController::class, 'siswa'])->name('dashboard.siswa');
-        Route::get('/LKPD', function() {
-            return view('siswa.LKPD');
-        });
-        Route::get('/kuis', function() {
-            return view('siswa.kuis');
-        });
-        Route::get('/materi', function() {
-            return view('siswa.materi');
-        });
-        Route::get('/kelompok', function() {
-            return view('siswa.kelompok');
-        });
-    });
-});
-
-
-=======
     return view('auth.login');
 });
 
->>>>>>> Stashed changes
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-<<<<<<< Updated upstream
-=======
 Route::middleware(['auth', 'verified', 'role:admin'])->group(function () {
     Route::get('admin', function () {
         return view('admin.dashboard');
@@ -128,6 +56,12 @@ Route::middleware(['auth', 'verified', 'role:admin'])->group(function () {
     Route::get('admin/kelompok',function (){
         return view('admin.kelompok.kelompok');
     })->name('admin.kelompok.kelompok');
+    Route::get('admin/kelompok/hasil',function (){
+        return view('admin.Kelompok.Detail');
+    })->name('admin.Kelompok.Detail');
+    Route::get('admin/kelompok/edit',function (){
+        return view('admin.Kelompok.edit');
+    })->name('admin.Kelompok.edit');
     Route::get('admin/materi',function (){
         return view('admin.Materi.index');
     })->name('admin.Materi.index');
@@ -155,7 +89,24 @@ Route::middleware(['auth', 'verified', 'role:siswa'])->group(function () {
     Route::get('siswa/tugas/detail', function () {
         return view('siswa.tugas.detail');
     })->name('siswa.tugas.detail');
-    
+    Route::get('siswa/Materi', function () {
+        return view('siswa.Materi.index');
+    })->name('siswa.Materi.index');
+    Route::get('siswa/Materi/detail', function () {
+        return view('siswa.Materi.detail');
+    })->name('siswa.Materi.detail');
+    Route::get('siswa/tugas/details', function () {
+        return view('siswa.tugas.detailTugas.RumusanMasalah');
+    })->name('siswa.tugas.detailTugas.RumusanMasalah');
+    Route::get('siswa/tugas/details/Laporan', function () {
+        return view('siswa.tugas.detailTugas.Laporan');
+    })->name('siswa.tugas.detailTugas.Laporan');
+    Route::get('siswa/tugas/details/Daftar_Tugas', function () {
+        return view('siswa.tugas.detailTugas.DaftarTugas');
+    })->name('siswa.tugas.detailTugas.DaftarTugas');
+    Route::get('siswa/tugas/details/Feedback', function () {
+        return view('siswa.tugas.detailTugas.Feedback');
+    })->name('siswa.tugas.detailTugas.Feedback');
 });
 
 Route::middleware(['auth', 'verified', 'role:guru'])->group(function () {
@@ -192,5 +143,4 @@ Route::middleware(['auth', 'verified', 'role:guru'])->group(function () {
     })->name('guru.Materi.detail');
 });
 
->>>>>>> Stashed changes
 require __DIR__.'/auth.php';

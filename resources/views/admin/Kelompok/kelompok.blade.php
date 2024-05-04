@@ -32,7 +32,7 @@
                     11 TKJ
                 </td>
                 <td class="px-12 py-4 text-center">
-                    <button type="button"
+                    <a type="button" href="{{route('admin.Kelompok.Detail')}}"
                                     class="mr-3 text-sm bg-custom-orange text-white p-2 rounded focus:outline-none focus:shadow-outline"><svg
                                         width="19" height="18" viewBox="0 0 19 18" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -43,8 +43,8 @@
                                             d="M9.50055 15.7651C6.68055 15.7651 4.01805 14.1151 2.18805 11.2501C1.39305 10.0126 1.39305 7.99511 2.18805 6.75011C4.02555 3.88511 6.68805 2.23511 9.50055 2.23511C12.313 2.23511 14.9755 3.88511 16.8055 6.75011C17.6005 7.98761 17.6005 10.0051 16.8055 11.2501C14.9755 14.1151 12.313 15.7651 9.50055 15.7651ZM9.50055 3.36011C7.07805 3.36011 4.76055 4.81511 3.14055 7.35761C2.57805 8.23511 2.57805 9.76511 3.14055 10.6426C4.76055 13.1851 7.07805 14.6401 9.50055 14.6401C11.923 14.6401 14.2405 13.1851 15.8605 10.6426C16.423 9.76511 16.423 8.23511 15.8605 7.35761C14.2405 4.81511 11.923 3.36011 9.50055 3.36011Z"
                                             fill="#F6F7F9" />
                                     </svg>
-                                </button>
-                                <button type="button"
+                                </a>
+                                <a type="button" href="{{route('admin.Kelompok.edit')}}"
                                     class="mr-3 text-sm bg-custom-orange text-white p-2 rounded focus:outline-none focus:shadow-outline">
                                     <svg width="19" height="18" viewBox="0 0 19 18" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -59,8 +59,8 @@
                                             fill="#FFF4ED" />
                                     </svg>
 
-                                </button>
-                                <button type="button"
+                                </a>
+                                <a type="button" href="#"
                                     class="text-sm bg-white border-red border-2 text-white p-2 rounded focus:outline-none focus:shadow-outline">
                                     <svg width="19" height="18" viewBox="0 0 19 18" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -80,7 +80,7 @@
                                             d="M11.375 9.9375H7.625C7.3175 9.9375 7.0625 9.6825 7.0625 9.375C7.0625 9.0675 7.3175 8.8125 7.625 8.8125H11.375C11.6825 8.8125 11.9375 9.0675 11.9375 9.375C11.9375 9.6825 11.6825 9.9375 11.375 9.9375Z"
                                             fill="#FB8A3C" />
                                     </svg>
-                                </button>
+                                </a>
                 </td>
             </tr>
             <tr class="bg-white border-b border-black dark:border-gray-700">

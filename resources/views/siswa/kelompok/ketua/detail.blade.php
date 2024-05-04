@@ -73,7 +73,7 @@
 
                     Tambah Tugas
                 </a>
-            </div>
+                </div>
                 <table class="w-full text-base text-left rtl:text-right text-black">
                     <thead class="bg-white border-b border-gray-400">
                         <tr>

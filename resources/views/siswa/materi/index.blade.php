@@ -424,7 +424,7 @@
                     <a href="#">
                         <h5 class="mb-2 text-2xl font-medium tracking-tight text-gray-900 pb-12">Keamanan Jaringan dan Infrastruktur Komputer pada Lab</h5>
                     </a>
-                    <a href="{{ route('guru.Materi.detail') }}"
+                    <a href="{{ route('siswa.Materi.detail') }}"
                         class="flex h-14 items-center justify-center px-3 py-2 text-sm font-medium text-center text-white bg-custom-orange rounded-xl">
                         <span class="px-2">Lihat Modul</span>
                         <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -437,7 +437,7 @@
                     <a href="#">
                         <h5 class="mb-2 text-2xl font-medium tracking-tight text-gray-900 pb-12">Keamanan Jaringan dan Infrastruktur Komputer pada Lab</h5>
                     </a>
-                    <a href="{{ route('guru.Materi.detail') }}"
+                    <a href="{{ route('siswa.Materi.detail') }}"
                         class="flex h-14 items-center justify-center px-3 py-2 text-sm font-medium text-center text-white bg-custom-orange rounded-xl">
                         <span class="px-2">Lihat Modul</span>
                         <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -450,7 +450,7 @@
                     <a href="#">
                         <h5 class="mb-2 text-2xl font-medium tracking-tight text-gray-900 pb-12">Keamanan Jaringan dan Infrastruktur Komputer pada Lab</h5>
                     </a>
-                    <a href="{{ route('guru.Materi.detail') }}"
+                    <a href="{{ route('siswa.Materi.detail') }}"
                         class="flex h-14 items-center justify-center px-3 py-2 text-sm font-medium text-center text-white bg-custom-orange rounded-xl">
                         <span class="px-2">Lihat Modul</span>
                         <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">

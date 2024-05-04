@@ -15,21 +15,6 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans text-gray-900 antialiased">
-<<<<<<< Updated upstream
-        <div class="bg-gray-100 flex justify-center items-center h-screen">
-            <!-- Left: Image -->
-            <div class="w-1/2 h-screen hidden lg:block">
-                <img src="{{ URL('asset/image/login.png')}}" alt="Placeholder Image" class="w-full h-full">
-            </div>
-
-            <div class="lg:p-36 md:p-26 sm:20 w-full h-full lg:w-1/2 ">
-                <div class="flex-col justify-start items-start gap-2.5 flex">
-                    <div class="text-zinc-700 text-[32px] font-bold font-['Poppins'] leading-[38.40px]">Login</div>
-                </div>
-                <div class="items-center pt-28">
-                    {{ $slot }}
-                </div>
-=======
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <!-- Image Section -->
             <div class="md:hidden">
@@ -46,7 +31,6 @@
             <div class="hidden md:block col-span-1 bg-gray-200">
                 <!-- Replace the placeholder URL with your actual image URL -->
                 <img src="{{ asset('assets/Frame 68.png') }}" alt="Image" class="object-cover w-full h-full" />
->>>>>>> Stashed changes
             </div>
         </div>
     </body>

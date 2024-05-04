@@ -1,24 +1,17 @@
 <x-guest-layout>
-<<<<<<< Updated upstream
-=======
     <x-slot name="title">
         {{ __('Register') }}
     </x-slot>
 
         <div class="lg:p-36 md:p-52 sm:20 p-8 w-full lg:w-1/2">
             <h1 class="text-2xl font-semibold mb-4">Login</h1>
->>>>>>> Stashed changes
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
         <!-- Name -->
         <div>
             <x-input-label for="name" :value="__('Name')" />
-<<<<<<< Updated upstream
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-=======
             <x-text-input id="name" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
->>>>>>> Stashed changes
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
         </div>
 
@@ -62,9 +55,6 @@
             </x-primary-button>
         </div>
     </form>
-<<<<<<< Updated upstream
-=======
         </div>
 
->>>>>>> Stashed changes
 </x-guest-layout>

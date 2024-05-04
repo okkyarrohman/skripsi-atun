@@ -1,6 +1,7 @@
 <?php
-
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
+use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
 
@@ -24,6 +25,7 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
+// >>>>>>> Stashed changes
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -143,4 +145,5 @@ Route::middleware(['auth', 'verified', 'role:guru'])->group(function () {
     })->name('guru.Materi.detail');
 });
 
+// >>>>>>> Stashed changes
 require __DIR__.'/auth.php';

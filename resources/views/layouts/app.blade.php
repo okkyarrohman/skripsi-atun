@@ -13,7 +13,6 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-
         <style>
             /* Custom Tailwind CSS styles */
             .bg-custom-orange {
@@ -30,15 +29,13 @@
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
             @include('layouts.navigation')
-
             <!--sidebar-->
+
             <!-- Page Content -->
             <main>
                 {{ $slot }}
             </main>
         </div>
-
         <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
-
     </body>
 </html>

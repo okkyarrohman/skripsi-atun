@@ -108,7 +108,7 @@
                 </button>
                 <ul id="dropdown-example" class="hidden py-2 space-y-2">
                     <li>
-                        <a href="{{ Auth::check() ? (Auth::user()->hasRole('admin') ? route('admin.Materi.index') : (Auth::user()->hasRole('guru') ? route('guru.Materi.index') : (Auth::user()->hasRole('siswa') ? route('modul.index') : '#'))) : '#' }}"
+                        <a href="{{ Auth::check() ? (Auth::user()->hasRole('admin') ? route('modul-admin.index') : (Auth::user()->hasRole('guru') ? route('guru.Materi.index') : (Auth::user()->hasRole('siswa') ? route('modul.index') : '#'))) : '#' }}"
                             class="flex items-center gap-5 w-full p-2 transition duration-75 rounded-lg pl-11 group hover:bg-white hover:text-orange">
                             <svg class="flex-shrink-0 w-6 h-6 transition duration-75 group-hover:text-orange" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25"
                                 fill="none">
@@ -126,7 +126,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ Auth::check() ? (Auth::user()->hasRole('admin') ? route('admin.Materi.index') : (Auth::user()->hasRole('guru') ? route('guru.Materi.index') : (Auth::user()->hasRole('siswa') ? route('simulasi.index') : '#'))) : '#' }}"
+                        <a href="{{ Auth::check() ? (Auth::user()->hasRole('admin') ? route('simulasi-admin.index') : (Auth::user()->hasRole('guru') ? route('guru.Materi.index') : (Auth::user()->hasRole('siswa') ? route('simulasi.index') : '#'))) : '#' }}"
                             class="flex items-center w-full gap-5 p-2 text-white transition duration-75 rounded-lg pl-11 group hover:bg-white hover:text-orange">
                             <svg class="flex-shrink-0 w-6 h-6 transition duration-75 group-hover:text-orange" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25"
                                 fill="none">

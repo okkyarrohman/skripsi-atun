@@ -1,4 +1,7 @@
 <?php
+
+use App\Http\Controllers\Admin\ModulAdminController;
+use App\Http\Controllers\Admin\SimulasiAdminController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Siswa\ModulSiswaController;
@@ -54,9 +57,12 @@ Route::group(['middleware' => 'role:guru'], function () {
 Route::group(['middleware' => 'role:admin'], function () {
     Route::prefix('admin')->group(function () {
         Route::get('/dashboard', [HomeController::class, 'admin'])->name('admin.dashboard');
-        Route::resources([
-            //
-        ]);
+        Route::prefix('materi')->group(function () {
+            Route::resources([
+                'modul-admin' => ModulAdminController::class,
+                'simulasi-admin' => SimulasiAdminController::class,
+            ]);
+        });
     });
 });
 
@@ -98,9 +104,9 @@ Route::middleware(['auth', 'verified', 'role:admin'])->group(function () {
     Route::get('admin/kelompok/edit',function (){
         return view('admin.kelompok.edit');
     })->name('admin.Kelompok.edit');
-    Route::get('admin/materi',function (){
-        return view('admin.materi.index');
-    })->name('admin.Materi.index');
+    // Route::get('admin/materi',function (){
+    //     return view('admin.materi.index');
+    // })->name('admin.Materi.index');
 });
 
 Route::middleware(['auth', 'verified', 'role:siswa'])->group(function () {
@@ -125,12 +131,12 @@ Route::middleware(['auth', 'verified', 'role:siswa'])->group(function () {
     Route::get('siswa/tugas/detail', function () {
         return view('siswa.tugas.detail');
     })->name('siswa.tugas.detail');
-    Route::get('siswa/Materi', function () {
-        return view('siswa.materi.index');
-    })->name('siswa.Materi.index');
-    Route::get('siswa/Materi/detail', function () {
-        return view('siswa.materi.detail');
-    })->name('siswa.Materi.detail');
+    // Route::get('siswa/Materi', function () {
+    //     return view('siswa.materi.index');
+    // })->name('siswa.Materi.index');
+    // Route::get('siswa/Materi/detail', function () {
+    //     return view('siswa.materi.detail');
+    // })->name('siswa.Materi.detail');
     Route::get('siswa/tugas/details', function () {
         return view('siswa.tugas.detailTugas.rumusanMasalah');
     })->name('siswa.tugas.detailTugas.RumusanMasalah');

@@ -26,6 +26,9 @@ class HomeController extends Controller
 
     public function admin()
     {
-        return view('admin.dashboard');
+        $siswas = User::role('siswa')->get();
+        $gurus = User::role('guru')->get();
+
+        return view('admin.dashboard', compact('siswas', 'gurus'));
     }
 }

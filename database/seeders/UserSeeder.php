@@ -16,6 +16,8 @@ class UserSeeder extends Seeder
         $guru = User::create([
             'name' => 'Guru',
             'email' => 'guru@atun.com',
+            'kelas' => '11 TKJ',
+            'nip' => '21051214022',
             'password' => bcrypt('guru123'),
         ]);
         $siswa = User::create([

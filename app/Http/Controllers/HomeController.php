@@ -12,7 +12,13 @@ class HomeController extends Controller
 {
     public function guru()
     {
-        return view('guru.dashboard');
+        $simulasis = Simulasi::latest()->take(4)->get();
+        $moduls = Modul::latest()->take(4)->get();
+        $materis = $moduls->merge($simulasis)->take(4);
+
+        $siswas = User::role('siswa')->get();
+
+        return view('guru.dashboard', compact('materis', 'siswas'));
     }
 
     public function siswa()

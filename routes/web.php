@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Admin\ModulAdminController;
 use App\Http\Controllers\Admin\SimulasiAdminController;
+use App\Http\Controllers\Guru\ModulGuruController;
+use App\Http\Controllers\Guru\SimulasiGuruController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Siswa\ModulSiswaController;
@@ -51,12 +53,21 @@ Route::group(['middleware' => 'role:guru'], function () {
         Route::resources([
             //
         ]);
+        Route::prefix('materi')->group(function () {
+            Route::resources([
+                'modul-guru' => ModulGuruController::class,
+                'simulasi-guru' => SimulasiGuruController::class,
+            ]);
+        });
     });
 });
 
 Route::group(['middleware' => 'role:admin'], function () {
     Route::prefix('admin')->group(function () {
         Route::get('/dashboard', [HomeController::class, 'admin'])->name('admin.dashboard');
+        Route::resources([
+            //
+        ]);
         Route::prefix('materi')->group(function () {
             Route::resources([
                 'modul-admin' => ModulAdminController::class,

@@ -4,7 +4,7 @@
     <div class="px-4 rounded-lg mt-14">
         <div class="flex items-center p-4 h-48 mb-4 rounded-xl bg-gray-50 bg-custom-orange justify-between">
             <div class="flex-col items-center text-white p-4">
-                <h1 class="text-3xl font-semibold pb-2">Selamat Datang, Bambang!</h1>
+                <h1 class="text-3xl font-semibold pb-2">Selamat Datang, {{ Auth::user()->name }}!</h1>
                 <p class="text-base font-reguler">Jangan Lupa cek tugas siswa setiap saat</p>
             </div>
             <div class="flex ml-auto p-4">
@@ -287,10 +287,7 @@
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 mb-4">
-
-
-            <div
-                class="w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8">
+            <div class="w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8">
                 <div class="flex items-center justify-between mb-4">
                     <h5 class="text-xl font-bold leading-none text-gray-900 ">Latest Customers</h5>
                     <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
@@ -313,8 +310,7 @@
                                         email@windster.com
                                     </p>
                                 </div>
-                                <div
-                                    class="inline-flex items-center text-base font-semibold text-gray-900 ">
+                                <div class="inline-flex items-center text-base font-semibold text-gray-900 ">
                                     $320
                                 </div>
                             </div>
@@ -333,8 +329,7 @@
                                         email@windster.com
                                     </p>
                                 </div>
-                                <div
-                                    class="inline-flex items-center text-base font-semibold text-gray-900 ">
+                                <div class="inline-flex items-center text-base font-semibold text-gray-900 ">
                                     $3467
                                 </div>
                             </div>
@@ -353,8 +348,7 @@
                                         email@windster.com
                                     </p>
                                 </div>
-                                <div
-                                    class="inline-flex items-center text-base font-semibold text-gray-900 ">
+                                <div class="inline-flex items-center text-base font-semibold text-gray-900 ">
                                     $67
                                 </div>
                             </div>
@@ -373,8 +367,7 @@
                                         email@windster.com
                                     </p>
                                 </div>
-                                <div
-                                    class="inline-flex items-center text-base font-semibold text-gray-900 ">
+                                <div class="inline-flex items-center text-base font-semibold text-gray-900 ">
                                     $367
                                 </div>
                             </div>
@@ -393,8 +386,7 @@
                                         email@windster.com
                                     </p>
                                 </div>
-                                <div
-                                    class="inline-flex items-center text-base font-semibold text-gray-900 ">
+                                <div class="inline-flex items-center text-base font-semibold text-gray-900 ">
                                     $2367
                                 </div>
                             </div>
@@ -403,203 +395,74 @@
                 </div>
             </div>
 
-            <div
-                class="w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8">
+            <div class="w-full p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8">
                 <div class="flex items-center justify-between mb-4">
-                    <h5 class="text-xl font-bold leading-none text-gray-900 ">Latest Customers</h5>
-                    <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
-                        View all
-                    </a>
+                    <h5 class="text-xl font-bold leading-none text-gray-900 ">Materi Terbaru</h5>
                 </div>
                 <div class="flow-root">
                     <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
-                        <li class="py-3 sm:py-4">
-                            <div class="flex items-center">
-                                <div class="flex-shrink-0">
-                                    <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-1.jpg"
-                                        alt="Neil image">
+                        @foreach($materis as $index => $materi)
+                            <a href="{{ isset($materi->link) ? route('simulasi.show', $materi->id) : route('modul.show', $materi->id) }}"
+                                class="py-3 sm:py-4 block">
+                                <div class="flex items-center">
+                                    <div
+                                        class="flex w-10 h-10 rounded-xl bg-custom-orange items-center justify-center p-2">
+                                        <span
+                                            class="text-white text-xl font-semibold">{{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}</span>
+                                    </div>
+                                    <div class="flex-1 min-w-0 ms-4">
+                                        <p class="text-base font-medium text-gray-900 truncate ">
+                                            {{ $materi->judul }}
+                                        </p>
+                                    </div>
+                                    <div class="inline-flex items-center text-base font-semibold text-gray-900 ">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </div>
                                 </div>
-                                <div class="flex-1 min-w-0 ms-4">
-                                    <p class="text-sm font-medium text-gray-900 truncate ">
-                                        Neil Sims
-                                    </p>
-                                    <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                                        email@windster.com
-                                    </p>
-                                </div>
-                                <div
-                                    class="inline-flex items-center text-base font-semibold text-gray-900 ">
-                                    $320
-                                </div>
-                            </div>
-                        </li>
-                        <li class="py-3 sm:py-4">
-                            <div class="flex items-center ">
-                                <div class="flex-shrink-0">
-                                    <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-3.jpg"
-                                        alt="Bonnie image">
-                                </div>
-                                <div class="flex-1 min-w-0 ms-4">
-                                    <p class="text-sm font-medium text-gray-900 truncate ">
-                                        Bonnie Green
-                                    </p>
-                                    <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                                        email@windster.com
-                                    </p>
-                                </div>
-                                <div
-                                    class="inline-flex items-center text-base font-semibold text-gray-900 ">
-                                    $3467
-                                </div>
-                            </div>
-                        </li>
-                        <li class="py-3 sm:py-4">
-                            <div class="flex items-center">
-                                <div class="flex-shrink-0">
-                                    <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-2.jpg"
-                                        alt="Michael image">
-                                </div>
-                                <div class="flex-1 min-w-0 ms-4">
-                                    <p class="text-sm font-medium text-gray-900 truncate ">
-                                        Michael Gough
-                                    </p>
-                                    <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                                        email@windster.com
-                                    </p>
-                                </div>
-                                <div
-                                    class="inline-flex items-center text-base font-semibold text-gray-900 ">
-                                    $67
-                                </div>
-                            </div>
-                        </li>
-                        <li class="py-3 sm:py-4">
-                            <div class="flex items-center ">
-                                <div class="flex-shrink-0">
-                                    <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-4.jpg"
-                                        alt="Lana image">
-                                </div>
-                                <div class="flex-1 min-w-0 ms-4">
-                                    <p class="text-sm font-medium text-gray-900 truncate ">
-                                        Lana Byrd
-                                    </p>
-                                    <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                                        email@windster.com
-                                    </p>
-                                </div>
-                                <div
-                                    class="inline-flex items-center text-base font-semibold text-gray-900 ">
-                                    $367
-                                </div>
-                            </div>
-                        </li>
-                        <li class="pt-3 pb-0 sm:pt-4">
-                            <div class="flex items-center ">
-                                <div class="flex-shrink-0">
-                                    <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-5.jpg"
-                                        alt="Thomas image">
-                                </div>
-                                <div class="flex-1 min-w-0 ms-4">
-                                    <p class="text-sm font-medium text-gray-900 truncate ">
-                                        Thomes Lean
-                                    </p>
-                                    <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                                        email@windster.com
-                                    </p>
-                                </div>
-                                <div
-                                    class="inline-flex items-center text-base font-semibold text-gray-900 ">
-                                    $2367
-                                </div>
-                            </div>
-                        </li>
+                            </a>
+                        @endforeach
                     </ul>
                 </div>
             </div>
         </div>
         <!--table-->
-        <div class="flex items-center justify-center mb-4 rounded-xl bg-gray-50 border">
-            <table class="w-full text-sm text-left rtl:text-right text-gray-500">
-                <caption
-                    class="p-5 text-lg font-semibold text-left rtl:text-right text-gray-900 bg-white ">
-                    Our products
-                </caption>
-                <thead class="bg-white border-b dark:border-gray-700">
-                    <tr>
-                        <th scope="col" class="px-6 py-3">
-                            Product name
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Color
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Category
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Price
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            <span class="sr-only">Edit</span>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="bg-white border-b dark:border-gray-700">
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                            Apple MacBook Pro 17"
-                        </th>
-                        <td class="px-6 py-4">
-                            Silver
-                        </td>
-                        <td class="px-6 py-4">
-                            Laptop
-                        </td>
-                        <td class="px-6 py-4">
-                            $2999
-                        </td>
-                        <td class="px-6 py-4 text-right">
-                            <a href="#"
-                                class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                        </td>
-                    </tr>
-                    <tr class="bg-white border-b dark:border-gray-700">
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                            Microsoft Surface Pro
-                        </th>
-                        <td class="px-6 py-4">
-                            White
-                        </td>
-                        <td class="px-6 py-4">
-                            Laptop PC
-                        </td>
-                        <td class="px-6 py-4">
-                            $1999
-                        </td>
-                        <td class="px-6 py-4 text-right">
-                            <a href="#"
-                                class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                        </td>
-                    </tr>
-                    <tr class="bg-white">
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                            Magic Mouse 2
-                        </th>
-                        <td class="px-6 py-4">
-                            Black
-                        </td>
-                        <td class="px-6 py-4">
-                            Accessories
-                        </td>
-                        <td class="px-6 py-4">
-                            $99
-                        </td>
-                        <td class="px-6 py-4 text-right">
-                            <a href="#"
-                                class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="text-gray-900 bg-white gap-5 p-7">
+            <div class="flex justify-between items-center p-2">
+                <h1 class="text-2xl font-bold">
+                    Daftar Siswa
+                </h1>
+            </div>
+            <div class="flex items-center justify-center mb-4 rounded-xl bg-gray-50">
+                <table class="w-full text-md bg-white rounded mb-4">
+                    <tbody>
+                        <tr class="border-b">
+                            <th class="w-1/4 text-left p-3 px-5">No</th>
+                            <th class="w-1/4 text-left p-3 px-5">Nama Siswa</th>
+                            <th class="w-1/4 text-left p-3 px-5">Kelas</th>
+                            <th class="w-1/4 text-left p-3 px-5">No Absen</th>
+                            <th class="w-1/4 text-center p-3 px-5">Detail</th>
+                        </tr>
+                        @foreach ($siswas as $index => $siswa)
+                            <tr class="border-b hover:bg-orange-100">
+                                <td class="p-3 px-5">{{ $index + 1 }}</td>
+                                <td class="p-3 px-5">{{ $siswa->name }}</td>
+                                <td class="p-3 px-5">{{ $siswa->kelas }}</td>
+                                <td class="p-3 px-5">{{ $siswa->no_absen }}</td>
+                                <td class="p-3 px-5 flex justify-center whitespace-nowrap">
+                                    <button type="button"
+                                        class="block w-fit mx-auto text-sm bg-custom-orange text-white p-2 rounded focus:outline-none focus:shadow-outline">
+                                        Lihat Detail
+                                    </button>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-@endsection
+    @endsection

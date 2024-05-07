@@ -108,7 +108,7 @@
                 </button>
                 <ul id="dropdown-example" class="hidden py-2 space-y-2">
                     <li>
-                        <a href="{{ Auth::check() ? (Auth::user()->hasRole('admin') ? route('modul-admin.index') : (Auth::user()->hasRole('guru') ? route('guru.Materi.index') : (Auth::user()->hasRole('siswa') ? route('modul.index') : '#'))) : '#' }}"
+                        <a href="{{ Auth::check() ? (Auth::user()->hasRole('admin') ? route('modul-admin.index') : (Auth::user()->hasRole('guru') ? route('modul-guru.index') : (Auth::user()->hasRole('siswa') ? route('modul.index') : '#'))) : '#' }}"
                             class="flex items-center gap-5 w-full p-2 transition duration-75 rounded-lg pl-11 group hover:bg-white hover:text-orange">
                             <svg class="flex-shrink-0 w-6 h-6 transition duration-75 group-hover:text-orange" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25"
                                 fill="none">
@@ -126,7 +126,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ Auth::check() ? (Auth::user()->hasRole('admin') ? route('simulasi-admin.index') : (Auth::user()->hasRole('guru') ? route('guru.Materi.index') : (Auth::user()->hasRole('siswa') ? route('simulasi.index') : '#'))) : '#' }}"
+                        <a href="{{ Auth::check() ? (Auth::user()->hasRole('admin') ? route('simulasi-admin.index') : (Auth::user()->hasRole('guru') ? route('simulasi-guru.index') : (Auth::user()->hasRole('siswa') ? route('simulasi.index') : '#'))) : '#' }}"
                             class="flex items-center w-full gap-5 p-2 text-white transition duration-75 rounded-lg pl-11 group hover:bg-white hover:text-orange">
                             <svg class="flex-shrink-0 w-6 h-6 transition duration-75 group-hover:text-orange" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25"
                                 fill="none">
@@ -142,24 +142,6 @@
                     </li>
                 </ul>
             </li>
-            {{-- <li>
-                <a href="{{ Auth::check() ? (Auth::user()->hasRole('admin') ? route('admin.Materi.index') : (Auth::user()->hasRole('guru') ? route('guru.Materi.index') : (Auth::user()->hasRole('siswa') ? route('siswa.Materi.index') : '#'))) : '#' }}"
-                    class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100">
-                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M15 23.5205H9C3.57 23.5205 1.25 21.2005 1.25 15.7705V9.77051C1.25 4.34051 3.57 2.02051 9 2.02051H15C20.43 2.02051 22.75 4.34051 22.75 9.77051V15.7705C22.75 21.2005 20.43 23.5205 15 23.5205ZM9 3.52051C4.39 3.52051 2.75 5.16051 2.75 9.77051V15.7705C2.75 20.3805 4.39 22.0205 9 22.0205H15C19.61 22.0205 21.25 20.3805 21.25 15.7705V9.77051C21.25 5.16051 19.61 3.52051 15 3.52051H9Z"
-                            fill="#F6F7F9" />
-                        <path
-                            d="M12.0001 19.7206C11.7601 19.7206 11.5201 19.6606 11.3201 19.5506C10.1601 18.9206 8.11013 18.2406 6.82013 18.0706L6.63013 18.0406C5.65013 17.9206 4.87012 17.0406 4.87012 16.0306V8.33059C4.87012 7.76059 5.11014 7.21059 5.52014 6.83059C5.94014 6.45059 6.48012 6.2606 7.06012 6.3106C8.52012 6.4306 10.6401 7.13061 11.8901 7.91061L11.9901 7.97061L12.0302 7.94061C13.2902 7.15061 15.4101 6.4406 16.8801 6.3106C16.9001 6.3106 16.9601 6.3106 16.9801 6.3106C17.5001 6.2606 18.0601 6.46059 18.4701 6.83059C18.8901 7.21059 19.1201 7.74058 19.1201 8.32058V16.0106C19.1201 17.0106 18.3401 17.8906 17.3501 18.0206L17.1401 18.0506C15.8601 18.2206 13.8001 18.9006 12.6601 19.5306C12.4701 19.6706 12.2401 19.7206 12.0001 19.7206ZM6.89014 7.82058C6.75014 7.82058 6.6301 7.87059 6.5401 7.95059C6.4301 8.05059 6.38013 8.1906 6.38013 8.3406V16.0406C6.38013 16.2806 6.60014 16.5306 6.83014 16.5606L7.02014 16.5906C8.48014 16.7906 10.7201 17.5206 12.0201 18.2306C13.2301 17.5306 15.4801 16.7806 16.9501 16.5906L17.1701 16.5606C17.4001 16.5306 17.6201 16.2806 17.6201 16.0406V8.35058C17.6201 8.19058 17.5601 8.0606 17.4601 7.9606C17.3501 7.8606 17.2101 7.82059 17.0501 7.83059C17.0301 7.83059 16.9701 7.83059 16.9501 7.83059C15.7901 7.93059 13.8801 8.57059 12.8401 9.23059L12.7401 9.29059C12.3001 9.56059 11.6801 9.56059 11.2601 9.30059L11.1101 9.2106C10.0601 8.5506 8.15012 7.92058 6.94012 7.82058C6.92012 7.82058 6.91014 7.82058 6.89014 7.82058Z"
-                            fill="#F6F7F9" />
-                        <path
-                            d="M12 19.1806C11.59 19.1806 11.25 18.8406 11.25 18.4306V8.87061C11.25 8.46061 11.59 8.12061 12 8.12061C12.41 8.12061 12.75 8.46061 12.75 8.87061V18.4306C12.75 18.8506 12.41 19.1806 12 19.1806Z"
-                            fill="#F6F7F9" />
-                    </svg>
-
-                    <span class="flex-1 ms-3 whitespace-nowrap px-2 text-white">Materi</span>
-                </a>
-            </li> --}}
         </ul>
         <ul class="space-y-2 font-medium text-white">
             <li>

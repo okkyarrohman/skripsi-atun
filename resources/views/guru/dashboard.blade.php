@@ -402,7 +402,7 @@
                 <div class="flow-root">
                     <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
                         @foreach($materis as $index => $materi)
-                            <a href="{{ isset($materi->link) ? route('simulasi.show', $materi->id) : route('modul.show', $materi->id) }}"
+                            <a href="{{ isset($materi->link) ? route('simulasi-guru.show', $materi->id) : route('modul-guru.show', $materi->id) }}"
                                 class="py-3 sm:py-4 block">
                                 <div class="flex items-center">
                                     <div

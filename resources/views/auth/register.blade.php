@@ -35,24 +35,41 @@
 
             <form method="POST" action="{{ route('register') }}" class="px-6 py-8">
                 @csrf
+                {{-- Name --}}
+                <div class="mb-4">
+                    <label for="name" class="block text-sm font-medium text-gray-700">Nama</label>
+                    <input id="name" type="name" name="name" value="{{ old('name') }}" required
+                        class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" />
+                    @error('name')
+                        <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <div class="mb-4 grid grid-cols-2 gap-x-4">
+                    <div>
+                        <label for="kelas" class="block text-sm font-medium text-gray-700">Kelas</label>
+                        <input id="kelas" type="kelas" name="kelas" value="{{ old('kelas') }}" required
+                            class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" />
+                        @error('kelas')
+                            <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <div>
+                        <label for="no_absen" class="block text-sm font-medium text-gray-700">No Absen</label>
+                        <input id="no_absen" type="no_absen" name="no_absen" value="{{ old('no_absen') }}" required
+                            class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" />
+                        @error('no_absen')
+                            <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+                        @enderror
+                    </div>
+                </div>
 
                 <!-- Email Address -->
                 <div class="mb-4">
                     <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
                     <input id="email" type="email" name="email" value="{{ old('email') }}" required
-                        autocomplete="username"
                         class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" />
                     @error('email')
-                        <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
-                    @enderror
-                </div>
-
-                <div class="mb-4">
-                    <label for="name" class="block text-sm font-medium text-gray-700">Nama</label>
-                    <input id="name" type="name" name="name" value="{{ old('name') }}" required
-                        autocomplete="username"
-                        class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" />
-                    @error('name')
                         <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                     @enderror
                 </div>
@@ -60,22 +77,13 @@
                 <!-- Password -->
                 <div class="mb-4">
                     <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
-                    <input id="password" type="password" name="password" required autocomplete="current-password"
+                    <input id="password" type="password" name="password" required
                         class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" />
                     @error('password')
                         <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                     @enderror
                 </div>
-                <div class="mb-4">
-                    <label for="password_confirmation" class="block text-sm font-medium text-gray-700">Konfirmasi
-                        Password</label>
-                    <input id="password_confirmation" type="password" name="password_confirmation" required
-                        autocomplete="current-password"
-                        class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" />
-                    @error('password_confirmation')
-                        <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
-                    @enderror
-                </div>
+
                 <button type="submit"
                     class="bg-custom-orange hover:bg-blue-600 text-white font-semibold rounded-md py-2 px-4 w-full">
                     Daftar

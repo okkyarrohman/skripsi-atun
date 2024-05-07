@@ -21,6 +21,8 @@ class UserSeeder extends Seeder
         $siswa = User::create([
             'name' => 'siswa',
             'email' => 'siswa@atun.com',
+            'kelas' => '11 TKJ',
+            'no_absen' => '12',
             'password' => bcrypt('siswa123'),
         ]);
         $admin = User::create([

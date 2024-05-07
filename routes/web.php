@@ -1,6 +1,8 @@
 <?php
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Siswa\ModulSiswaController;
+use App\Http\Controllers\Siswa\SimulasiSiswaController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
@@ -21,14 +23,46 @@ use App\Models\User;
 //     return view('welcome');
 // });
 
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::group(['middleware' => 'role:siswa'], function () {
+    Route::prefix('siswa')->group(function () {
+        Route::get('/dashboard', [HomeController::class, 'siswa'])->name('siswa.dashboard');
+        Route::resources([
+            //
+        ]);
+        Route::prefix('materi')->group(function () {
+            Route::resources([
+                'modul' => ModulSiswaController::class,
+                'simulasi' => SimulasiSiswaController::class,
+            ]);
+        });
+    });
+});
+
+Route::group(['middleware' => 'role:guru'], function () {
+    Route::prefix('guru')->group(function () {
+        Route::get('/dashboard', [HomeController::class, 'guru'])->name('guru.dashboard');
+        Route::resources([
+            //
+        ]);
+    });
+});
+
+Route::group(['middleware' => 'role:admin'], function () {
+    Route::prefix('admin')->group(function () {
+        Route::get('/dashboard', [HomeController::class, 'admin'])->name('admin.dashboard');
+        Route::resources([
+            //
+        ]);
+    });
+});
+
 Route::get('/', function () {
     return view('auth.login');
 });
-
-// >>>>>>> Stashed changes
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -37,9 +71,9 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware(['auth', 'verified', 'role:admin'])->group(function () {
-    Route::get('admin', function () {
-        return view('admin.dashboard');
-    })->name('admin.dashboard');
+    // Route::get('admin', function () {
+    //     return view('admin.dashboard');
+    // })->name('admin.dashboard');
     Route::get('admin/tambah',function (){
         return view('admin.tambah');
     })->name('admin.tambah');
@@ -70,9 +104,9 @@ Route::middleware(['auth', 'verified', 'role:admin'])->group(function () {
 });
 
 Route::middleware(['auth', 'verified', 'role:siswa'])->group(function () {
-    Route::get('siswa', function () {
-        return view('siswa.dashboard');
-    })->name('siswa.dashboard');
+    // Route::get('siswa', function () {
+    //     return view('siswa.dashboard');
+    // })->name('siswa.dashboard');
     Route::get('siswa/kelompok', function () {
         return view('siswa.kelompok.kelompok');
     })->name('siswa.kelompok.kelompok');
@@ -112,9 +146,9 @@ Route::middleware(['auth', 'verified', 'role:siswa'])->group(function () {
 });
 
 Route::middleware(['auth', 'verified', 'role:guru'])->group(function () {
-    Route::get('guru', function () {
-        return view('guru.dashboard');
-    })->name('guru.dashboard');
+    // Route::get('guru', function () {
+    //     return view('guru.dashboard');
+    // })->name('guru.dashboard');
     // Kelompok View
     Route::get('guru/kelompok', function () {
         return view('guru.kelompok.kelompok');
@@ -145,5 +179,4 @@ Route::middleware(['auth', 'verified', 'role:guru'])->group(function () {
     })->name('guru.Materi.detail');
 });
 
-// >>>>>>> Stashed changes
 require __DIR__.'/auth.php';

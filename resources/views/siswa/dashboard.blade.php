@@ -1,10 +1,10 @@
 @extends('partial.main')
 
-@Section('content')
+@section('content')
     <div class="px-4 rounded-lg mt-14">
         <div class="flex items-center p-4 h-48 mb-4 rounded-xl bg-gray-50 bg-custom-orange justify-between">
             <div class="flex-col items-center text-white p-4">
-                <h1 class="text-3xl font-semibold pb-2">Selamat Datang, Bambang!</h1>
+                <h1 class="text-3xl font-semibold pb-2">Selamat Datang, {{ Auth::user()->name }}!</h1>
                 <p class="text-base font-reguler">Jangan lupa belajar dan cek setiap tugas</p>
                 <p class="text-base font-reguler">serta materi yang diberikan</p>
             </div>
@@ -288,8 +288,6 @@
             </div>
         </div>
         <div class="grid grid-cols-2 gap-4 mb-4">
-
-
             <div class="w-full p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8">
                 <div class="flex items-center justify-between mb-6">
                     <h5 class="text-xl font-bold leading-none text-gray-900 ">Detail Diri Siswa</h5>
@@ -297,14 +295,18 @@
 
                 <a href="#" class="flex items-start bg-white md:flex-row md:max-w-xl gap-0.5">
                     <img class="object-cover w-1/4 rounded-l-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
-                        src="{{ asset('assets/foto.jpg') }}" alt="">
+                        src="{{ Auth::user()->foto ? asset('storage/profil/' . Auth::user()->foto) : asset('assets/Foto.jpg') }}"
+                        alt="">
                     <div class="flex flex-col justify-between p-4 leading-normal">
                         <p class="font-normal text-black">Nama</p>
-                        <h5 class="text-xl font-bold tracking-tight text-gray-900 mb-2">Albert Einstain</h5>
+                        <h5 class="text-xl font-bold tracking-tight text-gray-900 mb-2">{{ Auth::user()->name }}
+                        </h5>
                         <p class=" font-normal text-black">Kelas</p>
-                        <h5 class=" text-xl font-bold tracking-tight text-gray-900 mb-2">11 TKJ A</h5>
+                        <h5 class=" text-xl font-bold tracking-tight text-gray-900 mb-2">{{ Auth::user()->kelas }}
+                        </h5>
                         <p class=" font-normal text-black">No.Absen</p>
-                        <h5 class="text-xl font-bold tracking-tight text-gray-900 mb-2">123</h5>
+                        <h5 class="text-xl font-bold tracking-tight text-gray-900 mb-2">{{ Auth::user()->no_absen }}
+                        </h5>
                     </div>
                 </a>
             </div>
@@ -433,19 +435,18 @@
                 </div>
                 <div class="flex items-center justify-center ">
                     <a href="{{ route('admin.tambah') }}"
-                class="text-white bg-custom-orange focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M15 10.625H5C4.65833 10.625 4.375 10.3417 4.375 10C4.375 9.65833 4.65833 9.375 5 9.375H15C15.3417 9.375 15.625 9.65833 15.625 10C15.625 10.3417 15.3417 10.625 15 10.625Z"
-                        fill="#F6F7F9" />
-                    <path
-                        d="M10 15.125C9.96985 15.125 9.93857 15.1127 9.91293 15.0871C9.88728 15.0614 9.875 15.0301 9.875 15V5C9.875 4.96985 9.88728 4.93857 9.91293 4.91293C9.93857 4.88728 9.96985 4.875 10 4.875C10.0301 4.875 10.0614 4.88728 10.0871 4.91293C10.1127 4.93857 10.125 4.96985 10.125 5V15C10.125 15.0301 10.1127 15.0614 10.0871 15.0871C10.0614 15.1127 10.0301 15.125 10 15.125Z"
-                        fill="#F6F7F9" stroke="#F6F7F9" />
-                </svg>
+                        class="text-white bg-custom-orange focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M15 10.625H5C4.65833 10.625 4.375 10.3417 4.375 10C4.375 9.65833 4.65833 9.375 5 9.375H15C15.3417 9.375 15.625 9.65833 15.625 10C15.625 10.3417 15.3417 10.625 15 10.625Z"
+                                fill="#F6F7F9" />
+                            <path
+                                d="M10 15.125C9.96985 15.125 9.93857 15.1127 9.91293 15.0871C9.88728 15.0614 9.875 15.0301 9.875 15V5C9.875 4.96985 9.88728 4.93857 9.91293 4.91293C9.93857 4.88728 9.96985 4.875 10 4.875C10.0301 4.875 10.0614 4.88728 10.0871 4.91293C10.1127 4.93857 10.125 4.96985 10.125 5V15C10.125 15.0301 10.1127 15.0614 10.0871 15.0871C10.0614 15.1127 10.0301 15.125 10 15.125Z"
+                                fill="#F6F7F9" stroke="#F6F7F9" />
+                        </svg>
 
-                Lihat Semua Tugas
-                    </a> 
+                        Lihat Semua Tugas
+                    </a>
                 </div>
             </div>
 
@@ -455,67 +456,29 @@
                 </div>
                 <div class="flow-root">
                     <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
-                        <li class="py-3 sm:py-4">
-                            <div class="flex items-center">
-                                <div class="flex w-10 h-10 rounded-xl bg-custom-orange items-center justify-center p-2">
-                                    <span class="text-white text-xl font-semibold">01</span>
+                        @foreach($materis as $index => $materi)
+                            <a href="{{ isset($materi->link) ? route('simulasi.show', $materi->id) : route('modul.show', $materi->id) }}" class="py-3 sm:py-4 block">
+                                <div class="flex items-center">
+                                    <div
+                                        class="flex w-10 h-10 rounded-xl bg-custom-orange items-center justify-center p-2">
+                                        <span class="text-white text-xl font-semibold">{{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}</span>
+                                    </div>
+                                    <div class="flex-1 min-w-0 ms-4">
+                                        <p class="text-base font-medium text-gray-900 truncate ">
+                                            {{ $materi->judul }}
+                                        </p>
+                                    </div>
+                                    <div class="inline-flex items-center text-base font-semibold text-gray-900 ">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </div>
                                 </div>
-                                <div class="flex-1 min-w-0 ms-4">
-                                    <p class="text-base font-medium text-gray-900 truncate ">
-                                        Tipe Data dan Variabel
-                                    </p>
-                                </div>
-                                <div class="inline-flex items-center text-base font-semibold text-gray-900 ">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-                                      </svg>
-                                      
-                                </div>
-                            </div>
-                        </li>
-                        <li class="py-3 sm:py-4">
-                            <div class="flex items-center">
-                                <div class="flex w-10 h-10 rounded-xl bg-custom-orange items-center justify-center p-2">
-                                    <span class="text-white text-xl font-semibold">01</span>
-                                </div>
-                                <div class="flex-1 min-w-0 ms-4">
-                                    <p class="text-base font-medium text-gray-900 truncate ">
-                                        Tipe Data dan Variabel
-                                    </p>
-                                </div>
-                                <div class="inline-flex items-center text-base font-semibold text-gray-900 ">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-                                      </svg>
-                                      
-                                </div>
-                            </div>
-                        </li>
-                        <li class="py-3 sm:py-4">
-                            <div class="flex items-center">
-                                <div class="flex w-10 h-10 rounded-xl bg-custom-orange items-center justify-center p-2">
-                                    <span class="text-white text-xl font-semibold">01</span>
-                                </div>
-                                <div class="flex-1 min-w-0 ms-4">
-                                    <p class="text-base font-medium text-gray-900 truncate ">
-                                        Tipe Data dan Variabel
-                                    </p>
-                                </div>
-                                <div class="inline-flex items-center text-base font-semibold text-gray-900 ">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-                                      </svg>
-                                      
-                                </div>
-                            </div>
-                        </li>
+                            </a>
+                        @endforeach
                     </ul>
-                </div>
-                <div class="flex items-center justify-center ">
-                    <a href="{{ route('admin.tambah') }}"
-                class="text-white bg-custom-orange focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2">
-                Lihat Semua Materi
-                    </a> 
                 </div>
             </div>
         </div>

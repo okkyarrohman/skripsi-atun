@@ -4,12 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sinbarangan | Guru</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"
+    <title>Sinbarangan</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
     <!-- Tailwind -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">>
-    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+
+    <!-- Include Video.js CSS -->
+    <link href="https://vjs.zencdn.net/7.10.2/video-js.css" rel="stylesheet" />
+
+    <!-- Include Video.js JavaScript -->
+    <script src="https://vjs.zencdn.net/7.10.2/video.js"></script>
+
+    <!-- Include Video.js YouTube Plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/videojs-youtube/dist/Youtube.min.js"></script>
+
     <style>
         /* Custom Tailwind CSS styles */
         .bg-custom-orange {
@@ -21,10 +30,12 @@
             color: #FB8A3C;
             /* Adjust this to your desired shade of orange */
         }
+
         .border-custom-orange {
             color: #FB8A3C;
             /* Adjust this to your desired shade of orange */
         }
+
     </style>
     @vite(['resources/css/app.css','resources/js/app.js'])
 </head>
@@ -41,14 +52,15 @@
             </path>
         </svg>
     </button>
-<div class="flex">
-    @include('partial.sidebar')
+    <div class="flex">
+        @include('partial.sidebar')
 
-    @include('partial.header')
-</div>
+        @include('partial.header')
+    </div>
     <div class="px-4 sm:ml-64">
-    @yield('content')
-    <div class="px-4 sm:ml-64">
+        @yield('content')
+    </div>
+
     <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 </body>

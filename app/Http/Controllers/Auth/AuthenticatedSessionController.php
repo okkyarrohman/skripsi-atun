@@ -8,22 +8,16 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
-use Inertia\Response;
-use Carbon\Carbon;
+use Illuminate\View\View;
 
 class AuthenticatedSessionController extends Controller
 {
     /**
      * Display the login view.
      */
-    public function create(): Response
+    public function create(): View
     {
-        return Inertia::render('Auth/Login', [
-            'canResetPassword' => Route::has('password.request'),
-            'status' => session('status'),
-        ]);
+        return view('auth.login');
     }
 
     /**
@@ -35,14 +29,15 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        $guru =  $request->user()->hasRole('guru');
-        $siswa =  $request->user()->hasRole('siswa');
-
-        if ($guru) {
-            return redirect()->route('dashboard.guru');
-        } else if ($siswa) {
-            return redirect()->route('dashboard.siswa');
+        if (Auth::user()->hasRole('guru')) {
+            return redirect()->intended(RouteServiceProvider::HOME_GURU);
+        } else if (Auth::user()->hasRole('siswa')) {
+            return redirect()->intended(RouteServiceProvider::HOME_SISWA);
+        } else if (Auth::user()->hasRole('admin')) {
+            return redirect()->intended(RouteServiceProvider::HOME_ADMIN);
         }
+
+        // return redirect()->intended(RouteServiceProvider::HOME);
     }
 
     /**

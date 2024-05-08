@@ -19,7 +19,7 @@
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="m1 9 4-4-4-4" />
                         </svg>
-                        <a href="#" class="ms-1 text-lg font-medium text-custom-orange md:ms-2">Edit Kelompok</a>
+                        <a href="#" class="ms-1 text-lg font-medium text-custom-orange md:ms-2">Tambah Kelompok</a>
                     </div>
                 </li>
             </ol>
@@ -29,33 +29,32 @@
     <div class="rounded-lg">
         <div class="w-full p-7 bg-white rounded-xl flex-col items-start gap-9 inline-flex">
             <h1 class="text-2xl font-bold">
-                Edit Kelompok
+                Tambah Kelompok
             </h1>
-            <form action="{{ route('kelompok-admin.update', $kelompoks->id) }}" method="POST" enctype="multipart/form-data" class="w-full items-start">
+            <form action="{{ route('kelompok-admin.store') }}" method="POST" enctype="multipart/form-data" class="w-full items-start">
                 @csrf
-                @method('PATCH')
                 <div class="mb-5">
                     <label for="kelas" class="block mb-2 text-sm font-medium text-gray-900 ">Kelas</label>
-                    <input type="text" id="kelas" name="kelas" value="{{ $kelompoks->kelas }}"
+                    <input type="text" id="kelas" name="kelas" value="{{ old('kelas') }}"
                         placeholder="Masukkan Kelas"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                 </div>
                 <div class="mb-5">
                     <label for="nama" class="block mb-2 text-sm font-medium text-gray-900 ">Nama Kelompok</label>
-                    <input type="text" id="nama" name="nama" value="{{ $kelompoks->nama }}"
+                    <input type="text" id="nama" name="nama" value="{{ old('nama') }}"
                         placeholder="Masukkan Nama Kelompok"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                 </div>
                 <div class="mb-5">
                     <label for="kuota" class="block mb-2 text-sm font-medium text-gray-900 ">Kuota Kelompok</label>
-                    <input type="number" id="kuota" name="kuota" value="{{ $kelompoks->kuota }}"
+                    <input type="number" id="kuota" name="kuota" value="{{ old('kuota') }}"
                         placeholder="Masukkan Kuota Kelompok"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                 </div>
                 <div class="pt-2 flex justify-end w-full">
                     <button type="submit"
                         class="text-white bg-custom-orange focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2">
-                        Edit Kelompok
+                        Tambah Kelompok
                     </button>
                 </div>
             </form>

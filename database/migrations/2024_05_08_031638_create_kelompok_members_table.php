@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('kelompoks', function (Blueprint $table) {
+        Schema::create('kelompok_members', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->string('kelas');
-            $table->string('kuota');
+            $table->foreignId('kelompok_id')->constrained();
+            $table->foreignId('user_id')->constrained();
+            $table->enum('role', ['ketua', 'anggota'])->default('anggota');
             $table->timestamps();
         });
     }
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('kelompoks');
+        Schema::dropIfExists('kelompok_members');
     }
 };

@@ -17,7 +17,9 @@ class KelompokFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'nama' => $this->faker->name(),
+            'kelas' => $this->faker->randomElement(['11 TKJ A', '11 TKJ B']),
+            'kuota' => $this->faker->numberBetween(3, 5)
         ];
     }
 }

@@ -1,16 +1,17 @@
 <?php
 
+use App\Http\Controllers\Admin\KelompokAdminController;
 use App\Http\Controllers\Admin\ModulAdminController;
 use App\Http\Controllers\Admin\SimulasiAdminController;
 use App\Http\Controllers\Guru\ModulGuruController;
 use App\Http\Controllers\Guru\SimulasiGuruController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Siswa\KelompokSiswaController;
 use App\Http\Controllers\Siswa\ModulSiswaController;
 use App\Http\Controllers\Siswa\SimulasiSiswaController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
-use App\Models\User;
 
 
 /*
@@ -36,7 +37,7 @@ Route::group(['middleware' => 'role:siswa'], function () {
     Route::prefix('siswa')->group(function () {
         Route::get('/dashboard', [HomeController::class, 'siswa'])->name('siswa.dashboard');
         Route::resources([
-            //
+            'kelompok' => KelompokSiswaController::class,
         ]);
         Route::prefix('materi')->group(function () {
             Route::resources([
@@ -66,7 +67,7 @@ Route::group(['middleware' => 'role:admin'], function () {
     Route::prefix('admin')->group(function () {
         Route::get('/dashboard', [HomeController::class, 'admin'])->name('admin.dashboard');
         Route::resources([
-            //
+            'kelompok-admin' => KelompokAdminController::class,
         ]);
         Route::prefix('materi')->group(function () {
             Route::resources([
@@ -106,15 +107,15 @@ Route::middleware(['auth', 'verified', 'role:admin'])->group(function () {
     Route::get('admin/tugas/hasil',function (){
         return view('admin.tugas.hasil');
     })->name('admin.tugas.hasil');
-    Route::get('admin/kelompok',function (){
-        return view('admin.kelompok.kelompok');
-    })->name('admin.kelompok.kelompok');
-    Route::get('admin/kelompok/hasil',function (){
-        return view('admin.kelompok.detail');
-    })->name('admin.Kelompok.Detail');
-    Route::get('admin/kelompok/edit',function (){
-        return view('admin.kelompok.edit');
-    })->name('admin.Kelompok.edit');
+    // Route::get('admin/kelompok',function (){
+    //     return view('admin.kelompok.kelompok');
+    // })->name('admin.kelompok.kelompok');
+    // Route::get('admin/kelompok/hasil',function (){
+    //     return view('admin.kelompok.detail');
+    // })->name('admin.Kelompok.Detail');
+    // Route::get('admin/kelompok/edit',function (){
+    //     return view('admin.kelompok.edit');
+    // })->name('admin.Kelompok.edit');
     // Route::get('admin/materi',function (){
     //     return view('admin.materi.index');
     // })->name('admin.Materi.index');
@@ -124,9 +125,9 @@ Route::middleware(['auth', 'verified', 'role:siswa'])->group(function () {
     // Route::get('siswa', function () {
     //     return view('siswa.dashboard');
     // })->name('siswa.dashboard');
-    Route::get('siswa/kelompok', function () {
-        return view('siswa.kelompok.kelompok');
-    })->name('siswa.kelompok.kelompok');
+    // Route::get('siswa/kelompok', function () {
+    //     return view('siswa.kelompok.kelompok');
+    // })->name('siswa.kelompok.kelompok');
     Route::get('siswa/kelompok/detail', function () {
         return view('siswa.kelompok.detail');
     })->name('siswa.kelompok.detail');

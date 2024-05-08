@@ -1,22 +1,18 @@
 <?php
 
-namespace App\Http\Controllers\Siswa;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Kelompok;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class KelompokSiswaController extends Controller
+class TugasAdminController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $kelompoks = Kelompok::where('kelas', Auth::user()->kelas)->with(['members'])->get();
-
-        return view('siswa.kelompok.index', compact('kelompoks'));
+        //
     }
 
     /**

@@ -4,8 +4,11 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Kelompok;
+use App\Models\KelompokMember;
 use App\Models\Modul;
 use App\Models\Simulasi;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -18,7 +21,10 @@ class DatabaseSeeder extends Seeder
         $this->call([RoleSeeder::class]);
         $this->call([UserSeeder::class]);
 
+        User::factory(20)->create();
         Modul::factory(5)->create();
         Simulasi::factory(5)->create();
+        Kelompok::factory(5)->create();
+        KelompokMember::factory(20)->create();
     }
 }

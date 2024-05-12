@@ -12,7 +12,7 @@ export default {
         "./node_modules/flowbite/**/*.js",
     ],
 
-    theme: {    
+    theme: {
         extend: {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],

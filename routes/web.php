@@ -59,13 +59,13 @@ Route::middleware(['auth', 'verified', 'role:admin'])->group(function () {
         return view('admin.kelompok.kelompok');
     })->name('admin.kelompok.kelompok');
     Route::get('admin/kelompok/hasil',function (){
-        return view('admin.Kelompok.Detail');
+        return view('admin.kelompok.detail');
     })->name('admin.Kelompok.Detail');
     Route::get('admin/kelompok/edit',function (){
-        return view('admin.Kelompok.edit');
+        return view('admin.kelompok.edit');
     })->name('admin.Kelompok.edit');
     Route::get('admin/materi',function (){
-        return view('admin.Materi.index');
+        return view('admin.materi.index');
     })->name('admin.Materi.index');
 });
 
@@ -92,22 +92,22 @@ Route::middleware(['auth', 'verified', 'role:siswa'])->group(function () {
         return view('siswa.tugas.detail');
     })->name('siswa.tugas.detail');
     Route::get('siswa/Materi', function () {
-        return view('siswa.Materi.index');
+        return view('siswa.materi.index');
     })->name('siswa.Materi.index');
     Route::get('siswa/Materi/detail', function () {
-        return view('siswa.Materi.detail');
+        return view('siswa.materi.detail');
     })->name('siswa.Materi.detail');
     Route::get('siswa/tugas/details', function () {
-        return view('siswa.tugas.detailTugas.RumusanMasalah');
+        return view('siswa.tugas.detailTugas.rumusanMasalah');
     })->name('siswa.tugas.detailTugas.RumusanMasalah');
     Route::get('siswa/tugas/details/Laporan', function () {
-        return view('siswa.tugas.detailTugas.Laporan');
+        return view('siswa.tugas.detailTugas.laporan');
     })->name('siswa.tugas.detailTugas.Laporan');
     Route::get('siswa/tugas/details/Daftar_Tugas', function () {
-        return view('siswa.tugas.detailTugas.DaftarTugas');
+        return view('siswa.tugas.detailTugas.daftarTugas');
     })->name('siswa.tugas.detailTugas.DaftarTugas');
     Route::get('siswa/tugas/details/Feedback', function () {
-        return view('siswa.tugas.detailTugas.Feedback');
+        return view('siswa.tugas.detailTugas.feedback');
     })->name('siswa.tugas.detailTugas.Feedback');
 });
 
@@ -138,10 +138,10 @@ Route::middleware(['auth', 'verified', 'role:guru'])->group(function () {
     })->name('guru.tugas.hasil');
     // Materi View
     Route::get('guru/materi', function () {
-        return view('guru.Materi.index');
+        return view('guru.materi.index');
     })->name('guru.Materi.index');
     Route::get('guru/materi/detail', function () {
-        return view('guru.Materi.detail');
+        return view('guru.materi.detail');
     })->name('guru.Materi.detail');
 });
 

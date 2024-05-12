@@ -3,14 +3,17 @@
 use App\Http\Controllers\Admin\KelompokAdminController;
 use App\Http\Controllers\Admin\ModulAdminController;
 use App\Http\Controllers\Admin\SimulasiAdminController;
+use App\Http\Controllers\Admin\TugasAdminController;
 use App\Http\Controllers\Guru\KelompokGuruController;
 use App\Http\Controllers\Guru\ModulGuruController;
 use App\Http\Controllers\Guru\SimulasiGuruController;
+use App\Http\Controllers\Guru\TugasGuruController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Siswa\KelompokSiswaController;
 use App\Http\Controllers\Siswa\ModulSiswaController;
 use App\Http\Controllers\Siswa\SimulasiSiswaController;
+use App\Http\Controllers\Siswa\TugasSiswaController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 
@@ -39,6 +42,7 @@ Route::group(['middleware' => 'role:siswa'], function () {
         Route::get('/dashboard', [HomeController::class, 'siswa'])->name('siswa.dashboard');
         Route::resources([
             'kelompok' => KelompokSiswaController::class,
+            'tugas' => TugasSiswaController::class
         ]);
         Route::post('/kelompok/{id}/join', [KelompokSiswaController::class, 'join'])->name('kelompok.join');
         Route::patch('/kelompok/{id}/leader', [KelompokSiswaController::class, 'leader'])->name('kelompok.leader');
@@ -56,6 +60,7 @@ Route::group(['middleware' => 'role:guru'], function () {
         Route::get('/dashboard', [HomeController::class, 'guru'])->name('guru.dashboard');
         Route::resources([
             'kelompok-guru' => KelompokGuruController::class,
+            'tugas-guru' => TugasGuruController::class
         ]);
         Route::prefix('materi')->group(function () {
             Route::resources([
@@ -71,6 +76,7 @@ Route::group(['middleware' => 'role:admin'], function () {
         Route::get('/dashboard', [HomeController::class, 'admin'])->name('admin.dashboard');
         Route::resources([
             'kelompok-admin' => KelompokAdminController::class,
+            'tugas-admin' => TugasAdminController::class
         ]);
         Route::prefix('materi')->group(function () {
             Route::resources([
@@ -140,9 +146,9 @@ Route::middleware(['auth', 'verified', 'role:siswa'])->group(function () {
     Route::get('siswa/kelompok/detailketua/tambah', function () {
         return view('siswa.kelompok.ketua.tambah');
     })->name('siswa.kelompok.ketua.tambah');
-    Route::get('siswa/tugas', function () {
-        return view('siswa.tugas.tugas');
-    })->name('siswa.tugas.tugas');
+    // Route::get('siswa/tugas', function () {
+    //     return view('siswa.tugas.tugas');
+    // })->name('siswa.tugas.tugas');
     Route::get('siswa/tugas/detail', function () {
         return view('siswa.tugas.detail');
     })->name('siswa.tugas.detail');
@@ -180,9 +186,9 @@ Route::middleware(['auth', 'verified', 'role:guru'])->group(function () {
     // })->name('guru.kelompok.detail');
 
     // Tugas view
-    Route::get('guru/tugas', function () {
-        return view('guru.tugas.tugas');
-    })->name('guru.tugas.tugas');
+    // Route::get('guru/tugas', function () {
+    //     return view('guru.tugas.tugas');
+    // })->name('guru.tugas.tugas');
 
     Route::get('guru/tugas/detail',function (){
         return view('guru.tugas.detail');

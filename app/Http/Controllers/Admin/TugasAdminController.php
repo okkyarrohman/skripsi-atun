@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Tugas;
 use Illuminate\Http\Request;
 
 class TugasAdminController extends Controller
@@ -12,7 +13,9 @@ class TugasAdminController extends Controller
      */
     public function index()
     {
-        //
+        $tugases = Tugas::all();
+
+        return view('admin.tugas.index', compact('tugases'));
     }
 
     /**
@@ -20,7 +23,7 @@ class TugasAdminController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.tugas.create');
     }
 
     /**
@@ -28,7 +31,13 @@ class TugasAdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Tugas::create([
+            'nama' => $request->nama,
+            'deskripsi' => $request->deskripsi,
+            'deadline' => $request->deadline
+        ]);
+
+        return redirect()->route('tugas-admin.index');
     }
 
     /**
@@ -60,6 +69,10 @@ class TugasAdminController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $tugases = Tugas::findOrFail($id);
+
+        $tugases->delete();
+
+        return redirect()->route('tugas-admin.index');
     }
 }

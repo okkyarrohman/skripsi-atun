@@ -17,7 +17,9 @@ class TugasFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'nama' => $this->faker->name(),
+            'deskripsi' => $this->faker->paragraph(),
+            'deadline' => $this->faker->dateTimeBetween('now', '+1 month')
         ];
     }
 }

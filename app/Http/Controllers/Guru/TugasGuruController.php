@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Siswa;
+namespace App\Http\Controllers\Guru;
 
 use App\Http\Controllers\Controller;
 use App\Models\Tugas;
 use Illuminate\Http\Request;
 
-class TugasSiswaController extends Controller
+class TugasGuruController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class TugasSiswaController extends Controller
     {
         $tugases = Tugas::all();
 
-        return view('siswa.tugas.index', compact('tugases'));
+        return view('guru.tugas.index', compact('tugases'));
     }
 
     /**

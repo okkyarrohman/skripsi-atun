@@ -37,7 +37,7 @@
                 </a>
             </li>
             <li>
-                <a href="{{ Auth::check() ? (Auth::user()->hasRole('admin') ? route('admin.tugas.tugas') : (Auth::user()->hasRole('guru') ? route('guru.tugas.tugas') : (Auth::user()->hasRole('siswa') ? route('siswa.tugas.tugas') : '#'))) : '#' }}"
+                <a href="{{ Auth::check() ? (Auth::user()->hasRole('admin') ? route('tugas-admin.index') : (Auth::user()->hasRole('guru') ? route('tugas-guru.index') : (Auth::user()->hasRole('siswa') ? route('tugas.index') : '#'))) : '#' }}"
                     class="group flex items-center p-2 rounded-lg hover:bg-white">
                     <svg class="flex-shrink-0 w-6 h-6 transition duration-75 group-hover:text-orange" width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path id="Vector"

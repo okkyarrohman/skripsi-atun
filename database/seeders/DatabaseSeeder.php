@@ -8,6 +8,7 @@ use App\Models\Kelompok;
 use App\Models\KelompokMember;
 use App\Models\Modul;
 use App\Models\Simulasi;
+use App\Models\Tugas;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -26,5 +27,6 @@ class DatabaseSeeder extends Seeder
         Simulasi::factory(5)->create();
         Kelompok::factory(5)->create();
         KelompokMember::factory(20)->create();
+        Tugas::factory(5)->create();
     }
 }

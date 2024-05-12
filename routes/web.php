@@ -14,6 +14,7 @@ use App\Http\Controllers\Siswa\KelompokSiswaController;
 use App\Http\Controllers\Siswa\ModulSiswaController;
 use App\Http\Controllers\Siswa\SessionSiswaController;
 use App\Http\Controllers\Siswa\SimulasiSiswaController;
+use App\Http\Controllers\Siswa\TugasJobSiswaController;
 use App\Http\Controllers\Siswa\TugasSiswaController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -44,7 +45,8 @@ Route::group(['middleware' => 'role:siswa'], function () {
         Route::post('/session/store', [SessionSiswaController::class, 'store'])->name('session.store');
         Route::resources([
             'kelompok' => KelompokSiswaController::class,
-            'tugas' => TugasSiswaController::class
+            'tugas' => TugasSiswaController::class,
+            'tugas-job' => TugasJobSiswaController::class
         ]);
         Route::get('/tugas/{id}/rumusan-masalah', [TugasSiswaController::class, 'rumusanMasalah'])
                 ->name('tugas.rumusanMasalah');

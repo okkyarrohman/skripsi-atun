@@ -7,7 +7,7 @@
             <h1 class="text-2xl font-bold">
                 Tugas Kelompok
             </h1>
-            <a href="{{ route('siswa.kelompok.ketua.tambah') }}"
+            <a href="{{ route('tugas-job.create') }}"
                 class="text-white bg-custom-orange focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path

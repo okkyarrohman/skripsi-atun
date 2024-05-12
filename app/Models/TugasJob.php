@@ -14,7 +14,9 @@ class TugasJob extends Model
     protected $fillable = [
         'tugas_answer_id',
         'user_id',
-        'deadline'
+        'nama',
+        'deadline',
+        'status'
     ];
 
     public function tugas_answers() {

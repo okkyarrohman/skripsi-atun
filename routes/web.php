@@ -12,6 +12,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Siswa\KelompokSiswaController;
 use App\Http\Controllers\Siswa\ModulSiswaController;
+use App\Http\Controllers\Siswa\SessionSiswaController;
 use App\Http\Controllers\Siswa\SimulasiSiswaController;
 use App\Http\Controllers\Siswa\TugasSiswaController;
 use Illuminate\Foundation\Application;
@@ -40,10 +41,19 @@ use Illuminate\Support\Facades\Route;
 Route::group(['middleware' => 'role:siswa'], function () {
     Route::prefix('siswa')->group(function () {
         Route::get('/dashboard', [HomeController::class, 'siswa'])->name('siswa.dashboard');
+        Route::post('/session/store', [SessionSiswaController::class, 'store'])->name('session.store');
         Route::resources([
             'kelompok' => KelompokSiswaController::class,
             'tugas' => TugasSiswaController::class
         ]);
+        Route::get('/tugas/{id}/rumusan-masalah', [TugasSiswaController::class, 'rumusanMasalah'])
+                ->name('tugas.rumusanMasalah');
+        Route::get('/tugas/{id}/daftar-tugas', [TugasSiswaController::class, 'daftarTugas'])
+                ->name('tugas.daftarTugas');
+        Route::get('/tugas/{id}/laporan', [TugasSiswaController::class, 'laporan'])
+                ->name('tugas.laporan');
+        Route::get('/tugas/{id}/feedback', [TugasSiswaController::class, 'feedback'])
+                ->name('tugas.feedback');
         Route::post('/kelompok/{id}/join', [KelompokSiswaController::class, 'join'])->name('kelompok.join');
         Route::patch('/kelompok/{id}/leader', [KelompokSiswaController::class, 'leader'])->name('kelompok.leader');
         Route::prefix('materi')->group(function () {

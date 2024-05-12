@@ -433,7 +433,7 @@
                         <p>Nilai :98</p>
                     </div>
                     <div>
-                        <a href="{{ route('siswa.tugas.detailTugas.RumusanMasalah') }}"
+                        <a href="{{ route('tugas.rumusanMasalah', $tugas->id) }}"
                             class="flex h-14 items-center justify-center px-3 py-2 text-sm font-medium text-center text-white bg-custom-orange rounded-xl">
                             <span class="px-2">Lihat Hasil Tugas</span>
                         </a>

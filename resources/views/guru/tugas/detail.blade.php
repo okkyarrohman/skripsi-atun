@@ -42,7 +42,7 @@
                     89
                 </td>
                 <td class="px-12 py-4 text-center">
-                    <a href="{{ route('guru.tugas.hasil') }}" class="w-28 h-9 px-5 py-2 bg-custom-orange rounded-lg text-white text-sm font-medium font-['Poppins'] leading-tight">
+                    <a href="{{ route('guru.tugas.hasil') }}" class="w-28 h-9 px-5 py-2 bg-custom-orange rounded-lg text-white text-sm font-medium  leading-tight">
                         Lihat Hasil
                 </a>
                 </td>
@@ -61,7 +61,7 @@
                     -
                 </td>
                 <td class="px-12 py-4 text-center">
-                    <a href="{{ route('guru.tugas.hasil') }}" class="w-28 h-9 px-5 py-2 bg-custom-orange rounded-lg text-white text-sm font-medium font-['Poppins'] leading-tight">
+                    <a href="{{ route('guru.tugas.hasil') }}" class="w-28 h-9 px-5 py-2 bg-custom-orange rounded-lg text-white text-sm font-medium  leading-tight">
                         Lihat Hasil
                 </a>
                 </td>

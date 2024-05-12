@@ -27,7 +27,17 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($kelompoks as $index => $kelompok)
+
+                @php
+                    $alreadyJoined = $users->members;
+                @endphp
+
+                @foreach($kelompoks as $index => $kelompok)
+                    @php
+                        $userKelompok = $kelompok->members->firstWhere('user_id', Auth::user()->id);
+                        $isFull = count($kelompok->members) >= $kelompok->kuota;
+                    @endphp
+
                     <tr class="bg-white dark:border-gray-700">
                         <td scope="row" class="px-8 py-4 text-center">
                             {{ $index + 1 }}
@@ -39,11 +49,21 @@
                             {{ count($kelompok->members) }} / {{ $kelompok->kuota }}
                         </td>
                         <td class="px-12 py-4 text-center">
-                            <a href="{{ route('siswa.kelompok.detail') }}"
-                            class="w-28 h-9 px-5 py-2 rounded-lg text-white text-sm font-medium leading-tight
-                            {{ count($kelompok->members) >= $kelompok->kuota ? 'bg-orange-300 cursor-not-allowed' : 'bg-custom-orange' }}">
-                                Gabung
-                            </a>
+                            @if($alreadyJoined)
+                                <a href="{{ $userKelompok ? route('kelompok.show', $kelompok->id) : "#" }}"
+                                    class="w-28 h-9 px-5 py-2 rounded-lg text-white text-sm font-medium leading-tight
+                                {{ ($alreadyJoined || $isFull) ? ($userKelompok ? "bg-custom-orange" : "bg-orange-300 cursor-not-allowed") : "bg-orange-300 cursor-not-allowed" }}">
+                                    {{ $userKelompok ? "Tergabung" : "Gabung" }}
+                                </a>
+                            @else
+                                <form action="{{ route('kelompok.join', $kelompok->id) }}"
+                                    method="POST">
+                                    @csrf
+                                    @method('POST')
+                                    <button type="submit"
+                                        class="w-28 h-9 px-5 py-2 rounded-lg text-white text-sm font-medium leading-tight {{ $userKelompok ? 'bg-custom-orange' : ($isFull || $alreadyJoined ? 'bg-orange-300 cursor-not-allowed' : 'bg-custom-orange') }}">Gabung</button>
+                                </form>
+                            @endif
                         </td>
                     </tr>
                 @endforeach
@@ -51,4 +71,9 @@
         </table>
     </div>
 </div>
+
+<script>
+    console.log(@json($alreadyJoined))
+
+</script>
 @endsection

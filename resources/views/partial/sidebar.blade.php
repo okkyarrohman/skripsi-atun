@@ -57,7 +57,7 @@
                 </a>
             </li>
             <li>
-                <a href="{{ Auth::check() ? (Auth::user()->hasRole('admin') ? route('kelompok-admin.index') : (Auth::user()->hasRole('guru') ? route('guru.kelompok.kelompok') : (Auth::user()->hasRole('siswa') ? route('kelompok.index') : '#'))) : '#' }}"
+                <a href="{{ Auth::check() ? (Auth::user()->hasRole('admin') ? route('kelompok-admin.index') : (Auth::user()->hasRole('guru') ? route('kelompok-guru.index') : (Auth::user()->hasRole('siswa') ? route('kelompok.index') : '#'))) : '#' }}"
                     class="group flex items-center p-2 rounded-lg hover:bg-white">
                     <svg class="flex-shrink-0 w-6 h-6 transition duration-75 group-hover:text-orange" width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path

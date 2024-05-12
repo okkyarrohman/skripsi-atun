@@ -16,7 +16,7 @@ class HomeController extends Controller
         $moduls = Modul::latest()->take(4)->get();
         $materis = $moduls->merge($simulasis)->take(4);
 
-        $siswas = User::role('siswa')->get();
+        $siswas = User::role('siswa')->where('kelas', Auth::user()->kelas)->get();
 
         return view('guru.dashboard', compact('materis', 'siswas'));
     }

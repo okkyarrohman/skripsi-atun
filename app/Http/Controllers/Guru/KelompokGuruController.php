@@ -1,26 +1,22 @@
 <?php
 
-namespace App\Http\Controllers\Siswa;
+namespace App\Http\Controllers\Guru;
 
 use App\Http\Controllers\Controller;
 use App\Models\Kelompok;
-use App\Models\KelompokMember;
-use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class KelompokSiswaController extends Controller
+class KelompokGuruController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $users = User::where('id', Auth::user()->id)->with(['members.kelompoks'])->first();
-
         $kelompoks = Kelompok::where('kelas', Auth::user()->kelas)->with(['members'])->get();
 
-        return view('siswa.kelompok.index', compact('kelompoks', 'users'));
+        return view('guru.kelompok.index', compact('kelompoks'));
     }
 
     /**
@@ -46,7 +42,7 @@ class KelompokSiswaController extends Controller
     {
         $kelompoks = Kelompok::where('id', $id)->with(['members'])->first();
 
-        return view('siswa.kelompok.show', compact('kelompoks'));
+        return view('guru.kelompok.show', compact('kelompoks'));
     }
 
     /**
@@ -71,27 +67,5 @@ class KelompokSiswaController extends Controller
     public function destroy(string $id)
     {
         //
-    }
-
-    public function join($kelompok_id)
-    {
-        KelompokMember::create([
-            'kelompok_id' => $kelompok_id,
-            'user_id' => Auth::user()->id,
-        ]);
-
-        return redirect()->route('kelompok.show', $kelompok_id);
-    }
-
-    public function leader(Request $request, $id)
-    {
-        $members = KelompokMember::findOrFail($id);
-
-        $membersUpdate = $request->only(['role']);
-        $membersUpdate['role'] = "ketua";
-
-        $members->update($membersUpdate);
-
-        return redirect()->back();
     }
 }

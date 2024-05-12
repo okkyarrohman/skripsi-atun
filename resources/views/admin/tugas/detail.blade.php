@@ -25,7 +25,7 @@
                 </ol>
             </nav>
         </div>
-      
+
 <div class="flex items-center justify-center mb-4 rounded-xl bg-white border p-7">
     <table class="w-full text-base text-left rtl:text-right text-black">
         <caption
@@ -66,7 +66,7 @@
                     89
                 </td>
                 <td class="px-12 py-4 text-center">
-                    <a href="{{ route('admin.tugas.hasil') }}" class="w-28 h-9 px-5 py-2 bg-custom-orange rounded-lg text-white text-sm font-medium font-['Poppins'] leading-tight">
+                    <a href="{{ route('admin.tugas.hasil') }}" class="w-28 h-9 px-5 py-2 bg-custom-orange rounded-lg text-white text-sm font-medium  leading-tight">
                         Lihat Hasil
                 </a>
                 </td>
@@ -85,7 +85,7 @@
                     -
                 </td>
                 <td class="px-12 py-4 text-center">
-                    <a href="{{ route('guru.tugas.hasil') }}" class="w-28 h-9 px-5 py-2 bg-custom-orange rounded-lg text-white text-sm font-medium font-['Poppins'] leading-tight">
+                    <a href="{{ route('guru.tugas.hasil') }}" class="w-28 h-9 px-5 py-2 bg-custom-orange rounded-lg text-white text-sm font-medium  leading-tight">
                         Lihat Hasil
                 </a>
                 </td>

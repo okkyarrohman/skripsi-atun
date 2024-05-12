@@ -37,7 +37,7 @@
                             <td class="p-3 px-5">Subar</td>
                             <td class="p-3 px-5">201903473217</td>
                             <td class="px-12 py-4 text-center">
-                                <a href="{{ route('admin.tugas.detail') }}" class="w-28 h-9 px-5 py-2 bg-custom-orange rounded-lg text-white text-sm font-medium font-['Poppins'] leading-tight">
+                                <a href="{{ route('admin.tugas.detail') }}" class="w-28 h-9 px-5 py-2 bg-custom-orange rounded-lg text-white text-sm font-medium  leading-tight">
                                         Lihat Hasil
                                 </a>
                             </td>

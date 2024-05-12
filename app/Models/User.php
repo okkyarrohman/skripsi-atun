@@ -47,4 +47,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function members() {
+        return $this->hasOne(KelompokMember::class, 'user_id', 'id');
+    }
 }

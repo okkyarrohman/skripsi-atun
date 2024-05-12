@@ -41,14 +41,14 @@
                        1
                     </td>
                     <td class="p-4">
-                       basic@example.com 
+                       basic@example.com
                     </td>
                     <td class="p-4">
                         22/12/2222
                      </td>
                     <td class="p-4 text-center">
                         <div class="w-[118px] h-9 px-5 py-2 bg-orange rounded-lg justify-center items-center gap-2 inline-flex">
-                            <div class="text-white text-sm font-medium font-['Poppins'] leading-tight">Lihat Detail</div>
+                            <div class="text-white text-sm font-medium  leading-tight">Lihat Detail</div>
                         </div>
                      </td>
                      <td class="p-4">
@@ -60,23 +60,23 @@
                                 <path d="M10.7446 12.9375H8.24707C7.93957 12.9375 7.68457 12.6825 7.68457 12.375C7.68457 12.0675 7.93957 11.8125 8.24707 11.8125H10.7446C11.0521 11.8125 11.3071 12.0675 11.3071 12.375C11.3071 12.6825 11.0521 12.9375 10.7446 12.9375Z" fill="#FB8A3C"/>
                                 <path d="M11.375 9.9375H7.625C7.3175 9.9375 7.0625 9.6825 7.0625 9.375C7.0625 9.0675 7.3175 8.8125 7.625 8.8125H11.375C11.6825 8.8125 11.9375 9.0675 11.9375 9.375C11.9375 9.6825 11.6825 9.9375 11.375 9.9375Z" fill="#FB8A3C"/>
                                 </svg>
-                                
+
                         </div>
                      </td>
                  </tr>
                  <tr class="border-b hover:bg-gray-50">
                     <td class="p-4 text-center  ">
-                      2 
+                      2
                     </td>
                     <td class="p-4">
-                       admin@example.com  
+                       admin@example.com
                     </td>
                     <td class="p-4">
                         22/12/2222
                      </td>
                     <td class="p-4 text-center">
                         <div class="w-[118px] h-9 px-5 py-2 bg-orange rounded-lg justify-center items-center gap-2 inline-flex">
-                            <div class="text-white text-sm font-medium font-['Poppins'] leading-tight">Lihat Detail</div>
+                            <div class="text-white text-sm font-medium  leading-tight">Lihat Detail</div>
                         </div>
                      </td>
                      <td class="p-4">
@@ -88,7 +88,7 @@
                                 <path d="M10.7446 12.9375H8.24707C7.93957 12.9375 7.68457 12.6825 7.68457 12.375C7.68457 12.0675 7.93957 11.8125 8.24707 11.8125H10.7446C11.0521 11.8125 11.3071 12.0675 11.3071 12.375C11.3071 12.6825 11.0521 12.9375 10.7446 12.9375Z" fill="#FB8A3C"/>
                                 <path d="M11.375 9.9375H7.625C7.3175 9.9375 7.0625 9.6825 7.0625 9.375C7.0625 9.0675 7.3175 8.8125 7.625 8.8125H11.375C11.6825 8.8125 11.9375 9.0675 11.9375 9.375C11.9375 9.6825 11.6825 9.9375 11.375 9.9375Z" fill="#FB8A3C"/>
                                 </svg>
-                                
+
                         </div>
                      </td>
                  </tr>

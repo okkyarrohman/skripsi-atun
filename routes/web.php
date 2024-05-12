@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\KelompokAdminController;
 use App\Http\Controllers\Admin\ModulAdminController;
 use App\Http\Controllers\Admin\SimulasiAdminController;
+use App\Http\Controllers\Guru\KelompokGuruController;
 use App\Http\Controllers\Guru\ModulGuruController;
 use App\Http\Controllers\Guru\SimulasiGuruController;
 use App\Http\Controllers\HomeController;
@@ -39,6 +40,8 @@ Route::group(['middleware' => 'role:siswa'], function () {
         Route::resources([
             'kelompok' => KelompokSiswaController::class,
         ]);
+        Route::post('/kelompok/{id}/join', [KelompokSiswaController::class, 'join'])->name('kelompok.join');
+        Route::patch('/kelompok/{id}/leader', [KelompokSiswaController::class, 'leader'])->name('kelompok.leader');
         Route::prefix('materi')->group(function () {
             Route::resources([
                 'modul' => ModulSiswaController::class,
@@ -52,7 +55,7 @@ Route::group(['middleware' => 'role:guru'], function () {
     Route::prefix('guru')->group(function () {
         Route::get('/dashboard', [HomeController::class, 'guru'])->name('guru.dashboard');
         Route::resources([
-            //
+            'kelompok-guru' => KelompokGuruController::class,
         ]);
         Route::prefix('materi')->group(function () {
             Route::resources([
@@ -168,13 +171,13 @@ Route::middleware(['auth', 'verified', 'role:guru'])->group(function () {
     //     return view('guru.dashboard');
     // })->name('guru.dashboard');
     // Kelompok View
-    Route::get('guru/kelompok', function () {
-        return view('guru.kelompok.kelompok');
-    })->name('guru.kelompok.kelompok');
+    // Route::get('guru/kelompok', function () {
+    //     return view('guru.kelompok.kelompok');
+    // })->name('guru.kelompok.kelompok');
 
-    Route::get('guru/kelompok/detail',function (){
-        return view('guru.kelompok.detail');
-    })->name('guru.kelompok.detail');
+    // Route::get('guru/kelompok/detail',function (){
+    //     return view('guru.kelompok.detail');
+    // })->name('guru.kelompok.detail');
 
     // Tugas view
     Route::get('guru/tugas', function () {

@@ -290,112 +290,63 @@
 
 
             <div
-                class="w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8">
-                <div class="flex items-center justify-between mb-4">
-                    <h5 class="text-xl font-bold leading-none text-gray-900 ">Latest Customers</h5>
-                    <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
-                        View all
-                    </a>
+                class="w-full p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8">
+                <div class="flex items-center mb-4">
+                    <h5 class="text-xl font-bold leading-none text-gray-900 ">Tugas Terdekat</h5>
                 </div>
                 <div class="flow-root">
                     <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
                         <li class="py-3 sm:py-4">
-                            <div class="flex items-center">
-                                <div class="flex-shrink-0">
-                                    <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-1.jpg"
-                                        alt="Neil image">
-                                </div>
-                                <div class="flex-1 min-w-0 ms-4">
+                            <div class="flex items-center border-l-2 border-black">
+                                <div class="flex-1 min-w-0 ms-2">
                                     <p class="text-sm font-medium text-gray-900 truncate ">
-                                        Neil Sims
-                                    </p>
-                                    <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                                        email@windster.com
+                                        Pengumpulan Tugas Buat Candi
                                     </p>
                                 </div>
                                 <div
-                                    class="inline-flex items-center text-base font-semibold text-gray-900 ">
-                                    $320
+                                    class="flex-col text-right text-base font-semibold text-gray-900 ">
+                                    <p class="text-sm font-medium text-gray-900 truncate ">
+                                        Berakhir 
+                                    </p>
+                                    <p class="text-sm text-gray-500 truncate dark:text-gray-400">
+                                        12 Mar 2024 12:00
+                                    </p>
                                 </div>
                             </div>
                         </li>
                         <li class="py-3 sm:py-4">
-                            <div class="flex items-center ">
-                                <div class="flex-shrink-0">
-                                    <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-3.jpg"
-                                        alt="Bonnie image">
-                                </div>
-                                <div class="flex-1 min-w-0 ms-4">
+                            <div class="flex items-center border-l-2 border-black">
+                                <div class="flex-1 min-w-0 ms-2">
                                     <p class="text-sm font-medium text-gray-900 truncate ">
-                                        Bonnie Green
-                                    </p>
-                                    <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                                        email@windster.com
+                                        Pengumpulan Tugas Buat Candi
                                     </p>
                                 </div>
                                 <div
-                                    class="inline-flex items-center text-base font-semibold text-gray-900 ">
-                                    $3467
+                                    class="flex-col text-right text-base font-semibold text-gray-900 ">
+                                    <p class="text-sm font-medium text-gray-900 truncate ">
+                                        Berakhir 
+                                    </p>
+                                    <p class="text-sm text-gray-500 truncate dark:text-gray-400">
+                                        12 Mar 2024 12:00
+                                    </p>
                                 </div>
                             </div>
                         </li>
                         <li class="py-3 sm:py-4">
-                            <div class="flex items-center">
-                                <div class="flex-shrink-0">
-                                    <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-2.jpg"
-                                        alt="Michael image">
-                                </div>
-                                <div class="flex-1 min-w-0 ms-4">
+                            <div class="flex items-center border-l-2 border-black">
+                                <div class="flex-1 min-w-0 ms-2">
                                     <p class="text-sm font-medium text-gray-900 truncate ">
-                                        Michael Gough
-                                    </p>
-                                    <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                                        email@windster.com
+                                        Pengumpulan Tugas Buat Candi
                                     </p>
                                 </div>
                                 <div
-                                    class="inline-flex items-center text-base font-semibold text-gray-900 ">
-                                    $67
-                                </div>
-                            </div>
-                        </li>
-                        <li class="py-3 sm:py-4">
-                            <div class="flex items-center ">
-                                <div class="flex-shrink-0">
-                                    <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-4.jpg"
-                                        alt="Lana image">
-                                </div>
-                                <div class="flex-1 min-w-0 ms-4">
+                                    class="flex-col text-right text-base font-semibold text-gray-900 ">
                                     <p class="text-sm font-medium text-gray-900 truncate ">
-                                        Lana Byrd
+                                        Berakhir 
                                     </p>
                                     <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                                        email@windster.com
+                                        12 Mar 2024 12:00
                                     </p>
-                                </div>
-                                <div
-                                    class="inline-flex items-center text-base font-semibold text-gray-900 ">
-                                    $367
-                                </div>
-                            </div>
-                        </li>
-                        <li class="pt-3 pb-0 sm:pt-4">
-                            <div class="flex items-center ">
-                                <div class="flex-shrink-0">
-                                    <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-5.jpg"
-                                        alt="Thomas image">
-                                </div>
-                                <div class="flex-1 min-w-0 ms-4">
-                                    <p class="text-sm font-medium text-gray-900 truncate ">
-                                        Thomes Lean
-                                    </p>
-                                    <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                                        email@windster.com
-                                    </p>
-                                </div>
-                                <div
-                                    class="inline-flex items-center text-base font-semibold text-gray-900 ">
-                                    $2367
                                 </div>
                             </div>
                         </li>
@@ -404,112 +355,72 @@
             </div>
 
             <div
-                class="w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8">
+                class="w-full p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8">
                 <div class="flex items-center justify-between mb-4">
-                    <h5 class="text-xl font-bold leading-none text-gray-900 ">Latest Customers</h5>
-                    <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
-                        View all
-                    </a>
+                    <h5 class="text-xl font-bold leading-none text-gray-900 ">Materi Terbaru</h5>
                 </div>
                 <div class="flow-root">
                     <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
                         <li class="py-3 sm:py-4">
                             <div class="flex items-center">
-                                <div class="flex-shrink-0">
-                                    <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-1.jpg"
-                                        alt="Neil image">
+                                <div class="flex-shrink-0 border bg-custom-orange text-white p-2 rounded-lg text-xl">
+                                    01
                                 </div>
-                                <div class="flex-1 min-w-0 ms-4">
+                                <div class="flex-1 min-w-0 ms-2">
                                     <p class="text-sm font-medium text-gray-900 truncate ">
-                                        Neil Sims
-                                    </p>
-                                    <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                                        email@windster.com
+                                        Tipe Data Variabel
                                     </p>
                                 </div>
                                 <div
                                     class="inline-flex items-center text-base font-semibold text-gray-900 ">
-                                    $320
-                                </div>
-                            </div>
-                        </li>
-                        <li class="py-3 sm:py-4">
-                            <div class="flex items-center ">
-                                <div class="flex-shrink-0">
-                                    <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-3.jpg"
-                                        alt="Bonnie image">
-                                </div>
-                                <div class="flex-1 min-w-0 ms-4">
-                                    <p class="text-sm font-medium text-gray-900 truncate ">
-                                        Bonnie Green
-                                    </p>
-                                    <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                                        email@windster.com
-                                    </p>
-                                </div>
-                                <div
-                                    class="inline-flex items-center text-base font-semibold text-gray-900 ">
-                                    $3467
+                                    <button>
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M8.9101 20.67C8.7201 20.67 8.5301 20.6 8.3801 20.45C8.0901 20.16 8.0901 19.68 8.3801 19.39L14.9001 12.87C15.3801 12.39 15.3801 11.61 14.9001 11.13L8.3801 4.61002C8.0901 4.32002 8.0901 3.84002 8.3801 3.55002C8.6701 3.26002 9.1501 3.26002 9.4401 3.55002L15.9601 10.07C16.4701 10.58 16.7601 11.27 16.7601 12C16.7601 12.73 16.4801 13.42 15.9601 13.93L9.4401 20.45C9.2901 20.59 9.1001 20.67 8.9101 20.67Z" fill="#383A42"/>
+                                            </svg>
+                                            
+                                    </button>
                                 </div>
                             </div>
                         </li>
                         <li class="py-3 sm:py-4">
                             <div class="flex items-center">
-                                <div class="flex-shrink-0">
-                                    <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-2.jpg"
-                                        alt="Michael image">
+                                <div class="flex-shrink-0 border bg-custom-orange text-white p-2 rounded-lg text-xl">
+                                    01
                                 </div>
-                                <div class="flex-1 min-w-0 ms-4">
+                                <div class="flex-1 min-w-0 ms-2">
                                     <p class="text-sm font-medium text-gray-900 truncate ">
-                                        Michael Gough
-                                    </p>
-                                    <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                                        email@windster.com
+                                        Tipe Data Variabel
                                     </p>
                                 </div>
                                 <div
                                     class="inline-flex items-center text-base font-semibold text-gray-900 ">
-                                    $67
+                                    <button>
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M8.9101 20.67C8.7201 20.67 8.5301 20.6 8.3801 20.45C8.0901 20.16 8.0901 19.68 8.3801 19.39L14.9001 12.87C15.3801 12.39 15.3801 11.61 14.9001 11.13L8.3801 4.61002C8.0901 4.32002 8.0901 3.84002 8.3801 3.55002C8.6701 3.26002 9.1501 3.26002 9.4401 3.55002L15.9601 10.07C16.4701 10.58 16.7601 11.27 16.7601 12C16.7601 12.73 16.4801 13.42 15.9601 13.93L9.4401 20.45C9.2901 20.59 9.1001 20.67 8.9101 20.67Z" fill="#383A42"/>
+                                            </svg>
+                                            
+                                    </button>
                                 </div>
                             </div>
                         </li>
                         <li class="py-3 sm:py-4">
-                            <div class="flex items-center ">
-                                <div class="flex-shrink-0">
-                                    <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-4.jpg"
-                                        alt="Lana image">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0 border bg-custom-orange text-white p-2 rounded-lg text-xl">
+                                    01
                                 </div>
-                                <div class="flex-1 min-w-0 ms-4">
+                                <div class="flex-1 min-w-0 ms-2">
                                     <p class="text-sm font-medium text-gray-900 truncate ">
-                                        Lana Byrd
-                                    </p>
-                                    <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                                        email@windster.com
+                                        Tipe Data Variabel
                                     </p>
                                 </div>
                                 <div
                                     class="inline-flex items-center text-base font-semibold text-gray-900 ">
-                                    $367
-                                </div>
-                            </div>
-                        </li>
-                        <li class="pt-3 pb-0 sm:pt-4">
-                            <div class="flex items-center ">
-                                <div class="flex-shrink-0">
-                                    <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-5.jpg"
-                                        alt="Thomas image">
-                                </div>
-                                <div class="flex-1 min-w-0 ms-4">
-                                    <p class="text-sm font-medium text-gray-900 truncate ">
-                                        Thomes Lean
-                                    </p>
-                                    <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                                        email@windster.com
-                                    </p>
-                                </div>
-                                <div
-                                    class="inline-flex items-center text-base font-semibold text-gray-900 ">
-                                    $2367
+                                    <button>
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M8.9101 20.67C8.7201 20.67 8.5301 20.6 8.3801 20.45C8.0901 20.16 8.0901 19.68 8.3801 19.39L14.9001 12.87C15.3801 12.39 15.3801 11.61 14.9001 11.13L8.3801 4.61002C8.0901 4.32002 8.0901 3.84002 8.3801 3.55002C8.6701 3.26002 9.1501 3.26002 9.4401 3.55002L15.9601 10.07C16.4701 10.58 16.7601 11.27 16.7601 12C16.7601 12.73 16.4801 13.42 15.9601 13.93L9.4401 20.45C9.2901 20.59 9.1001 20.67 8.9101 20.67Z" fill="#383A42"/>
+                                            </svg>
+                                            
+                                    </button>
                                 </div>
                             </div>
                         </li>
@@ -518,84 +429,59 @@
             </div>
         </div>
         <!--table-->
-        <div class="flex items-center justify-center mb-4 rounded-xl bg-gray-50 border">
-            <table class="w-full text-sm text-left rtl:text-right text-gray-500">
+        <div class="flex items-center justify-center mb-4 rounded-xl bg-white border p-7">
+            <table class="w-full text-base text-left rtl:text-right text-black">
                 <caption
-                    class="p-5 text-lg font-semibold text-left rtl:text-right text-gray-900 bg-white ">
-                    Our products
+                    class=" pb-8 text-2xl font-bold text-left rtl:text-right text-black bg-white">
+                    Daftar Siswa
                 </caption>
-                <thead class="bg-white border-b dark:border-gray-700">
+                <thead class="bg-white border-b border-gray-400">
                     <tr>
-                        <th scope="col" class="px-6 py-3">
-                            Product name
+                        <th scope="col" class="px-8 py-3 text-center">
+                            No Absen
                         </th>
-                        <th scope="col" class="px-6 py-3">
-                            Color
+                        <th scope="col" class="px-28 py-3">
+                            Nama Siswa
                         </th>
-                        <th scope="col" class="px-6 py-3">
-                            Category
+                        <th scope="col" class="px-20 py-3">
+                            NIM
                         </th>
-                        <th scope="col" class="px-6 py-3">
-                            Price
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            <span class="sr-only">Edit</span>
+                        <th scope="col" class="px-12 py-3 text-center">
+                            Detail
                         </th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="bg-white border-b dark:border-gray-700">
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                            Apple MacBook Pro 17"
+                    <tr class="bg-white border-b border-black dark:border-gray-700">
+                        <th scope="row" class="px-8 py-4 text-center">
+                            1
                         </th>
-                        <td class="px-6 py-4">
-                            Silver
+                        <td class="px-28 py-4">
+                            Abagus Subar
                         </td>
-                        <td class="px-6 py-4">
-                            Laptop
+                        <td class="px-20 py-4">
+                            201903473217
                         </td>
-                        <td class="px-6 py-4">
-                            $2999
-                        </td>
-                        <td class="px-6 py-4 text-right">
-                            <a href="#"
-                                class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                        <td class="px-12 py-4 text-center">
+                            <a href="{{ route('guru.tugas.detail') }}" class="w-28 h-9 px-5 py-2 bg-custom-orange rounded-lg text-white text-sm font-medium font-['Poppins'] leading-tight">
+                                    Lihat Detail
+                            </a>
                         </td>
                     </tr>
-                    <tr class="bg-white border-b dark:border-gray-700">
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                            Microsoft Surface Pro
+                    <tr class="bg-white border-b border-black dark:border-gray-700">
+                        <th scope="row" class="px-8 py-4 text-center">
+                            2
                         </th>
-                        <td class="px-6 py-4">
-                            White
+                        <td class="px-28 py-4">
+                            Apik Sabar
                         </td>
-                        <td class="px-6 py-4">
-                            Laptop PC
+                        <td class="px-20 py-4">
+                            201903473217
                         </td>
-                        <td class="px-6 py-4">
-                            $1999
-                        </td>
-                        <td class="px-6 py-4 text-right">
-                            <a href="#"
-                                class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                        </td>
-                    </tr>
-                    <tr class="bg-white">
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                            Magic Mouse 2
-                        </th>
-                        <td class="px-6 py-4">
-                            Black
-                        </td>
-                        <td class="px-6 py-4">
-                            Accessories
-                        </td>
-                        <td class="px-6 py-4">
-                            $99
-                        </td>
-                        <td class="px-6 py-4 text-right">
-                            <a href="#"
-                                class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                        <td class="px-12 py-4 text-center">
+                            <a href="{{ route('guru.tugas.detail') }}" class="w-28 h-9 px-5 py-2 bg-custom-orange rounded-lg text-white text-sm font-medium font-['Poppins'] leading-tight">
+                                    Lihat Detail
+                            </a>
                         </td>
                     </tr>
                 </tbody>

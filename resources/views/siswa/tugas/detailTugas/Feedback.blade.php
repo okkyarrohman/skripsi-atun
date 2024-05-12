@@ -45,7 +45,7 @@
     <div class="pt-2 flex justify-end">
         <a href="{{ route('siswa.tugas.detailTugas.Feedback') }}"
             class="text-white bg-custom-orange focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2">
-            Selanjutnya
+            Kirim
         </a>
     </div> 
 </div>

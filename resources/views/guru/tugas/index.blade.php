@@ -12,13 +12,13 @@
                     <th scope="col" class="px-8 py-3 text-center">
                         No
                     </th>
-                    <th scope="col" class="px-28 py-3">
+                    <th scope="col" class="px-8 py-3">
                         Judul Tugas
                     </th>
-                    <th scope="col" class="px-20 py-3">
+                    <th scope="col" class="px-8 py-3">
                         Tenggat Waktu
                     </th>
-                    <th scope="col" class="px-12 py-3 text-center">
+                    <th scope="col" class="px-8 py-3 text-center">
                         Hasil
                     </th>
                 </tr>
@@ -29,14 +29,14 @@
                         <td scope="row" class="px-8 py-4 text-center">
                             {{ $index + 1 }}
                         </td>
-                        <td class="px-28 py-4">
+                        <td class="px-8 py-4">
                             {{ $tugas->nama }}
                         </td>
-                        <td class="px-20 py-4">
+                        <td class="px-8 py-4">
                             {{ date('d/m/Y H:i', strtotime($tugas->deadline)) }} WIB
                         </td>
-                        <td class="px-12 py-4 text-center">
-                            <a href="{{ route('guru.tugas.detail') }}"
+                        <td class="px-8 py-4 text-center">
+                            <a href="{{ route('tugas-guru.show', $tugas->id) }}"
                                 class="w-28 h-9 px-5 py-2 bg-custom-orange rounded-lg text-white text-sm font-medium  leading-tight">
                                 Lihat Hasil
                             </a>

@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Guru;
 
 use App\Http\Controllers\Controller;
 use App\Models\Tugas;
+use App\Models\TugasAnswer;
+use App\Models\TugasGrade;
 use Illuminate\Http\Request;
 
 class TugasGuruController extends Controller
@@ -21,9 +23,11 @@ class TugasGuruController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(string $answerId)
     {
-        //
+        $tugasAnswers = TugasAnswer::where('id', $answerId)->with(['users', 'tugases', 'tugas_grades'])->first();
+
+        return view('guru.tugas.create', compact('tugasAnswers'));
     }
 
     /**
@@ -31,7 +35,13 @@ class TugasGuruController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        TugasGrade::create([
+            'tugas_answer_id' => $request->tugas_answer_id,
+            'nilai' => $request->nilai,
+            'feedback' => $request->feedback
+        ]);
+
+        return redirect()->back();
     }
 
     /**
@@ -39,7 +49,9 @@ class TugasGuruController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $tugases = Tugas::where('id', $id)->with(['tugas_answers.tugas_jobs', 'tugas_answers.users', 'tugas_answers.tugas_grades'])->first();
+
+        return view('guru.tugas.show', compact('tugases'));
     }
 
     /**

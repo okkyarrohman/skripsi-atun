@@ -61,8 +61,6 @@ class TugasSiswaController extends Controller
             'file_laporan' => $fileLaporanName
         ]);
 
-        $request->session()->forget('rumusan_masalah');
-
         return redirect()->back();
     }
 
@@ -118,8 +116,6 @@ class TugasSiswaController extends Controller
 
         $tugasAnswers->update($tugasAnswersUpdate);
 
-        $request->session()->forget('rumusan_masalah');
-
         return redirect()->back();
     }
 
@@ -140,14 +136,14 @@ class TugasSiswaController extends Controller
 
     public function daftarTugas(string $id)
     {
-        $tugases = Tugas::with(['tugas_answers.tugas_jobs'])->findOrFail($id);
+        $tugases = Tugas::with(['tugas_answers.tugas_jobs.users'])->findOrFail($id);
 
         return view('siswa.tugas.detailTugas.daftarTugas', compact('tugases'));
     }
 
     public function laporan(string $id)
     {
-        $tugases = Tugas::findOrFail($id);
+        $tugases = Tugas::with(['tugas_answers.tugas_jobs'])->findOrFail($id);
 
         return view('siswa.tugas.detailTugas.laporan', compact('tugases'));
     }

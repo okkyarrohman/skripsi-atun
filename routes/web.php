@@ -48,6 +48,10 @@ Route::group(['middleware' => 'role:siswa'], function () {
             'tugas' => TugasSiswaController::class,
             'tugas-job' => TugasJobSiswaController::class
         ]);
+        Route::get('/tugas/{tugasId}/tugas-job/create', [TugasJobSiswaController::class, 'create'])->name('tugas-job.create');
+        Route::patch('/tugas-job/{jobId}/update-status', [TugasJobSiswaController::class, 'updateStatus'])
+                ->name('tugas-job.updateStatus');
+
         Route::get('/tugas/{id}/rumusan-masalah', [TugasSiswaController::class, 'rumusanMasalah'])
                 ->name('tugas.rumusanMasalah');
         Route::get('/tugas/{id}/daftar-tugas', [TugasSiswaController::class, 'daftarTugas'])
@@ -74,6 +78,7 @@ Route::group(['middleware' => 'role:guru'], function () {
             'kelompok-guru' => KelompokGuruController::class,
             'tugas-guru' => TugasGuruController::class
         ]);
+        Route::get('/tugas-guru/tugas-answer/{answerId}/create', [TugasGuruController::class, 'create'])->name('tugas-guru.create');
         Route::prefix('materi')->group(function () {
             Route::resources([
                 'modul-guru' => ModulGuruController::class,
@@ -202,9 +207,9 @@ Route::middleware(['auth', 'verified', 'role:guru'])->group(function () {
     //     return view('guru.tugas.tugas');
     // })->name('guru.tugas.tugas');
 
-    Route::get('guru/tugas/detail',function (){
-        return view('guru.tugas.detail');
-    })->name('guru.tugas.detail');
+    // Route::get('guru/tugas/detail',function (){
+    //     return view('guru.tugas.detail');
+    // })->name('guru.tugas.detail');
 
     Route::get('guru/tugas/detail/hasil',function (){
         return view('guru.tugas.hasil');

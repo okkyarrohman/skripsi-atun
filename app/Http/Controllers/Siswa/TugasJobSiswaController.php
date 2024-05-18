@@ -3,8 +3,13 @@
 namespace App\Http\Controllers\Siswa;
 
 use App\Http\Controllers\Controller;
+use App\Models\Kelompok;
+use App\Models\Tugas;
+use App\Models\TugasAnswer;
 use App\Models\TugasJob;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TugasJobSiswaController extends Controller
 {
@@ -19,9 +24,14 @@ class TugasJobSiswaController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(string $tugasId)
     {
-        return view('siswa.tugas.daftarTugas.create');
+        $tugases = Tugas::where('id', $tugasId)->first();
+        $tugasAnswers = TugasAnswer::where('tugas_id', $tugasId)->where('user_id', Auth::user()->id)->with(['tugas_jobs'])->first();
+        $users = User::where('id', Auth::user()->id)->with(['members.kelompoks'])->first();
+        $kelompoks = Kelompok::where('id', $users->members->kelompok_id)->with(['members.users'])->first();
+
+        return view('siswa.tugas.daftarTugas.create', compact('tugasAnswers', 'tugases', 'kelompoks', 'users'));
     }
 
     /**
@@ -30,8 +40,8 @@ class TugasJobSiswaController extends Controller
     public function store(Request $request)
     {
         TugasJob::create([
-            'tugas_answer_id' => '',
-            'user_id' => '',
+            'tugas_answer_id' => $request->tugas_answer_id,
+            'user_id' => $request->user_id,
             'nama' => $request->nama,
             'deadline' => $request->deadline
         ]);
@@ -61,6 +71,17 @@ class TugasJobSiswaController extends Controller
     public function update(Request $request, string $id)
     {
         //
+    }
+
+    public function updateStatus(Request $request, $jobId)
+    {
+        $tugasJobs = TugasJob::findOrFail($jobId);
+
+        $tugasJobsUpdate = $request->only('status');
+
+        $tugasJobs->update($tugasJobsUpdate);
+
+        return redirect()->back();
     }
 
     /**

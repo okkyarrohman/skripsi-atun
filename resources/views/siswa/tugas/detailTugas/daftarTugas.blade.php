@@ -2,7 +2,6 @@
 
 @section('section')
 <div class="w-full">
-
     @php
         $userAnswers = $tugases->tugas_answers->where('user_id', Auth::user()->id)->first();
     @endphp
@@ -12,7 +11,7 @@
             <h1 class="text-2xl font-bold">
                 Tugas Kelompok
             </h1>
-            <a href="{{ route('tugas-job.create') }}"
+            <a href="{{ route('tugas-job.create', $tugases->id) }}"
                 class="text-white bg-custom-orange focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -46,69 +45,34 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="bg-white">
-                    <th scope="row" class="px-8 py-4 justify-center items-center text-center">
-                        <div class="flex items-center justify-center">
-                            <input id="checkbox-all-search" type="checkbox"
-                                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
-                            <label for="checkbox-all-search" class="sr-only">checkbox</label>
-                        </div>
-                    </th>
-                    <th scope="row" class="px-8 py-4 text-center">
-                        1
-                    </th>
-                    <td class="px-8 py-4">
-                        Mencari biksu tong
-                    </td>
-                    <td class="px-8 py-4">
-                        Febrian Daffa (ketua kelompok)
-                    </td>
-                    <td class="px-8 py-4 text-center font-semibold">
-                        22/1/2024
-                    </td>
-                </tr>
-                <tr class="bg-white dark:border-gray-700">
-                    <th scope="row" class="px-8 py-4 justify-center items-center text-center">
-                        <div class="flex items-center justify-center">
-                            <input id="checkbox-all-search" type="checkbox"
-                                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
-                            <label for="checkbox-all-search" class="sr-only">checkbox</label>
-                        </div>
-                    </th>
-                    <th scope="row" class="px-8 py-4 text-center">
-                        2
-                    </th>
-                    <td class="px-8 py-4">
-                        Mencari biksu tong
-                    </td>
-                    <td class="px-8 py-4">
-                        Febrian Daffa (ketua kelompok)
-                    </td>
-                    <td class="px-8 py-4 text-center font-semibold">
-                        22/1/2024
-                    </td>
-                </tr>
-                <tr class="bg-white">
-                    <th scope="row" class="px-8 py-4 justify-center items-center text-center">
-                        <div class="flex items-center justify-center">
-                            <input id="checkbox-all-search" type="checkbox"
-                                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
-                            <label for="checkbox-all-search" class="sr-only">checkbox</label>
-                        </div>
-                    </th>
-                    <th scope="row" class="px-8 py-4 text-center">
-                        3
-                    </th>
-                    <td class="px-8 py-4">
-                        Mencari biksu tong
-                    </td>
-                    <td class="px-8 py-4">
-                        Febrian Daffa (ketua kelompok)
-                    </td>
-                    <td class="px-8 py-4 text-center font-semibold">
-                        22/1/2024
-                    </td>
-                </tr>
+                @foreach($userAnswers?->tugas_jobs as $index => $job)
+                    <tr class="bg-white">
+                        <th scope="row" class="px-8 py-4 justify-center items-center text-center">
+                            <div class="flex items-center justify-center">
+                                <form action="{{ route('tugas-job.updateStatus', $job->id) }}" method="POST">
+                                    @csrf
+                                    @method('PATCH')
+                                    <input type="hidden" id="status" name="status" value="{{ $job->status == "progres" ? "selesai" : "progres" }}">
+                                    <input id="checkbox-all-search" {{ $job->status == "selesai" ? "checked" : "" }} onchange="this.form.submit()" type="checkbox"
+                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
+                                    <label for="checkbox-all-search" class="sr-only">checkbox</label>
+                                </form>
+                            </div>
+                        </th>
+                        <th scope="row" class="px-8 py-4 text-center">
+                            {{ $index + 1 }}
+                        </th>
+                        <td class="px-8 py-4">
+                            {{ $job->nama }}
+                        </td>
+                        <td class="px-8 py-4">
+                            {{ $job->users->name }}
+                        </td>
+                        <td class="px-8 py-4 text-center font-semibold">
+                            {{ date('d/m/Y H:i', strtotime($job->deadline)) }}
+                        </td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
@@ -117,7 +81,7 @@
     <div class="pt-2 flex justify-start">
         <a href="{{ route('tugas.rumusanMasalah', $tugases->id) }}"
             class="text-custom-orange bg-white border-2 border-orange-400 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2">
-            sebelumnya
+            Sebelumnya
         </a>
     </div>
     <div class="pt-2 flex justify-end">
@@ -129,9 +93,8 @@
 </div>
 
 <script>
-    const handleTambahTugasClick = (tugasAnswerId) => {
-        localStorage.setItem('TUGAS_ANSWER_ID', tugasAnswerId)
-    }
+    console.log(@json($userAnswers))
+
 </script>
 
 @endsection

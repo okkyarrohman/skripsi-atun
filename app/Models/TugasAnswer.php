@@ -22,4 +22,16 @@ class TugasAnswer extends Model
     public function tugas_jobs() {
         return $this->hasMany(TugasJob::class, 'tugas_answer_id', 'id');
     }
+
+    public function users() {
+        return $this->belongsTo(User::class, 'user_id', 'id');
+    }
+
+    public function tugases() {
+        return $this->belongsTo(Tugas::class, 'tugas_id', 'id');
+    }
+
+    public function tugas_grades() {
+        return $this->hasOne(TugasGrade::class, 'tugas_answer_id', 'id');
+    }
 }

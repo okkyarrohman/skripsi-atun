@@ -2,6 +2,11 @@
 
 @section('section')
 <div class="w-full">
+
+    @php
+        $userAnswers = $tugases->tugas_answers->where('user_id', Auth::user()->id)->first();
+    @endphp
+
     <div class="flex-col items-center justify-center mb-4 rounded-xl bg-white p-7">
         <div class="flex justify-between items-center p-2 mb-4">
             <h1 class="text-2xl font-bold">
@@ -122,5 +127,11 @@
         </a>
     </div>
 </div>
+
+<script>
+    const handleTambahTugasClick = (tugasAnswerId) => {
+        localStorage.setItem('TUGAS_ANSWER_ID', tugasAnswerId)
+    }
+</script>
 
 @endsection

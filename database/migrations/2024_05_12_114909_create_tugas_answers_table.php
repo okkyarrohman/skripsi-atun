@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('tugas_answers', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('tugas_id')->constrained('tugases');
             $table->foreignId('user_id')->constrained();
             $table->longText('rumusan_masalah')->nullable();
             $table->string('file_presentasi')->nullable();

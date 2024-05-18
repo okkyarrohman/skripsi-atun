@@ -53,20 +53,4 @@
     <button type="Submit"
         class="text-white bg-custom-orange focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center flex items-center justify-center w-fit mt-6 mx-auto">Simpan</button>
 </form>
-
-<script>
-    var filePresentasiInput = document.getElementById('file-input-presentasi');
-    var fileLaporanInput = document.getElementById('file-input-laporan');
-
-    filePresentasiInput.addEventListener('change', function() {
-        var fileName = this.files[0].name;
-        var fileLabel = document.getElementById('file-name-presentasi');
-        fileLabel.textContent = fileName;
-    });
-    fileLaporanInput.addEventListener('change', function() {
-        var fileName = this.files[0].name;
-        var fileLabel = document.getElementById('file-name-laporan');
-        fileLabel.textContent = fileName;
-    });
-</script>
 @endsection

@@ -16,4 +16,8 @@ class Tugas extends Model
         'deskripsi',
         'deadline'
     ];
+
+    public function tugas_answers() {
+        return $this->hasMany(TugasAnswer::class, 'tugas_id', 'id');
+    }
 }

@@ -95,6 +95,7 @@ Route::group(['middleware' => 'role:admin'], function () {
             'kelompok-admin' => KelompokAdminController::class,
             'tugas-admin' => TugasAdminController::class
         ]);
+        Route::get('/tugas-admin/tugas-answer/{answerId}', [TugasAdminController::class, 'hasil'])->name('tugas-admin.hasil');
         Route::prefix('materi')->group(function () {
             Route::resources([
                 'modul-admin' => ModulAdminController::class,

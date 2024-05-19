@@ -25,7 +25,8 @@ class TugasGuruController extends Controller
      */
     public function create(string $answerId)
     {
-        $tugasAnswers = TugasAnswer::where('id', $answerId)->with(['users', 'tugases', 'tugas_grades'])->first();
+        $tugasAnswers = TugasAnswer::where('id', $answerId)->with(['users', 'tugases', 'tugas_grades'])
+                                        ->first();
 
         return view('guru.tugas.create', compact('tugasAnswers'));
     }

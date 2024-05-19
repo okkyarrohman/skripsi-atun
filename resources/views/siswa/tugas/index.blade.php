@@ -421,6 +421,11 @@
         <h1 class="text-3xl font-bold leading-none text-gray-900 mb-4 pb-3">Tugas</h1>
         <div class="grid grid-cols-3 gap-4 mb-4">
             @foreach ($tugases as $tugas)
+
+                @php
+                    $userAnswers = $tugas->tugas_answers->where('user_id', Auth::user()->id)->first();
+                @endphp
+
                 <div
                     class="max-w p-6 bg-white border border-gray-200 rounded-lg shadow flex flex-col justify-between gap-5">
                     <div class="border-b-2">
@@ -430,35 +435,21 @@
                     </div>
                     <div class="mb-2">
                         <p>Deadline : {{ date('d/m/Y H:i', strtotime($tugas->deadline)) }} WIB</p>
-                        <p>Nilai :98</p>
+                        <p>Nilai : {{ $userAnswers ? $userAnswers->tugas_grades ? $userAnswers->tugas_grades->nilai : "Belum Dinilai" : "Belum Dikerjakan" }}</p>
                     </div>
                     <div>
                         <a href="{{ route('tugas.rumusanMasalah', $tugas->id) }}"
                             class="flex h-14 items-center justify-center px-3 py-2 text-sm font-medium text-center text-white bg-custom-orange rounded-xl">
-                            <span class="px-2">Lihat Hasil Tugas</span>
+                            <span class="px-2">{{ $userAnswers ? "Lihat Hasil" : "Lihat Tugas" }}</span>
                         </a>
                     </div>
                 </div>
             @endforeach
-            <div
-                class="max-w p-6 bg-white border border-gray-200 rounded-lg shadow flex flex-col justify-between gap-5">
-                <div class="border-b-2">
-                    <a href="#">
-                        <h5 class="mb-2 text-2xl font-medium tracking-tight text-gray-900">Keamanan Jaringan</h5>
-                    </a>
-                </div>
-                <div class="mb-2">
-                    <p>Deadline : 22/01/2024</p>
-                    <p>nilai :98</p>
-                </div>
-                <div>
-                    <a href="{{ route('siswa.tugas.detailTugas.RumusanMasalah') }}"
-                        class="flex h-14 items-center justify-center px-3 py-2 text-sm font-medium text-center text-white bg-custom-orange rounded-xl">
-                        <span class="px-2">Lihat Hasil Tugas</span>
-                    </a>
-                </div>
-            </div>
         </div>
     </div>
 </div>
+
+<script>
+    console.log(@json($tugases))
+</script>
 @endsection

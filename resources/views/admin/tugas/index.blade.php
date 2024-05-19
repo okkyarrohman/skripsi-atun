@@ -36,7 +36,7 @@
                             <td class="p-3 px-5">{{ $tugas->nama }}</td>
                             <td class="p-3 px-5">{{ date('d/m/Y H:i', strtotime($tugas->deadline)) }} WIB</td>
                             <td class="px-12 py-4 text-center">
-                                <a href="{{ route('admin.tugas.detail') }}"
+                                <a href="{{ route('tugas-admin.show', $tugas->id) }}"
                                     class="w-28 h-9 px-5 py-2 bg-custom-orange rounded-lg text-white text-sm font-medium  leading-tight">
                                     Lihat Hasil
                                 </a>

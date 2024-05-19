@@ -16,7 +16,7 @@ class TugasSiswaController extends Controller
      */
     public function index()
     {
-        $tugases = Tugas::all();
+        $tugases = Tugas::with(['tugas_answers.tugas_grades'])->get();
 
         return view('siswa.tugas.index', compact('tugases'));
     }
@@ -69,7 +69,7 @@ class TugasSiswaController extends Controller
      */
     public function show(string $id)
     {
-        $tugases = Tugas::where('id', $id)->with(['tugas_answers'])->first();
+        $tugases = Tugas::where('id', $id)->with(['tugas_answers.tugas_grades'])->first();
 
         return view('siswa.tugas.show', compact('tugases'));
     }
@@ -150,7 +150,7 @@ class TugasSiswaController extends Controller
 
     public function feedback(string $id)
     {
-        $tugases = Tugas::findOrFail($id);
+        $tugases = Tugas::with(['tugas_answers.tugas_grades'])->findOrFail($id);
 
         return view('siswa.tugas.detailTugas.feedback', compact('tugases'));
     }

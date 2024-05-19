@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Tugas;
+use App\Models\TugasAnswer;
 use Illuminate\Http\Request;
 
 class TugasAdminController extends Controller
@@ -45,7 +46,17 @@ class TugasAdminController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $tugases = Tugas::where('id', $id)->with(['tugas_answers.tugas_jobs', 'tugas_answers.users', 'tugas_answers.tugas_grades'])->first();
+
+        return view('admin.tugas.show', compact('tugases'));
+    }
+
+    public function hasil(string $answerId)
+    {
+        $tugasAnswers = TugasAnswer::where('id', $answerId)->with(['users', 'tugases', 'tugas_grades'])
+                                        ->first();
+
+        return view('admin.tugas.hasil', compact('tugasAnswers'));
     }
 
     /**

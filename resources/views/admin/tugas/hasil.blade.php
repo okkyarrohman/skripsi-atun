@@ -1,100 +1,108 @@
 @extends('partial.main')
 
 @section('content')
+<div class="px-4 pb-7">
     <div class="w-full items-center py-7">
         <nav class="flex" aria-label="Breadcrumb">
             <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
                 <li class="inline-flex items-center">
-                    <a href="{{ route('admin.tugas.tugas') }}"
+                    <a href="{{ route('tugas-admin.index') }}"
                         class="inline-flex items-center text-lg font-medium text-gray-500">
                         Tugas
                     </a>
                 </li>
-                <li>
-                    <div class="flex items-center">
-                        <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="m1 9 4-4-4-4" />
-                        </svg>
-                        <a href="{{route('admin.tugas.detail')}}"
-                            class="ms-1 text-lg font-medium text-gray-400 md:ms-2">Hasil Tugas</a>
-                    </div>
+                <li class="flex items-center">
+                    <svg class="w-3 h-3 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m1 9 4-4-4-4" />
+                    </svg>
+                    <a href="{{ route('tugas-admin.show', $tugasAnswers->tugas_id) }}"
+                        class="text-lg font-medium text-gray-500">
+                        Detail Tugas
+                    </a>
                 </li>
-                <li>
-                    <div class="flex items-center">
-                        <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="m1 9 4-4-4-4" />
-                        </svg>
-                        <a href="#"
-                            class="ms-1 text-lg font-medium text-custom-orange md:ms-2">Jalaluldin Salahudin</a>
-                    </div>
+                <li class="flex items-center">
+                    <svg class="w-3 h-3 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m1 9 4-4-4-4" />
+                    </svg>
+                    <a href="#" class="text-lg font-medium text-custom-orange">{{ $tugasAnswers->users->name }}</a>
                 </li>
             </ol>
         </nav>
     </div>
 
-    <div class="px-4 rounded-lg">
-        <div class="p-6 bg-white rounded-md flex flex-col justify-start items-start gap-9">
-            <div class="flex flex-col justify-center items-start gap-1.5">
-                <span class="text-zinc-800 text-lg font-medium leading-relaxed">Nama Siswa</span>
-                <span class="text-zinc-800 text-lg font-normal leading-relaxed">Jalaluldin Siswanto Putra Aditama Sarjo</span>
-            </div>
-            <div class="flex flex-col justify-center items-start gap-1.5">
-                <span class="text-zinc-800 text-lg font-medium leading-relaxed">Tugas</span>
-                <span class="text-zinc-800 text-lg font-normal leading-relaxed">Keamanan Jaringan dan Infrastruktur Komputer pada Lab</span>
-            </div>
-            <div class="flex flex-col justify-center items-start gap-1.5">
-                <span class="text-zinc-800 text-lg font-medium leading-relaxed">Deadline</span>
-                <span class="text-red-500 text-lg font-medium leading-relaxed">Sabtu, 32 Maret 2024 23.00</span>
-            </div>
-            <div class="flex flex-col justify-center items-start gap-1.5">
-                <span class="text-zinc-800 text-lg font-medium leading-relaxed">Rumusan Masalah</span>
-                <span class="text-slate-500 text-lg font-normal leading-relaxed">Figma ipsum component variant main layer. Effect boolean scrolling community plugin vertical select scale comment italic. Shadow edit team text list outline frame group bullet. Auto figma device boolean hand. Vector share bold background style layout. Bold flatten boolean comment ellipse comment. Ipsum draft move ipsum invite polygon shadow. Team outline draft flatten scrolling bold horizontal object shadow. Subtract union slice vector bullet group. Mask edit content overflow plugin invite layout layout content stroke.</span>
-            </div>
-            <div class="w-full flex flex-col justify-start items-start gap-2">
-                <div class="text-zinc-800 text-lg font-medium leading-relaxed">Berkas Presentasi</div>
-                <div class="flex-shrink-0 w-full flex items-center gap-2.5 bg-neutral-50 rounded-lg border border-gray-300">
-                    <label for="file-upload" class="px-4 py-3 bg-gray-100 rounded cursor-pointer">
-                        <div class="text-zinc-800 text-base font-medium leading-snug">Lihat File</div>
-                        <input id="file-upload" type="file" class="hidden" />
-                    </label>
-                    <div class="flex-grow text-zinc-800 text-base font-normal leading-snug tracking-tight">No file selected</div>
-                </div>
-            </div>
-            <div class="w-full flex flex-col justify-start items-start gap-2">
-                <div class="text-zinc-800 text-lg font-medium leading-relaxed">Laporan</div>
-                <div class="flex-shrink-0 w-full flex items-center gap-2.5 bg-neutral-50 rounded-lg border border-gray-300">
-                    <label for="file-upload" class="px-4 py-3 bg-gray-100 rounded cursor-pointer">
-                        <div class="text-zinc-800 text-base font-medium leading-snug">Lihat File</div>
-                        <input id="file-upload" type="file" class="hidden" />
-                    </label>
-                    <div class="flex-grow text-zinc-800 text-base font-normal leading-snug tracking-tight">No file selected</div>
-                </div>
-            </div>
-            <div class="self-stretch flex flex-col justify-start items-start gap-2">
-                <span class="text-zinc-800 text-lg font-medium font-Poppins leading-relaxed">Nilai</span>
-                <div class=" flex w-full bg-neutral-50 rounded-lg text-left">
-                    <input
-                        class="block w-full p-4 py-4 text-gray-900 border justify-start border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500" placeholder="89"></input>
-                </div>
-            </div>
-            <div class="self-stretch flex flex-col justify-start items-start gap-2">
-                <span class="text-zinc-800 text-lg font-medium font-Poppins leading-relaxed">Feedback Tugas</span>
-                <div class=" flex w-full bg-neutral-50 rounded-lg text-left">
-                    <input
-                        class="block w-full p-4 py-12 text-gray-900 border justify-start border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500" placeholder="sudah bagus"></input>
-                </div>
-            </div>
-            <div class="pt-2 flex justify-end w-full">
-                <a href="{{ route('siswa.tugas.detailTugas.Feedback') }}"
-                    class="text-white bg-custom-orange focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2">
-                    Kirim
-                </a>
-            </div> 
+    <div class="p-6 bg-neutral-50 rounded-md flex flex-col justify-start items-start gap-6">
+        <div class="flex flex-col justify-center items-start gap-1.5">
+            <div class="text-zinc-800 text-lg font-medium leading-relaxed">Nama Siswa</div>
+            <div class="text-zinc-800 text-lg font-normal leading-relaxed">{{ $tugasAnswers->users->name }}</div>
         </div>
-        
+        <div class="flex flex-col justify-center items-start gap-1.5">
+            <div class="text-zinc-800 text-lg font-medium leading-relaxed">Tugas</div>
+            <div class="text-zinc-800 text-lg font-normal leading-relaxed">{{ $tugasAnswers->tugases->nama }}</div>
+        </div>
+        <div class="flex flex-col justify-center items-start gap-1.5">
+            <div class="text-zinc-800 text-lg font-medium leading-relaxed">Deadline</div>
+            <div class="text-red-500 text-lg font-medium leading-relaxed">{{ $tugasAnswers->tugases->deadline }}
+            </div>
+        </div>
+        <div class="flex flex-col justify-center items-start gap-1.5">
+            <div class="text-zinc-800 text-lg font-medium leading-relaxed">Rumusan Masalah</div>
+            <div class="text-slate-500 text-lg font-normal leading-relaxed">{{ $tugasAnswers->rumusan_masalah }}</div>
+        </div>
+        <div class="flex flex-col justify-start items-start gap-2 w-full">
+            <div class="text-zinc-800 text-lg font-medium leading-relaxed">Berkas Presentasi</div>
+            <div class="flex-shrink-0 w-full flex items-center gap-2.5 bg-neutral-50 rounded-lg border border-gray-300">
+                <div class="px-4 py-3 bg-gray-100 rounded">
+                    <div class="text-zinc-800 text-base font-medium leading-snug">Lihat File</div>
+                </div>
+                <div class="flex-grow text-zinc-800 text-base font-normal leading-snug tracking-tight">
+                    {{ $tugasAnswers->file_presentasi ? $tugasAnswers->file_presentasi : "Belum Mengumpulkan" }}
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col justify-start items-start gap-2 w-full">
+            <div class="text-zinc-800 text-lg font-medium leading-relaxed">Laporan</div>
+            <div class="flex-shrink-0 w-full flex items-center gap-2.5 bg-neutral-50 rounded-lg border border-gray-300">
+                <div class="px-4 py-3 bg-gray-100 rounded">
+                    <div class="text-zinc-800 text-base font-medium leading-snug">Lihat File</div>
+                </div>
+                <div class="flex-grow text-zinc-800 text-base font-normal leading-snug tracking-tight">
+                    {{ $tugasAnswers->file_laporan ? $tugasAnswers->file_laporan : "Belum Mengumpulkan" }}
+                </div>
+            </div>
+        </div>
+        <form action="{{ route('tugas-guru.store') }}" method="POST" class="w-full flex flex-col gap-6">
+            @csrf
+            <input type="hidden" id="tugas_answer_id" name="tugas_answer_id" value="{{ $tugasAnswers->id }}">
+            <div class="flex flex-col justify-start items-start gap-2">
+                <div class="text-zinc-800 text-lg font-medium leading-relaxed">Nilai</div>
+                <input type="text" id="nilai" name="nilai" value="{{ $tugasAnswers->tugas_grades ? $tugasAnswers->tugas_grades?->nilai : old('nilai') }}" disabled="{{ $tugasAnswers->tugas_grades }}"
+                    placeholder="Masukkan Nilai Tugas"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+            </div>
+            <div class="flex flex-col justify-start items-start gap-2">
+                <div class="text-zinc-800 text-lg font-medium leading-relaxed">Feedback Tugas</div>
+                <textarea type="text" id="feedback" name="feedback" value="{{ $tugasAnswers->tugas_grades ? $tugasAnswers->tugas_grades?->feedback : old('feedback') }}" disabled="{{ $tugasAnswers->tugas_grades }}"
+                    placeholder="Masukkan Feedback Tugas" rows="7"
+                    class="block w-full p-2.5 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500">{{ $tugasAnswers->tugas_grades ? $tugasAnswers->tugas_grades?->feedback : old('feedback') }}</textarea>
+            </div>
+            @if (!$tugasAnswers->tugas_grades)
+                <div class="flex flex-col justify-center items-end w-full gap-2.5">
+                    <button type="submit"
+                        class="px-8 py-4 bg-orange-500 rounded-xl justify-center items-center gap-3 inline-flex text-neutral-50 text-base font-medium leading-snug">
+                        Submit
+                    </button>
+                </div>
+            @endif
+        </form>
     </div>
+</div>
+
+<script>
+    console.log(@json($tugasAnswers))
+
+</script>
 @endsection

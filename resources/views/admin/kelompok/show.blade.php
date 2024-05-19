@@ -47,7 +47,9 @@
                             <td class="p-3 px-5">{{ $member->users->no_absen }}</td>
                             <td class="p-3 px-5">{{ $member->users->name }}</td>
                             <td class="p-3 px-5 capitalize">{{ $member->role }}</td>
-                            <td class="p-3 px-5">0 Menit</td>
+                            <td class="p-3 px-5">
+                                {{ $member->users->total_login_time ? $member->users->total_login_time : 0 }} Menit
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>

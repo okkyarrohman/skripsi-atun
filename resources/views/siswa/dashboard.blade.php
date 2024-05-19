@@ -294,9 +294,9 @@
                 </div>
 
                 <a href="#" class="flex items-start bg-white md:flex-row md:max-w-xl gap-0.5">
-                    <img class="object-cover w-1/4 rounded-l-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
+                    <img class="object-cover w-1/4 rounded-lg h-96 md:h-auto md:w-48"
                         src="{{ Auth::user()->foto ? asset('storage/profil/' . Auth::user()->foto) : asset('assets/Foto.jpg') }}"
-                        alt="">
+                        alt="" />
                     <div class="flex flex-col justify-between p-4 leading-normal">
                         <p class="font-normal text-black">Nama</p>
                         <h5 class="text-xl font-bold tracking-tight text-gray-900 mb-2">{{ Auth::user()->name }}

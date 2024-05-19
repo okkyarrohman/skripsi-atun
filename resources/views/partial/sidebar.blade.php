@@ -39,7 +39,8 @@
             <li>
                 <a href="{{ Auth::check() ? (Auth::user()->hasRole('admin') ? route('tugas-admin.index') : (Auth::user()->hasRole('guru') ? route('tugas-guru.index') : (Auth::user()->hasRole('siswa') ? route('tugas.index') : '#'))) : '#' }}"
                     class="group flex items-center p-2 rounded-lg hover:bg-white">
-                    <svg class="flex-shrink-0 w-6 h-6 transition duration-75 group-hover:text-orange" width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="flex-shrink-0 w-6 h-6 transition duration-75 group-hover:text-orange" width="24"
+                        height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path id="Vector"
                             d="M3.5 19.5205C3.09 19.5205 2.75 19.1805 2.75 18.7705V7.77051C2.75 3.36051 4.09 2.02051 8.5 2.02051H15.5C19.91 2.02051 21.25 3.36051 21.25 7.77051V17.7705C21.25 17.9305 21.25 18.0805 21.24 18.2405C21.21 18.6505 20.84 18.9705 20.44 18.9405C20.03 18.9105 19.71 18.5505 19.74 18.1405C19.75 18.0205 19.75 17.8905 19.75 17.7705V7.77051C19.75 4.20051 19.08 3.52051 15.5 3.52051H8.5C4.92 3.52051 4.25 4.20051 4.25 7.77051V18.7705C4.25 19.1805 3.91 19.5205 3.5 19.5205Z"
                             fill="currentcolor" />
@@ -59,7 +60,8 @@
             <li>
                 <a href="{{ Auth::check() ? (Auth::user()->hasRole('admin') ? route('kelompok-admin.index') : (Auth::user()->hasRole('guru') ? route('kelompok-guru.index') : (Auth::user()->hasRole('siswa') ? route('kelompok.index') : '#'))) : '#' }}"
                     class="group flex items-center p-2 rounded-lg hover:bg-white">
-                    <svg class="flex-shrink-0 w-6 h-6 transition duration-75 group-hover:text-orange" width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="flex-shrink-0 w-6 h-6 transition duration-75 group-hover:text-orange" width="24"
+                        height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M17.9998 8.68053C17.9698 8.68053 17.9498 8.68053 17.9198 8.68053H17.8698C15.9798 8.62053 14.5698 7.16052 14.5698 5.36052C14.5698 3.52052 16.0698 2.03052 17.8998 2.03052C19.7298 2.03052 21.2298 3.53052 21.2298 5.36052C21.2198 7.17052 19.8098 8.63052 18.0098 8.69052C18.0098 8.68052 18.0098 8.68053 17.9998 8.68053ZM17.8998 3.52052C16.8898 3.52052 16.0698 4.34052 16.0698 5.35052C16.0698 6.34052 16.8398 7.14053 17.8298 7.18053C17.8398 7.17053 17.9198 7.17053 18.0098 7.18053C18.9798 7.13053 19.7298 6.33052 19.7398 5.35052C19.7398 4.34052 18.9198 3.52052 17.8998 3.52052Z"
                             fill="currentcolor" />
@@ -87,7 +89,8 @@
                 <button type="button"
                     class="group flex justify-between text-left w-full items-center p-2 rounded-lg hover:bg-white"
                     aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
-                    <svg class="flex-shrink-0 w-6 h-6 transition duration-75 group-hover:text-orange" width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="flex-shrink-0 w-6 h-6 transition duration-75 group-hover:text-orange" width="24"
+                        height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M15 23.5205H9C3.57 23.5205 1.25 21.2005 1.25 15.7705V9.77051C1.25 4.34051 3.57 2.02051 9 2.02051H15C20.43 2.02051 22.75 4.34051 22.75 9.77051V15.7705C22.75 21.2005 20.43 23.5205 15 23.5205ZM9 3.52051C4.39 3.52051 2.75 5.16051 2.75 9.77051V15.7705C2.75 20.3805 4.39 22.0205 9 22.0205H15C19.61 22.0205 21.25 20.3805 21.25 15.7705V9.77051C21.25 5.16051 19.61 3.52051 15 3.52051H9Z"
                             fill="currentcolor" />
@@ -100,8 +103,8 @@
                     </svg>
 
                     <span class="flex-1 ms-3 whitespace-nowrap px-2 group-hover:text-orange">Materi</span>
-                    <svg class="w-3 h-3 group-hover:text-orange" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                        viewBox="0 0 10 6">
+                    <svg class="w-3 h-3 group-hover:text-orange" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        fill="none" viewBox="0 0 10 6">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="m1 1 4 4 4-4" />
                     </svg>
@@ -110,7 +113,8 @@
                     <li>
                         <a href="{{ Auth::check() ? (Auth::user()->hasRole('admin') ? route('modul-admin.index') : (Auth::user()->hasRole('guru') ? route('modul-guru.index') : (Auth::user()->hasRole('siswa') ? route('modul.index') : '#'))) : '#' }}"
                             class="flex items-center gap-5 w-full p-2 transition duration-75 rounded-lg pl-11 group hover:bg-white hover:text-orange">
-                            <svg class="flex-shrink-0 w-6 h-6 transition duration-75 group-hover:text-orange" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25"
+                            <svg class="flex-shrink-0 w-6 h-6 transition duration-75 group-hover:text-orange"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25"
                                 fill="none">
                                 <path
                                     d="M11.9998 22.8505C11.6998 22.8505 11.3998 22.7805 11.1498 22.6405C9.27978 21.6205 5.99976 20.5405 3.93976 20.2705L3.64978 20.2305C2.33978 20.0705 1.25977 18.8405 1.25977 17.5105V5.4305C1.25977 4.6405 1.56977 3.92053 2.13977 3.40053C2.70977 2.88053 3.44974 2.63052 4.22974 2.70052C6.41974 2.88052 9.73975 3.98053 11.6198 5.15053L11.8597 5.29054C11.9297 5.32054 12.0798 5.33054 12.1398 5.29054L12.2997 5.19051C12.9697 4.77051 13.8097 4.36049 14.7297 3.99049C14.9597 3.90049 15.2197 3.93051 15.4297 4.07051C15.6397 4.21051 15.7598 4.44051 15.7598 4.69051V7.3705L16.5898 6.82051C16.8398 6.65051 17.1697 6.65051 17.4197 6.82051L18.2498 7.3705V3.55055C18.2498 3.19055 18.5097 2.8805 18.8597 2.8105C19.1497 2.7605 19.4398 2.72052 19.6998 2.70052C19.7198 2.70052 19.7998 2.70052 19.8198 2.70052C20.5498 2.64052 21.2997 2.89054 21.8597 3.41054C22.4297 3.93054 22.7397 4.65051 22.7397 5.44051V17.5105C22.7397 18.8505 21.6598 20.0705 20.3398 20.2305L20.0098 20.2705C17.9498 20.5405 14.6498 21.6305 12.8198 22.6405C12.5998 22.7805 12.2998 22.8505 11.9998 22.8505ZM3.97974 4.1805C3.65974 4.1805 3.36977 4.2905 3.13977 4.5005C2.88977 4.7305 2.74976 5.0605 2.74976 5.4305V17.5105C2.74976 18.1005 3.25977 18.6705 3.82977 18.7505L4.12976 18.7905C6.37976 19.0905 9.82977 20.2205 11.8298 21.3205C11.9198 21.3605 12.0497 21.3705 12.0997 21.3505C14.1097 20.2405 17.5698 19.1006 19.8298 18.8006L20.1697 18.7605C20.7397 18.6905 21.2498 18.1105 21.2498 17.5205V5.45052C21.2498 5.08051 21.1097 4.76052 20.8597 4.52052C20.6097 4.29052 20.2598 4.18052 19.8998 4.20052C19.8698 4.20052 19.7798 4.20052 19.7598 4.20052V8.77052C19.7598 9.05052 19.6097 9.3005 19.3597 9.4305C19.1097 9.5605 18.8198 9.55052 18.5898 9.39052L17.0098 8.34053L15.4297 9.39052C15.1997 9.54052 14.9097 9.5605 14.6597 9.4305C14.4197 9.3005 14.2598 9.05052 14.2598 8.77052V5.84053C13.8298 6.05053 13.4397 6.26052 13.0997 6.46052L12.9398 6.5605C12.3898 6.9005 11.6098 6.90051 11.0798 6.57051L10.8398 6.42055C9.14978 5.36055 6.06974 4.3405 4.10974 4.1805C4.05974 4.1805 4.01974 4.1805 3.97974 4.1805Z"
@@ -128,7 +132,8 @@
                     <li>
                         <a href="{{ Auth::check() ? (Auth::user()->hasRole('admin') ? route('simulasi-admin.index') : (Auth::user()->hasRole('guru') ? route('simulasi-guru.index') : (Auth::user()->hasRole('siswa') ? route('simulasi.index') : '#'))) : '#' }}"
                             class="flex items-center w-full gap-5 p-2 text-white transition duration-75 rounded-lg pl-11 group hover:bg-white hover:text-orange">
-                            <svg class="flex-shrink-0 w-6 h-6 transition duration-75 group-hover:text-orange" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25"
+                            <svg class="flex-shrink-0 w-6 h-6 transition duration-75 group-hover:text-orange"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25"
                                 fill="none">
                                 <path
                                     d="M15 23.5205H9C3.57 23.5205 1.25 21.2005 1.25 15.7705V9.77051C1.25 4.34051 3.57 2.02051 9 2.02051H15C20.43 2.02051 22.75 4.34051 22.75 9.77051V15.7705C22.75 21.2005 20.43 23.5205 15 23.5205ZM9 3.52051C4.39 3.52051 2.75 5.16051 2.75 9.77051V15.7705C2.75 20.3805 4.39 22.0205 9 22.0205H15C19.61 22.0205 21.25 20.3805 21.25 15.7705V9.77051C21.25 5.16051 19.61 3.52051 15 3.52051H9Z"
@@ -144,31 +149,34 @@
             </li>
         </ul>
         <ul class="space-y-2 font-medium text-white">
-            <li>
-                <a href="#"
-                    class="flex items-center p-2 rounded-lg hover:bg-white group">
-                    <svg class="flex-shrink-0 w-6 h-6 transition duration-75 group-hover:text-orange" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M12 22.08C11.7 22.08 11.4 22.01 11.15 21.87C9.28 20.85 5.99 19.77 3.93 19.5L3.64 19.46C2.33 19.3 1.25 18.07 1.25 16.74V4.66001C1.25 3.87001 1.56 3.15001 2.13 2.63001C2.7 2.11001 3.44 1.86001 4.22 1.93001C6.42 2.10001 9.74 3.20001 11.62 4.38001L11.86 4.52001C11.93 4.56001 12.08 4.56001 12.14 4.53001L12.3 4.43001C14.18 3.25001 17.5 2.13001 19.71 1.94001C19.73 1.94001 19.81 1.94001 19.83 1.94001C20.56 1.87001 21.31 2.13001 21.87 2.65001C22.44 3.17001 22.75 3.89001 22.75 4.68001V16.75C22.75 18.09 21.67 19.31 20.35 19.47L20.02 19.51C17.96 19.78 14.66 20.87 12.83 21.88C12.59 22.02 12.3 22.08 12 22.08ZM3.98 3.42001C3.66 3.42001 3.37 3.53001 3.14 3.74001C2.89 3.97001 2.75 4.30001 2.75 4.66001V16.74C2.75 17.33 3.26 17.9 3.83 17.98L4.13 18.02C6.38 18.32 9.83 19.45 11.83 20.54C11.92 20.58 12.05 20.59 12.1 20.57C14.1 19.46 17.57 18.32 19.83 18.02L20.17 17.98C20.74 17.91 21.25 17.33 21.25 16.74V4.67001C21.25 4.30001 21.11 3.98001 20.86 3.74001C20.6 3.51001 20.27 3.40001 19.9 3.42001C19.88 3.42001 19.8 3.42001 19.78 3.42001C17.87 3.59001 14.79 4.62001 13.11 5.67001L12.95 5.78001C12.4 6.12001 11.62 6.12001 11.09 5.79001L10.85 5.65001C9.14 4.60001 6.06 3.58001 4.1 3.42001C4.06 3.42001 4.02 3.42001 3.98 3.42001Z"
-                            fill="currentcolor" />
-                        <path
-                            d="M12 21.24C11.59 21.24 11.25 20.9 11.25 20.49V5.48999C11.25 5.07999 11.59 4.73999 12 4.73999C12.41 4.73999 12.75 5.07999 12.75 5.48999V20.49C12.75 20.91 12.41 21.24 12 21.24Z"
-                            fill="currentcolor" />
-                        <path
-                            d="M7.75 9.23999H5.5C5.09 9.23999 4.75 8.89999 4.75 8.48999C4.75 8.07999 5.09 7.73999 5.5 7.73999H7.75C8.16 7.73999 8.5 8.07999 8.5 8.48999C8.5 8.89999 8.16 9.23999 7.75 9.23999Z"
-                            fill="currentcolor" />
-                        <path
-                            d="M8.5 12.24H5.5C5.09 12.24 4.75 11.9 4.75 11.49C4.75 11.08 5.09 10.74 5.5 10.74H8.5C8.91 10.74 9.25 11.08 9.25 11.49C9.25 11.9 8.91 12.24 8.5 12.24Z"
-                            fill="currentcolor" />
-                    </svg>
-                    <span class="flex-1 ms-3 whitespace-nowrap px-2 group-hover:text-orange">Panduan</span>
-                </a>
-            </li>
+            @if (Auth::user()->hasRole('admin') || Auth::user()->hasRole('guru'))
+                <li>
+                    <a href="{{ route('panduan.index') }}" class="flex items-center p-2 rounded-lg hover:bg-white group">
+                        <svg class="flex-shrink-0 w-6 h-6 transition duration-75 group-hover:text-orange" width="24"
+                            height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 22.08C11.7 22.08 11.4 22.01 11.15 21.87C9.28 20.85 5.99 19.77 3.93 19.5L3.64 19.46C2.33 19.3 1.25 18.07 1.25 16.74V4.66001C1.25 3.87001 1.56 3.15001 2.13 2.63001C2.7 2.11001 3.44 1.86001 4.22 1.93001C6.42 2.10001 9.74 3.20001 11.62 4.38001L11.86 4.52001C11.93 4.56001 12.08 4.56001 12.14 4.53001L12.3 4.43001C14.18 3.25001 17.5 2.13001 19.71 1.94001C19.73 1.94001 19.81 1.94001 19.83 1.94001C20.56 1.87001 21.31 2.13001 21.87 2.65001C22.44 3.17001 22.75 3.89001 22.75 4.68001V16.75C22.75 18.09 21.67 19.31 20.35 19.47L20.02 19.51C17.96 19.78 14.66 20.87 12.83 21.88C12.59 22.02 12.3 22.08 12 22.08ZM3.98 3.42001C3.66 3.42001 3.37 3.53001 3.14 3.74001C2.89 3.97001 2.75 4.30001 2.75 4.66001V16.74C2.75 17.33 3.26 17.9 3.83 17.98L4.13 18.02C6.38 18.32 9.83 19.45 11.83 20.54C11.92 20.58 12.05 20.59 12.1 20.57C14.1 19.46 17.57 18.32 19.83 18.02L20.17 17.98C20.74 17.91 21.25 17.33 21.25 16.74V4.67001C21.25 4.30001 21.11 3.98001 20.86 3.74001C20.6 3.51001 20.27 3.40001 19.9 3.42001C19.88 3.42001 19.8 3.42001 19.78 3.42001C17.87 3.59001 14.79 4.62001 13.11 5.67001L12.95 5.78001C12.4 6.12001 11.62 6.12001 11.09 5.79001L10.85 5.65001C9.14 4.60001 6.06 3.58001 4.1 3.42001C4.06 3.42001 4.02 3.42001 3.98 3.42001Z"
+                                fill="currentcolor" />
+                            <path
+                                d="M12 21.24C11.59 21.24 11.25 20.9 11.25 20.49V5.48999C11.25 5.07999 11.59 4.73999 12 4.73999C12.41 4.73999 12.75 5.07999 12.75 5.48999V20.49C12.75 20.91 12.41 21.24 12 21.24Z"
+                                fill="currentcolor" />
+                            <path
+                                d="M7.75 9.23999H5.5C5.09 9.23999 4.75 8.89999 4.75 8.48999C4.75 8.07999 5.09 7.73999 5.5 7.73999H7.75C8.16 7.73999 8.5 8.07999 8.5 8.48999C8.5 8.89999 8.16 9.23999 7.75 9.23999Z"
+                                fill="currentcolor" />
+                            <path
+                                d="M8.5 12.24H5.5C5.09 12.24 4.75 11.9 4.75 11.49C4.75 11.08 5.09 10.74 5.5 10.74H8.5C8.91 10.74 9.25 11.08 9.25 11.49C9.25 11.9 8.91 12.24 8.5 12.24Z"
+                                fill="currentcolor" />
+                        </svg>
+                        <span class="flex-1 ms-3 whitespace-nowrap px-2 group-hover:text-orange">Panduan</span>
+                    </a>
+                </li>
+            @endif
             <li>
                 <form method="POST" action="{{ route('logout') }}"
                     class="flex items-center p-2 rounded-lg hover:bg-white group">
                     @csrf
-                    <svg class="flex-shrink-0 w-6 h-6 transition duration-75 group-hover:text-orange" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="flex-shrink-0 w-6 h-6 transition duration-75 group-hover:text-orange" width="24"
+                        height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M15.24 22.27H15.11C10.67 22.27 8.53002 20.52 8.16002 16.6C8.12002 16.19 8.42002 15.82 8.84002 15.78C9.24002 15.74 9.62002 16.05 9.66002 16.46C9.95002 19.6 11.43 20.77 15.12 20.77H15.25C19.32 20.77 20.76 19.33 20.76 15.26V8.73998C20.76 4.66998 19.32 3.22998 15.25 3.22998H15.12C11.41 3.22998 9.93002 4.41998 9.66002 7.61998C9.61002 8.02998 9.26002 8.33998 8.84002 8.29998C8.42002 8.26998 8.12001 7.89998 8.15001 7.48998C8.49001 3.50998 10.64 1.72998 15.11 1.72998H15.24C20.15 1.72998 22.25 3.82998 22.25 8.73998V15.26C22.25 20.17 20.15 22.27 15.24 22.27Z"
                             fill="currentcolor" />

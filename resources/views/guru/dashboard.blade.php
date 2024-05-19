@@ -398,10 +398,10 @@
                                 <td class="p-3 px-5">{{ $siswa->kelas }}</td>
                                 <td class="p-3 px-5">{{ $siswa->no_absen }}</td>
                                 <td class="p-3 px-5 flex justify-center whitespace-nowrap">
-                                    <button type="button"
+                                    <a href="{{ route('user-guru.show', $siswa->id) }}"
                                         class="block w-fit mx-auto text-sm bg-custom-orange text-white p-2 rounded focus:outline-none focus:shadow-outline">
                                         Lihat Detail
-                                    </button>
+                                    </a>
                                 </td>
                             </tr>
                         @endforeach

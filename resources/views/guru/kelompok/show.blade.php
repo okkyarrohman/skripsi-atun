@@ -49,7 +49,7 @@
                             {{ $member->users->name }}
                         </td>
                         <td class="px-20 py-4">
-                            0 Menit
+                            {{ $member->users->total_login_time ? $member->users->total_login_time : 0 }} Menit
                         </td>
                     </tr>
                 @endforeach

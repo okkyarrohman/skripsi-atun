@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\KelompokAdminController;
 use App\Http\Controllers\Admin\ModulAdminController;
 use App\Http\Controllers\Admin\SimulasiAdminController;
 use App\Http\Controllers\Admin\TugasAdminController;
+use App\Http\Controllers\Admin\UserAdminController;
 use App\Http\Controllers\Guru\KelompokGuruController;
 use App\Http\Controllers\Guru\ModulGuruController;
 use App\Http\Controllers\Guru\SimulasiGuruController;
@@ -91,11 +92,19 @@ Route::group(['middleware' => 'role:guru'], function () {
 Route::group(['middleware' => 'role:admin'], function () {
     Route::prefix('admin')->group(function () {
         Route::get('/dashboard', [HomeController::class, 'admin'])->name('admin.dashboard');
+        Route::prefix('dashboard')->group(function () {
+            Route::resources([
+                'user-admin' => UserAdminController::class,
+            ]);
+        });
+        Route::get('/dashboard/user-admin/{role}/create',[UserAdminController::class, 'create'])->name('user-admin.create');
+        Route::post('/dashboard/user-admin/{role}/create', [UserAdminController::class, 'store'])->name('user-admin.store');
+        Route::get('/dashboard/user-admin/{id}/{role}/edit',[UserAdminController::class, 'edit'])->name('user-admin.edit');
         Route::resources([
             'kelompok-admin' => KelompokAdminController::class,
-            'tugas-admin' => TugasAdminController::class
+            'tugas-admin' => TugasAdminController::class,
         ]);
-        Route::get('/tugas-admin/tugas-answer/{answerId}', [TugasAdminController::class, 'hasil'])->name('tugas-admin.hasil');
+        Route::get('/tugas-admin/tugas-answer/{answerId}', [TugasAdminController::class, 'create'])->name('tugas-admin.hasil');
         Route::prefix('materi')->group(function () {
             Route::resources([
                 'modul-admin' => ModulAdminController::class,

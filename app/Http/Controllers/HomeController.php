@@ -33,7 +33,7 @@ class HomeController extends Controller
 
         $tugases = Tugas::orderBy('deadline', 'asc')->take(3)->get();
 
-        $answers = TugasAnswer::where('kelompok_id', Auth::user()->members->kelompok_id)
+        $answers = TugasAnswer::where('kelompok_id', Auth::user()->members?->kelompok_id)
                                 ->with(['tugas_grades', 'tugases'])->latest()->take(2)->get();
 
         return view('siswa.dashboard', compact('materis', 'tugases', 'answers'));

@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="px-4 pb-14 rounded-lg mt-14">
-        <div class="text-gray-900 bg-white gap-5 p-7">
+        <div class="text-gray-900 bg-white gap-5 p-7 rounded-xl">
             <div class="flex justify-between items-center p-2">
                 <h1 class="text-2xl font-bold">
                     Materi Simulasi

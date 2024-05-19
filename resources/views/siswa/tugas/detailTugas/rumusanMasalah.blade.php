@@ -24,7 +24,14 @@
             Selanjutnya
         </a>
     </div>
-    <button type="Submit" class="text-white bg-custom-orange focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center flex items-center justify-center w-fit mt-6 mx-auto">Simpan</button>
+
+    @php
+        $currentDateTime =  Carbon\Carbon::now();
+        $deadline = Carbon\Carbon::parse($tugases->deadline);
+        $isDeadline = $currentDateTime->greaterThanOrEqualTo($deadline);
+    @endphp
+
+    <button type="Submit" {{ $isDeadline ? "disabled" : "" }} class="text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center flex items-center justify-center w-fit mt-6 mx-auto {{ $isDeadline ? "bg-gray-400 cursor-not-allowed" : "bg-custom-orange cursor-pointer" }}">Simpan</button>
 </form>
 
 <script>

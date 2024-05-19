@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="px-4 rounded-lg mt-14">
-        <div class="flex-col items-center justify-center mb-4 rounded-xl bg-gray-50 border p-7">
+        <div class="flex-col items-center justify-center mb-4 rounded-xl bg-gray-50 p-7">
             <h1 class="text-zinc-800 text-xl font-semibold leading-loose">{{ $simulasis->judul }}
             </h1>
             <h2 class="text-zinc-800 text-lg font-medium leading-relaxed">Deskripsi</h2>

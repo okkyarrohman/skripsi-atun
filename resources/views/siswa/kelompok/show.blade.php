@@ -87,77 +87,58 @@
         </table>
     </div>
 
-    <div class="flex items-center justify-start mb-4 rounded-xl bg-white p-7">
+    @php
+        $tugasProgres = $tugasAnswers->where('kelompok_id', $kelompoks->id);
+    @endphp
+
+    <div class="flex items-center justify-start mb-4 mt-14 rounded-xl bg-white p-7">
         <table class="w-full text-base text-left text-black">
             <caption class="text-left font-bold text-2xl mb-4">
-                Tugas Kelompok
+                Tugas Kelompok Yang Sedang Dikerjakan
             </caption>
             <thead class="bg-white border-b border-gray-400">
                 <tr>
                     <th scope="col" class="px-8 py-3 text-center">
                         No
                     </th>
-                    <th scope="col" class="px-28 py-3">
-                        Nama Kelompok
+                    <th scope="col" class="px-8 py-3">
+                        Nama Tugas
                     </th>
-                    <th scope="col" class="px-20 py-3">
-                        Dikerjakan oleh
-                    </th>
-                    <th scope="col" class="px-12 py-3 text-center">
+                    <th scope="col" class="px-8 py-3 ">
                         Deadline
+                    </th>
+                    <th scope="col" class="px-8 py-3 ">
+                        Aksi
                     </th>
                 </tr>
             </thead>
             <tbody>
-                <tr class="bg-white">
-                    <th scope="row" class="px-8 py-4 text-center">
-                        1
-                    </th>
-                    <td class="px-28 py-4">
-                        Mencari biksu tong
-                    </td>
-                    <td class="px-20 py-4">
-                        Febrian Daffa (ketua kelompok)
-                    </td>
-                    <td class="px-12 py-4 text-center font-semibold">
-                        22/1/2024
-                    </td>
-                </tr>
-                <tr class="bg-white dark:border-gray-700">
-                    <th scope="row" class="px-8 py-4 text-center">
-                        2
-                    </th>
-                    <td class="px-28 py-4">
-                        Mencari biksu tong
-                    </td>
-                    <td class="px-20 py-4">
-                        Febrian Daffa (ketua kelompok)
-                    </td>
-                    <td class="px-12 py-4 text-center font-semibold">
-                        22/1/2024
-                    </td>
-                </tr>
-                <tr class="bg-white dark:border-gray-700">
-                    <th scope="row" class="px-8 py-4 text-center">
-                        3
-                    </th>
-                    <td class="px-28 py-4">
-                        Mencari biksu tong
-                    </td>
-                    <td class="px-20 py-4">
-                        Febrian Daffa (ketua kelompok)
-                    </td>
-                    <td class="px-12 py-4 text-center font-semibold">
-                        22/1/2024
-                    </td>
-                </tr>
+                @foreach ($tugasProgres as $index => $tugas)
+                    <tr class="bg-white">
+                        <th scope="row" class="px-8 py-4 text-center">
+                            {{ $index + 1 }}
+                        </th>
+                        <td class="px-8 py-4">
+                            {{ $tugas->tugases->nama }}
+                        </td>
+                        <td class="px-8 py-4">
+                            {{ date('d/m/Y H:i', strtotime($tugas->tugases->deadline)) }} WIB
+                        </td>
+                        <td class="px-8 py-4">
+                            <a href="{{ route('tugas.rumusanMasalah', $tugas->tugas_id) }}"
+                                class="px-5 py-2 bg-custom-orange rounded-lg text-white text-sm font-medium  leading-tight">
+                                Lihat Tugas
+                            </a>
+                        </td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
 </div>
 
 <script>
-    console.log(@json($memberLeader))
+    console.log(@json($tugasProgres))
 
 </script>
 @endsection

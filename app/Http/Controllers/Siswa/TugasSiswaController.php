@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Siswa;
 use App\Http\Controllers\Controller;
 use App\Models\Tugas;
 use App\Models\TugasAnswer;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -18,7 +19,9 @@ class TugasSiswaController extends Controller
     {
         $tugases = Tugas::with(['tugas_answers.tugas_grades'])->get();
 
-        return view('siswa.tugas.index', compact('tugases'));
+        $users = User::where('id', Auth::user()->id)->with(['members'])->first();
+
+        return view('siswa.tugas.index', compact('tugases', 'users'));
     }
 
     /**
@@ -56,6 +59,7 @@ class TugasSiswaController extends Controller
         TugasAnswer::create([
             'tugas_id' => $request->tugas_id,
             'user_id' => Auth::user()->id,
+            'kelompok_id' => Auth::user()->members->kelompok_id,
             'rumusan_masalah' => $rumusanMasalah,
             'file_presentasi' => $filePresentasiName,
             'file_laporan' => $fileLaporanName
@@ -138,7 +142,9 @@ class TugasSiswaController extends Controller
     {
         $tugases = Tugas::with(['tugas_answers.tugas_jobs.users'])->findOrFail($id);
 
-        return view('siswa.tugas.detailTugas.daftarTugas', compact('tugases'));
+        $users = User::where('id', Auth::user()->id)->with(['members'])->first();
+
+        return view('siswa.tugas.detailTugas.daftarTugas', compact('tugases', 'users'));
     }
 
     public function laporan(string $id)

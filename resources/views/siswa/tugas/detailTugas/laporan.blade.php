@@ -6,7 +6,7 @@
     $userAnswers = $tugases->tugas_answers->where('user_id', Auth::user()->id)->first();
 @endphp
 
-<form action="{{ route('tugas.update', $userAnswers->id) }}" method="POST" enctype="multipart/form-data" class="w-full">
+<form action="{{ $userAnswers ? route('tugas.update', $userAnswers->id) : "#" }}" method="POST" enctype="multipart/form-data" class="w-full">
     @csrf
     @method('PATCH')
     <div class="w-full flex flex-col justify-start items-start gap-2">
@@ -26,7 +26,7 @@
             </label>
         </div>
     </div>
-    <div class="h-[94px] w-full flex flex-col justify-start items-start gap-2">
+    <div class="w-full flex flex-col justify-start items-start gap-2">
         <div class="text-zinc-800 text-lg font-medium leading-relaxed">Laporan</div>
         <div class="flex-shrink-0 w-full flex items-center gap-2.5 bg-neutral-50 rounded-lg border border-gray-300">
             <label for="file-input-laporan"
@@ -50,18 +50,30 @@
                 Sebelumnya
             </a>
         </div>
-        <div class="pt-2 flex justify-end">
-            <a href="{{ route('tugas.feedback', $tugases->id) }}"
-                class="text-white bg-custom-orange focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2">
-                Selanjutnya
-            </a>
-        </div>
+        @if ($userAnswers?->tugas_grades)
+            <div class="pt-2 flex justify-end">
+                <a href="{{ route('tugas.feedback', $tugases->id) }}"
+                    class="text-white bg-custom-orange focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2">
+                    Selanjutnya
+                </a>
+            </div>
+        @endif
     </div>
-    <button type="Submit"
-        class="text-white bg-custom-orange focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center flex items-center justify-center w-fit mt-6 mx-auto">Simpan</button>
+
+    @php
+        $currentDateTime =  Carbon\Carbon::now();
+        $deadline = Carbon\Carbon::parse($tugases->deadline);
+        $isDeadline = $currentDateTime->greaterThanOrEqualTo($deadline);
+    @endphp
+
+    @if ($userAnswers && count($userAnswers->tugas_jobs) != 0 )
+        <button type="Submit" {{ $isDeadline ? "disabled" : "" }} class="text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center flex items-center justify-center w-fit mt-6 mx-auto {{ $isDeadline ? "bg-gray-400 cursor-not-allowed" : "bg-custom-orange cursor-pointer" }}">Simpan</button>
+    @endif
 </form>
 
 <script>
+    console.log(@json($userAnswers))
+
     document.getElementById('file-input-presentasi').addEventListener('change', function () {
         var fileNamePresentasi = this.files[0].name;
         var fileLabelPresentasi = document.getElementById('file-name-presentasi');

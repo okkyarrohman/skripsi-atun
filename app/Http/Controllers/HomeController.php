@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Modul;
 use App\Models\Simulasi;
+use App\Models\Tugas;
+use App\Models\TugasAnswer;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -18,7 +20,9 @@ class HomeController extends Controller
 
         $siswas = User::role('siswa')->where('kelas', Auth::user()->kelas)->get();
 
-        return view('guru.dashboard', compact('materis', 'siswas'));
+        $tugases = Tugas::orderBy('deadline', 'asc')->take(3)->get();
+
+        return view('guru.dashboard', compact('materis', 'siswas', 'tugases'));
     }
 
     public function siswa()
@@ -27,7 +31,12 @@ class HomeController extends Controller
         $moduls = Modul::latest()->take(4)->get();
         $materis = $moduls->merge($simulasis)->take(4);
 
-        return view('siswa.dashboard', compact('materis'));
+        $tugases = Tugas::orderBy('deadline', 'asc')->take(3)->get();
+
+        $answers = TugasAnswer::where('kelompok_id', Auth::user()->members->kelompok_id)
+                                ->with(['tugas_grades', 'tugases'])->latest()->take(2)->get();
+
+        return view('siswa.dashboard', compact('materis', 'tugases', 'answers'));
     }
 
     public function admin()

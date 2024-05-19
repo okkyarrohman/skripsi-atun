@@ -39,14 +39,16 @@ class TugasJobSiswaController extends Controller
      */
     public function store(Request $request)
     {
-        TugasJob::create([
+        $tugasJobs = TugasJob::create([
             'tugas_answer_id' => $request->tugas_answer_id,
             'user_id' => $request->user_id,
             'nama' => $request->nama,
             'deadline' => $request->deadline
         ]);
 
-        return redirect()->route('tugas.index');
+        $answers = TugasAnswer::findOrFail($tugasJobs->tugas_answer_id);
+
+        return redirect()->route('tugas.daftarTugas', $answers->tugas_id);
     }
 
     /**

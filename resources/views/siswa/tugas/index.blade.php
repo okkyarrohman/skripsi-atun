@@ -438,8 +438,8 @@
                         <p>Nilai : {{ $userAnswers ? $userAnswers->tugas_grades ? $userAnswers->tugas_grades->nilai : "Belum Dinilai" : "Belum Dikerjakan" }}</p>
                     </div>
                     <div>
-                        <a href="{{ route('tugas.rumusanMasalah', $tugas->id) }}"
-                            class="flex h-14 items-center justify-center px-3 py-2 text-sm font-medium text-center text-white bg-custom-orange rounded-xl">
+                        <a href="{{ $users->members ? route('tugas.rumusanMasalah', $tugas->id) : "#" }}"
+                            class="flex h-14 items-center justify-center px-3 py-2 text-sm font-medium text-center text-white rounded-xl {{ $users->members ? "bg-custom-orange cursor-pointer" : "bg-gray-400 cursor-default" }}">
                             <span class="px-2">{{ $userAnswers ? "Lihat Hasil" : "Lihat Tugas" }}</span>
                         </a>
                     </div>

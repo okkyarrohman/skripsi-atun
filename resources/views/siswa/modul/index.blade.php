@@ -417,7 +417,7 @@
             </svg>
         </div>
     </div>
-    <div class="flex-col items-center justify-center mb-4 rounded-xl bg-gray-50 border p-7">
+    <div class="flex-col items-center justify-center mb-4 rounded-xl bg-gray-50 p-7">
         <h1 class="text-3xl font-bold leading-none text-gray-900 mb-4 pb-3">Materi Modul Pembelajaran</h1>
         <div class="grid grid-cols-3 gap-4 mb-4">
             @foreach ($moduls as $modul)

@@ -6,14 +6,14 @@
             <h1 class="px-2">Albert Suprapto</h1>
             <h2 class="px-2 justify-end flex">{{ Auth::user()->name }}</h2>
         </div>
-        
+
 
 
 <!-- Modal toggle -->
 <button data-modal-target="extralarge-modal"  data-modal-toggle="extralarge-modal" class="block font-medium rounded-full dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
-    <img class="w-[52px] h-[52px] rounded-full" src="https://via.placeholder.com/52x52" />
+    <img class="rounded-full" src="https://via.placeholder.com/52x52" />
   </button>
-  
+
   <!-- Main modal -->
   <div id="extralarge-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-auto md:inset-0 h-auto max-h-full p-6">
       <div class="relative w-full max-w-7xl max-h-full">
@@ -64,8 +64,8 @@
               </div>
           </div>
       </div>
-  </div> 
-  
+  </div>
+
 
     </div>
 </header>

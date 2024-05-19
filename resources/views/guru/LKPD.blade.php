@@ -47,12 +47,12 @@
                         22/12/2222
                      </td>
                     <td class="p-4 text-center">
-                        <div class="w-[118px] h-9 px-5 py-2 bg-orange rounded-lg justify-center items-center gap-2 inline-flex">
+                        <div class="h-9 px-5 py-2 bg-orange rounded-lg justify-center items-center gap-2 inline-flex">
                             <div class="text-white text-sm font-medium  leading-tight">Lihat Detail</div>
                         </div>
                      </td>
                      <td class="p-4">
-                        <div class="w-[34px] h-[34px] p-2 bg-orange-50 rounded-md border border-orange-400 justify-start items-start gap-2.5 inline-flex">
+                        <div class="p-2 bg-orange-50 rounded-md border border-orange-400 justify-start items-start gap-2.5 inline-flex">
                             <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M16.2498 5.0476C16.2348 5.0476 16.2123 5.0476 16.1898 5.0476C12.2223 4.6501 8.26225 4.5001 4.33975 4.8976L2.80975 5.0476C2.49475 5.0776 2.21725 4.8526 2.18725 4.5376C2.15725 4.2226 2.38225 3.9526 2.68975 3.9226L4.21975 3.7726C8.20975 3.3676 12.2523 3.5251 16.3023 3.9226C16.6098 3.9526 16.8348 4.2301 16.8048 4.5376C16.7823 4.8301 16.5348 5.0476 16.2498 5.0476Z" fill="#FB8A3C"/>
                                 <path d="M6.87458 4.29C6.84458 4.29 6.81458 4.29 6.77708 4.2825C6.47708 4.23 6.26708 3.9375 6.31958 3.6375L6.48458 2.655C6.60458 1.935 6.76958 0.9375 8.51708 0.9375H10.4821C12.2371 0.9375 12.4021 1.9725 12.5146 2.6625L12.6796 3.6375C12.7321 3.945 12.5221 4.2375 12.2221 4.2825C11.9146 4.335 11.6221 4.125 11.5771 3.825L11.4121 2.85C11.3071 2.1975 11.2846 2.07 10.4896 2.07H8.52458C7.72958 2.07 7.71458 2.175 7.60208 2.8425L7.42958 3.8175C7.38458 4.095 7.14458 4.29 6.87458 4.29Z" fill="#FB8A3C"/>
@@ -75,12 +75,12 @@
                         22/12/2222
                      </td>
                     <td class="p-4 text-center">
-                        <div class="w-[118px] h-9 px-5 py-2 bg-orange rounded-lg justify-center items-center gap-2 inline-flex">
+                        <div class="h-9 px-5 py-2 bg-orange rounded-lg justify-center items-center gap-2 inline-flex">
                             <div class="text-white text-sm font-medium  leading-tight">Lihat Detail</div>
                         </div>
                      </td>
                      <td class="p-4">
-                        <div class="w-[34px] h-[34px] p-2 bg-orange-50 rounded-md border border-orange-400 justify-start items-start gap-2.5 inline-flex">
+                        <div class="p-2 bg-orange-50 rounded-md border border-orange-400 justify-start items-start gap-2.5 inline-flex">
                             <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M16.2498 5.0476C16.2348 5.0476 16.2123 5.0476 16.1898 5.0476C12.2223 4.6501 8.26225 4.5001 4.33975 4.8976L2.80975 5.0476C2.49475 5.0776 2.21725 4.8526 2.18725 4.5376C2.15725 4.2226 2.38225 3.9526 2.68975 3.9226L4.21975 3.7726C8.20975 3.3676 12.2523 3.5251 16.3023 3.9226C16.6098 3.9526 16.8348 4.2301 16.8048 4.5376C16.7823 4.8301 16.5348 5.0476 16.2498 5.0476Z" fill="#FB8A3C"/>
                                 <path d="M6.87458 4.29C6.84458 4.29 6.81458 4.29 6.77708 4.2825C6.47708 4.23 6.26708 3.9375 6.31958 3.6375L6.48458 2.655C6.60458 1.935 6.76958 0.9375 8.51708 0.9375H10.4821C12.2371 0.9375 12.4021 1.9725 12.5146 2.6625L12.6796 3.6375C12.7321 3.945 12.5221 4.2375 12.2221 4.2825C11.9146 4.335 11.6221 4.125 11.5771 3.825L11.4121 2.85C11.3071 2.1975 11.2846 2.07 10.4896 2.07H8.52458C7.72958 2.07 7.71458 2.175 7.60208 2.8425L7.42958 3.8175C7.38458 4.095 7.14458 4.29 6.87458 4.29Z" fill="#FB8A3C"/>

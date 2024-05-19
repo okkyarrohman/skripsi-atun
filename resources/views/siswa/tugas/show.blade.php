@@ -1,7 +1,7 @@
 @extends('partial.main')
 
 @section('content')
-<div class="px-4 rounded-lg mt-14">
+<div class="px-4 rounded-lg mt-14 pb-14">
 
     @php
         $userAnswers = $tugases->tugas_answers->where('user_id', Auth::user()->id)->first();
@@ -37,7 +37,7 @@
                 </a>
             @endif
         </div>
-        <div class="self-stretch h-[162px] flex flex-col justify-center items-start gap-1.5">
+        <div class="self-stretch flex flex-col justify-center items-start gap-1.5">
             <span class="text-zinc-800 text-lg font-medium font-Poppins leading-relaxed">Deskripsi</span>
             <span class="self-stretch text-slate-500 text-lg font-normal font-Poppins leading-relaxed">
                 {{ $tugases->deskripsi }}

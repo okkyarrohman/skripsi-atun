@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Siswa;
 use App\Http\Controllers\Controller;
 use App\Models\Kelompok;
 use App\Models\KelompokMember;
+use App\Models\Tugas;
+use App\Models\TugasAnswer;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -46,7 +48,9 @@ class KelompokSiswaController extends Controller
     {
         $kelompoks = Kelompok::where('id', $id)->with(['members'])->first();
 
-        return view('siswa.kelompok.show', compact('kelompoks'));
+        $tugasAnswers = TugasAnswer::with(['tugases', 'tugas_grades'])->get();
+
+        return view('siswa.kelompok.show', compact('kelompoks', 'tugasAnswers'));
     }
 
     /**

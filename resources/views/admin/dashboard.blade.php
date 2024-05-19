@@ -370,7 +370,7 @@
         </div>
 
         {{-- table 1 --}}
-        <div class="text-gray-900 bg-white gap-5 p-7">
+        <div class="text-gray-900 bg-white gap-5 p-7 rounded-xl">
             <div class="flex justify-between items-center p-2">
                 <h1 class="text-2xl font-bold">
                     Daftar Siswa
@@ -462,7 +462,7 @@
             </div>
         </div>
         {{-- table 2 --}}
-        <div class="text-gray-900 bg-white gap-5 p-7">
+        <div class="text-gray-900 bg-white gap-5 p-7 rounded-xl mt-6">
             <div class="flex justify-between items-center">
                 <h1 class="text-2xl font-bold">
                     Daftar Guru

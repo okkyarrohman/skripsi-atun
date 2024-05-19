@@ -70,9 +70,15 @@ class UserAdminController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $id, $role)
     {
-        //
+        $users = User::where('id', $id)->first();
+
+        if ($role == "guru") {
+            return view('admin.user.showGuru', compact('users'));
+        } else {
+            return view('admin.user.showSiswa', compact('users'));
+        }
     }
 
     /**

@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
 
 class ProfileController extends Controller
@@ -16,25 +18,57 @@ class ProfileController extends Controller
      */
     public function edit(Request $request): View
     {
-        return view('profile.edit', [
-            'user' => $request->user(),
-        ]);
+        $role = Auth::user()->roles->pluck('name')->first();
+
+        if ($role == "guru") {
+            return view('profile.editGuru', [
+                'users' => $request->user(),
+            ]);
+        } elseif ($role == "admin") {
+            return view('profile.editAdmin', [
+                'users' => $request->user(),
+            ]);
+        } else {
+            return view('profile.editSiswa', [
+                'users' => $request->user(),
+            ]);
+        }
     }
 
     /**
      * Update the user's profile information.
      */
-    public function update(ProfileUpdateRequest $request): RedirectResponse
+    public function update(Request $request, $id): RedirectResponse
     {
-        $request->user()->fill($request->validated());
+        $users = User::findOrFail($id);
 
-        if ($request->user()->isDirty('email')) {
-            $request->user()->email_verified_at = null;
-        }
+        if ($request->hasFile('foto')) {
+            Storage::delete("public/profil/" . $users->file);
 
-        $request->user()->save();
+            $file = $request->file('foto');
+            $extension = $file->getClientOriginalName();
+            $fileName = date('YmdHis') . "." . $extension;
+            $file->move(storage_path('app/public/profil'), $fileName);
+        } else {
+            $fileName = $users->file;
+        };
 
-        return Redirect::route('profile.edit')->with('status', 'profile-updated');
+        $usersUpdate = $request->all();
+        $usersUpdate['foto'] = $fileName;
+
+        $users->update($usersUpdate);
+
+        return redirect()->back();
+
+        // $request->user()->fill($request->validated());
+
+        // if ($request->user()->isDirty('email')) {
+        //     $request->user()->email_verified_at = null;
+        // }
+
+        // $request->user()->save();
+
+        // return Redirect::route('profile.edit')->with('status', 'profile-updated');
     }
 
     /**

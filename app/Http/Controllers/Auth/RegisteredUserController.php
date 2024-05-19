@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
+use Carbon\Carbon;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -54,6 +55,10 @@ class RegisteredUserController extends Controller
         if (Auth::user()->hasRole('guru')) {
             return redirect()->intended(RouteServiceProvider::HOME_GURU);
         } else if (Auth::user()->hasRole('siswa')) {
+            $user = Auth::user();
+            $user->session_login_at = Carbon::now();
+            $user->save();
+
             return redirect()->intended(RouteServiceProvider::HOME_SISWA);
         } else if (Auth::user()->hasRole('admin')) {
             return redirect()->intended(RouteServiceProvider::HOME_ADMIN);

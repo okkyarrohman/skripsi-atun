@@ -405,8 +405,8 @@
                                 <td class="p-3 px-5">{{ $siswa->kelas }}</td>
                                 <td class="p-3 px-5">{{ $siswa->no_absen }}</td>
                                 <td class="p-3 px-5 flex justify-center">
-                                    <button type="button"
-                                        class="mr-3 text-sm bg-custom-orange text-white p-2 rounded focus:outline-none focus:shadow-outline">
+                                    <a href="{{ route('user-admin.show', [$siswa->id, 'siswa']) }}"
+                                        class="mr-3 flex items-center justify-center text-sm bg-custom-orange text-white p-2 rounded focus:outline-none focus:shadow-outline">
                                         <svg
                                             width="19" height="18" viewBox="0 0 19 18" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
@@ -417,9 +417,9 @@
                                                 d="M9.50055 15.7651C6.68055 15.7651 4.01805 14.1151 2.18805 11.2501C1.39305 10.0126 1.39305 7.99511 2.18805 6.75011C4.02555 3.88511 6.68805 2.23511 9.50055 2.23511C12.313 2.23511 14.9755 3.88511 16.8055 6.75011C17.6005 7.98761 17.6005 10.0051 16.8055 11.2501C14.9755 14.1151 12.313 15.7651 9.50055 15.7651ZM9.50055 3.36011C7.07805 3.36011 4.76055 4.81511 3.14055 7.35761C2.57805 8.23511 2.57805 9.76511 3.14055 10.6426C4.76055 13.1851 7.07805 14.6401 9.50055 14.6401C11.923 14.6401 14.2405 13.1851 15.8605 10.6426C16.423 9.76511 16.423 8.23511 15.8605 7.35761C14.2405 4.81511 11.923 3.36011 9.50055 3.36011Z"
                                                 fill="#F6F7F9" />
                                         </svg>
-                                    </button>
+                                    </a>
                                     <a href="{{ route('user-admin.edit', [$siswa->id, 'siswa']) }}"
-                                        class="mr-3 text-sm bg-custom-orange text-white p-2 rounded focus:outline-none focus:shadow-outline">
+                                        class="mr-3 flex items-center justify-center text-sm bg-custom-orange text-white p-2 rounded focus:outline-none focus:shadow-outline">
                                         <svg width="19" height="18" viewBox="0 0 19 18" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -501,8 +501,8 @@
                                 <td class="p-3 px-5">{{ $guru->kelas }}</td>
                                 <td class="p-3 px-5">{{ $guru->nip }}</td>
                                 <td class="p-3 px-5 flex justify-center">
-                                    <button type="button"
-                                        class="mr-3 text-sm bg-custom-orange text-white p-2 rounded focus:outline-none focus:shadow-outline">
+                                    <a href="{{ route('user-admin.show', [$guru->id , 'guru']) }}"
+                                        class="mr-3 flex items-center justify-center text-sm bg-custom-orange text-white p-2 rounded focus:outline-none focus:shadow-outline">
                                         <svg
                                             width="19" height="18" viewBox="0 0 19 18" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
@@ -513,9 +513,9 @@
                                                 d="M9.50055 15.7651C6.68055 15.7651 4.01805 14.1151 2.18805 11.2501C1.39305 10.0126 1.39305 7.99511 2.18805 6.75011C4.02555 3.88511 6.68805 2.23511 9.50055 2.23511C12.313 2.23511 14.9755 3.88511 16.8055 6.75011C17.6005 7.98761 17.6005 10.0051 16.8055 11.2501C14.9755 14.1151 12.313 15.7651 9.50055 15.7651ZM9.50055 3.36011C7.07805 3.36011 4.76055 4.81511 3.14055 7.35761C2.57805 8.23511 2.57805 9.76511 3.14055 10.6426C4.76055 13.1851 7.07805 14.6401 9.50055 14.6401C11.923 14.6401 14.2405 13.1851 15.8605 10.6426C16.423 9.76511 16.423 8.23511 15.8605 7.35761C14.2405 4.81511 11.923 3.36011 9.50055 3.36011Z"
                                                 fill="#F6F7F9" />
                                         </svg>
-                                    </button>
+                                    </a>
                                     <a href="{{ route('user-admin.edit', [$guru->id, 'guru']) }}"
-                                        class="mr-3 text-sm bg-custom-orange text-white p-2 rounded focus:outline-none focus:shadow-outline">
+                                        class="mr-3 flex items-center justify-center text-sm bg-custom-orange text-white p-2 rounded focus:outline-none focus:shadow-outline">
                                         <svg width="19" height="18" viewBox="0 0 19 18" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path

@@ -100,6 +100,7 @@ Route::group(['middleware' => 'role:admin'], function () {
         Route::get('/dashboard/user-admin/{role}/create',[UserAdminController::class, 'create'])->name('user-admin.create');
         Route::post('/dashboard/user-admin/{role}/create', [UserAdminController::class, 'store'])->name('user-admin.store');
         Route::get('/dashboard/user-admin/{id}/{role}/edit',[UserAdminController::class, 'edit'])->name('user-admin.edit');
+        Route::get('/dashboard/user-admin/{id}/{role}/show',[UserAdminController::class, 'show'])->name('user-admin.show');
         Route::resources([
             'kelompok-admin' => KelompokAdminController::class,
             'tugas-admin' => TugasAdminController::class,
@@ -120,7 +121,7 @@ Route::get('/', function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::patch('/profile/{id}', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 

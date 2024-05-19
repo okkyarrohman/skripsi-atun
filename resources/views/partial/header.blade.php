@@ -1,7 +1,7 @@
 <header class="w-full items-center bg-white py-2 px-6 hidden sm:flex ml-64 top-0">
     <div class="flex justify-start">
         <h1 class="font-semibold text-2xl">
-            @if (Request::is(Auth::user()->roles->pluck('name')->first().'/dashboard*'))
+            @if (Request::is(Auth::user()->roles->pluck('name')->first().'/dashboard*') || '/profile*')
                 Dashboard
             @elseif (Request::is(Auth::user()->roles->pluck('name')->first().'/materi*'))
                 Materi
@@ -14,12 +14,11 @@
             @endif
         </h1>
     </div>
-    <div class="w-1/2"></div>
-    <div x-data="{ isOpen: false }" class="relative w-1/2 flex justify-end items-center">
+    <a href="{{ route('profile.edit' ) }}" x-data="{ isOpen: false }" class="relative w-fit ml-auto flex justify-end items-center">
         <div>
             <h1 class="px-2">{{ Auth::user()->name }}</h1>
             <h2 class="px-2 justify-end flex capitalize">{{ Auth::user()->roles->pluck('name')->first() }}</h2>
         </div>
-        <img src="" alt="" class="size-12 rounded-full bg-green">
-    </div>
+        <img src="{{ Auth::user()->foto ? asset('storage/profil/' . Auth::user()->foto) : asset('assets/profil-image.png') }}" alt="" class="size-12 rounded-full object-cover">
+    </a>
 </header>

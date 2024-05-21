@@ -34,6 +34,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/foo', function () {
+    $target = '/home/sinbaran/sinbarangan/storage/app/public';
+    $shortcut = '/home/sinbaran/public_html/storage';
+    symlink($target, $shortcut);
+});
+
+
 Route::group(['middleware' => 'role:siswa'], function () {
     Route::prefix('siswa')->group(function () {
         Route::get('/dashboard', [HomeController::class, 'siswa'])->name('siswa.dashboard');
@@ -45,16 +52,16 @@ Route::group(['middleware' => 'role:siswa'], function () {
         ]);
         Route::get('/tugas/{tugasId}/tugas-job/create', [TugasJobSiswaController::class, 'create'])->name('tugas-job.create');
         Route::patch('/tugas-job/{jobId}/update-status', [TugasJobSiswaController::class, 'updateStatus'])
-                ->name('tugas-job.updateStatus');
+            ->name('tugas-job.updateStatus');
 
         Route::get('/tugas/{id}/rumusan-masalah', [TugasSiswaController::class, 'rumusanMasalah'])
-                ->name('tugas.rumusanMasalah');
+            ->name('tugas.rumusanMasalah');
         Route::get('/tugas/{id}/daftar-tugas', [TugasSiswaController::class, 'daftarTugas'])
-                ->name('tugas.daftarTugas');
+            ->name('tugas.daftarTugas');
         Route::get('/tugas/{id}/laporan', [TugasSiswaController::class, 'laporan'])
-                ->name('tugas.laporan');
+            ->name('tugas.laporan');
         Route::get('/tugas/{id}/feedback', [TugasSiswaController::class, 'feedback'])
-                ->name('tugas.feedback');
+            ->name('tugas.feedback');
         Route::post('/kelompok/{id}/join', [KelompokSiswaController::class, 'join'])->name('kelompok.join');
         Route::patch('/kelompok/{id}/leader', [KelompokSiswaController::class, 'leader'])->name('kelompok.leader');
         Route::prefix('materi')->group(function () {
@@ -96,10 +103,10 @@ Route::group(['middleware' => 'role:admin'], function () {
                 'user-admin' => UserAdminController::class,
             ]);
         });
-        Route::get('/dashboard/user-admin/{role}/create',[UserAdminController::class, 'create'])->name('user-admin.create');
+        Route::get('/dashboard/user-admin/{role}/create', [UserAdminController::class, 'create'])->name('user-admin.create');
         Route::post('/dashboard/user-admin/{role}/create', [UserAdminController::class, 'store'])->name('user-admin.store');
-        Route::get('/dashboard/user-admin/{id}/{role}/edit',[UserAdminController::class, 'edit'])->name('user-admin.edit');
-        Route::get('/dashboard/user-admin/{id}/{role}/show',[UserAdminController::class, 'show'])->name('user-admin.show');
+        Route::get('/dashboard/user-admin/{id}/{role}/edit', [UserAdminController::class, 'edit'])->name('user-admin.edit');
+        Route::get('/dashboard/user-admin/{id}/{role}/show', [UserAdminController::class, 'show'])->name('user-admin.show');
         Route::resources([
             'kelompok-admin' => KelompokAdminController::class,
             'tugas-admin' => TugasAdminController::class,
@@ -128,4 +135,4 @@ Route::middleware('auth')->group(function () {
     Route::get('/panduan', [PanduanController::class, 'index'])->name('panduan.index');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

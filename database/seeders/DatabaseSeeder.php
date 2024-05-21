@@ -22,11 +22,11 @@ class DatabaseSeeder extends Seeder
         $this->call([RoleSeeder::class]);
         $this->call([UserSeeder::class]);
 
-        User::factory(20)->create();
-        Modul::factory(5)->create();
-        Simulasi::factory(5)->create();
-        Kelompok::factory(5)->create();
-        KelompokMember::factory(20)->create();
-        Tugas::factory(5)->create();
+        // User::factory(20)->create();
+        // Modul::factory(5)->create();
+        // Simulasi::factory(5)->create();
+        // Kelompok::factory(5)->create();
+        // KelompokMember::factory(20)->create();
+        // Tugas::factory(5)->create();
     }
 }

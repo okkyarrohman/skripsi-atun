@@ -16,8 +16,12 @@
         "vite": "^5.0.0"
     },
     "dependencies": {
+        "8": "^0.0.1",
+        "@rollup/rollup-win32-x64-msvc": "^4.17.2",
+        "amqplib": "^0.10.4",
         "flowbite": "^2.3.0",
-        "node": "^18.20.2",
+        "node": "18.14.0",
+        "rollup": "^4.17.2",
         "tailwind": "^4.0.0"
     }
 }

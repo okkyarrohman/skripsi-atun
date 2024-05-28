@@ -345,7 +345,7 @@
                                             {{ $answer->tugases->nama }}
                                         </p>
                                         <p class="text-3xl text-black font-bold">
-                                            {{ $answer->tugas_grades->nilai }}
+                                            {{ $answer->tugas_grades? $answer->tugas_grades->nilai : "Belum Dinilai" }}
                                         </p>
                                     </div>
                                 </div>

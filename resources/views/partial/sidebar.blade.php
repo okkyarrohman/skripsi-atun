@@ -149,7 +149,7 @@
             </li>
         </ul>
         <ul class="space-y-2 font-medium text-white">
-            @if (Auth::user()->hasRole('admin') || Auth::user()->hasRole('guru'))
+            {{-- @if (Auth::user()->hasRole('admin') || Auth::user()->hasRole('guru')) --}}
                 <li>
                     <a href="{{ route('panduan.index') }}" class="flex items-center p-2 rounded-lg hover:bg-white group">
                         <svg class="flex-shrink-0 w-6 h-6 transition duration-75 group-hover:text-orange" width="24"
@@ -170,7 +170,7 @@
                         <span class="flex-1 ms-3 whitespace-nowrap px-2 group-hover:text-orange">Panduan</span>
                     </a>
                 </li>
-            @endif
+            {{-- @endif --}}
             <li>
                 <form method="POST" action="{{ route('logout') }}"
                     class="flex items-center p-2 rounded-lg hover:bg-white group">

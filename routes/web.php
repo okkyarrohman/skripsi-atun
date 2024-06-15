@@ -103,6 +103,7 @@ Route::group(['middleware' => 'role:admin'], function () {
                 'user-admin' => UserAdminController::class,
             ]);
         });
+        Route::post('/tugas-guru', [TugasGuruController::class, 'store'])->name('tugas-admin.nilai');
         Route::get('/dashboard/user-admin/{role}/create', [UserAdminController::class, 'create'])->name('user-admin.create');
         Route::post('/dashboard/user-admin/{role}/create', [UserAdminController::class, 'store'])->name('user-admin.store');
         Route::get('/dashboard/user-admin/{id}/{role}/edit', [UserAdminController::class, 'edit'])->name('user-admin.edit');

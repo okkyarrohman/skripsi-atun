@@ -90,7 +90,7 @@
                     </div>
                 </div>
             </div>
-            <form action="{{ route('tugas-admin.store') }}" method="POST" class="w-full flex flex-col gap-6">
+            <form action="{{ route('tugas-admin.nilai') }}" method="POST" class="w-full flex flex-col gap-6">
                 @csrf
                 <input type="hidden" id="tugas_answer_id" name="tugas_answer_id" value="{{ $tugasAnswers->id }}">
                 <div class="flex flex-col justify-start items-start gap-2">

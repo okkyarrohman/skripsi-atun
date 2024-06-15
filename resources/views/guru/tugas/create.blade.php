@@ -95,7 +95,7 @@
                 <input type="hidden" id="tugas_answer_id" name="tugas_answer_id" value="{{ $tugasAnswers->id }}">
                 <div class="flex flex-col justify-start items-start gap-2">
                     <div class="text-zinc-800 text-lg font-medium leading-relaxed">Nilai</div>
-                    <input type="text" id="nilai" name="nilai"
+                    <input type="number" id="nilai" name="nilai"
                         value="{{ $tugasAnswers->tugas_grades ? $tugasAnswers->tugas_grades?->nilai : old('nilai') }}"
                         placeholder="Masukkan Nilai Tugas"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">

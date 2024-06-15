@@ -26,7 +26,7 @@ class TugasGuruController extends Controller
     public function create(string $answerId)
     {
         $tugasAnswers = TugasAnswer::where('id', $answerId)->with(['users', 'tugases', 'tugas_grades'])
-                                        ->first();
+            ->first();
 
         return view('guru.tugas.create', compact('tugasAnswers'));
     }
@@ -53,6 +53,14 @@ class TugasGuruController extends Controller
         $tugases = Tugas::where('id', $id)->with(['tugas_answers.tugas_jobs', 'tugas_answers.users', 'tugas_answers.tugas_grades'])->first();
 
         return view('guru.tugas.show', compact('tugases'));
+    }
+
+    public function hasil(string $answerId)
+    {
+        $tugasAnswers = TugasAnswer::where('id', $answerId)->with(['users', 'tugases', 'tugas_grades'])
+            ->first();
+
+        return view('admin.tugas.hasil', compact('tugasAnswers'));
     }
 
     /**

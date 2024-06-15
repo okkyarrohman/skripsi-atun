@@ -94,8 +94,7 @@ class SimulasiAdminController extends Controller
 
         if (Str::contains($url, 'youtu.be')) {
             $videoId = Str::afterLast($url, '/');
-        }
-        else if (Str::contains($url, 'watch?v=')) {
+        } else if (Str::contains($url, 'watch?v=')) {
             $videoId = Str::after(Str::after($url, 'watch?v='), '/');
             $videoId = Str::before($videoId, '&');
         }

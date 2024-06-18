@@ -10,4 +10,19 @@ class PanduanController extends Controller
     {
         return view('panduan.index');
     }
+
+    public function guru()
+    {
+        return view('guru.panduan.index');
+    }
+
+    public function siswa()
+    {
+        return view('siswa.panduan.index');
+    }
+
+    public function admin()
+    {
+        return view('admin.panduan.index');
+    }
 }

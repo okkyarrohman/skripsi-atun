@@ -70,6 +70,7 @@ Route::group(['middleware' => 'role:siswa'], function () {
                 'simulasi' => SimulasiSiswaController::class,
             ]);
         });
+        Route::get('/panduan', [PanduanController::class, 'siswa'])->name('panduan.siswa');
     });
 });
 
@@ -92,6 +93,7 @@ Route::group(['middleware' => 'role:guru'], function () {
                 'simulasi-guru' => SimulasiGuruController::class,
             ]);
         });
+        Route::get('/panduan', [PanduanController::class, 'guru'])->name('panduan.guru');
     });
 });
 
@@ -119,6 +121,7 @@ Route::group(['middleware' => 'role:admin'], function () {
                 'simulasi-admin' => SimulasiAdminController::class,
             ]);
         });
+        Route::get('/panduan', [PanduanController::class, 'admin'])->name('panduan.admin');
     });
 });
 

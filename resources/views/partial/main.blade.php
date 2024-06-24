@@ -18,6 +18,8 @@
 
     <!-- Include Video.js YouTube Plugin -->
     <script src="https://cdn.jsdelivr.net/npm/videojs-youtube/dist/Youtube.min.js"></script>
+    
+    <script src="https://cdn.tiny.cloud/1/p2dc08j629ts2y9bbvyzizd6ds2ljjkkewgj8s34cojjbagt/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
 
     <style>
         /* Custom Tailwind CSS styles */

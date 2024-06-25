@@ -422,8 +422,8 @@
         <div class="grid grid-cols-3 gap-4 mb-4">
             @foreach ($simulasis as $simulasi)
                 <div class="max-w p-6 bg-white border border-gray-200 rounded-lg shadow flex flex-col justify-between">
-                    <h5 class="text-2xl font-medium tracking-tight text-gray-900">{{ $simulasi->judul }}</h5>
-                    <p class="my-8 line-clamp-2">{{ $simulasi->deskripsi }}</p>
+                    <h5 class="text-2xl font-medium tracking-tight text-gray-900 mb-6">{{ $simulasi->judul }}</h5>
+                    {{-- <p class="my-8 line-clamp-2 prose">{!! $simulasi->deskripsi !!}</p> --}}
                     <a href="{{ route('simulasi.show', $simulasi->id) }}"
                         class="flex h-14 items-center justify-center px-3 py-2 text-sm font-medium text-center text-white bg-custom-orange rounded-xl">
                         <span class="px-2">Lihat Simulasi</span>

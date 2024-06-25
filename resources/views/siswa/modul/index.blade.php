@@ -422,8 +422,8 @@
         <div class="grid grid-cols-3 gap-4 mb-4">
             @foreach ($moduls as $modul)
                 <div class="max-w p-6 bg-white border border-gray-200 rounded-lg shadow flex flex-col justify-between">
-                    <h5 class="text-2xl font-medium tracking-tight text-gray-900">{{ $modul->judul }}</h5>
-                    <p class="my-8 line-clamp-2">{{ $modul->deskripsi }}</p>
+                    <h5 class="text-2xl font-medium tracking-tight text-gray-900 mb-6">{{ $modul->judul }}</h5>
+                    {{-- <p class="my-8 line-clamp-2">{{ $modul->deskripsi }}</p> --}}
                     <a href="{{ route('modul.show', $modul->id) }}"
                         class="flex h-14 items-center justify-center px-3 py-2 text-sm font-medium text-center text-white bg-custom-orange rounded-xl">
                         <span class="px-2">Lihat Modul</span>

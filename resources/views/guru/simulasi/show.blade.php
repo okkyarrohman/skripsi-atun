@@ -6,7 +6,11 @@
             <h1 class="text-zinc-800 text-xl font-semibold leading-loose">{{ $simulasis->judul }}
             </h1>
             <h2 class="text-zinc-800 text-lg font-medium leading-relaxed">Deskripsi</h2>
-            <h3 class="color-grey text-xl font-normal  leading-7">{{ $simulasis->deskripsi }}</h3>
+            <h3 class="color-grey text-xl font-normal  leading-7">
+                <div class="prose">
+                    {!! $simulasis->deskripsi !!}
+                </div>
+            </h3>
             <div class="w-full pt-4 items-center justify-center flex">
                 {{-- <p>Video ID: {{ $simulasis->link }}</p> --}}
                 <iframe width="1000px" height="600px" src="{{ 'https://www.youtube.com/embed/' . $simulasis->link }}"

@@ -51,7 +51,11 @@
             </div>
             <div class="flex flex-col justify-center items-start gap-1.5">
                 <div class="text-zinc-800 text-lg font-medium leading-relaxed">Rumusan Masalah</div>
-                <div class="text-slate-500 text-lg font-normal leading-relaxed">{{ $tugasAnswers->rumusan_masalah }}</div>
+                <div class="text-slate-500 text-lg font-normal leading-relaxed">
+                    <div class="prose">
+                        {!! $tugasAnswers->rumusan_masalah !!}
+                    </div>
+                </div>
             </div>
             <div class="flex flex-col justify-start items-start gap-2 w-full">
                 <div class="text-zinc-800 text-lg font-medium leading-relaxed">Berkas Presentasi</div>

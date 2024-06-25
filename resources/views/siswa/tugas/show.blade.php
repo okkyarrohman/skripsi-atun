@@ -40,7 +40,9 @@
         <div class="self-stretch flex flex-col justify-center items-start gap-1.5">
             <span class="text-zinc-800 text-lg font-medium font-Poppins leading-relaxed">Deskripsi</span>
             <span class="self-stretch text-slate-500 text-lg font-normal font-Poppins leading-relaxed">
-                {{ $tugases->deskripsi }}
+                <div class="prose">
+                    {!! $tugases->deskripsi !!}
+                </div>
             </span>
         </div>
         @yield('section')

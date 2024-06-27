@@ -37,6 +37,13 @@ class TugasSiswaController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'file_presentasi' => 'nullable|mimes:pdf|max:8048', // Accepts only PDF files with a max size of 2MB
+            'file_laporan' => 'nullable|mimes:pdf|max:8048', // Accepts only PDF files with a max size of 2MB
+        ]);
+
+
+
         $filePresentasiName = null;
         $fileLaporanName = null;
 
@@ -91,6 +98,13 @@ class TugasSiswaController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $request->validate([
+            'file_presentasi' => 'nullable|mimes:pdf|max:8048', // Accepts only PDF files with a max size of 2MB
+            'file_laporan' => 'nullable|mimes:pdf|max:8048', // Accepts only PDF files with a max size of 2MB
+        ]);
+
+
+
         $tugasAnswers = TugasAnswer::findOrFail($id);
 
         $filePresentasiName = $tugasAnswers->file_presentasi;

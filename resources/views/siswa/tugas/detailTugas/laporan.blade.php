@@ -10,7 +10,7 @@
         @csrf
         @method('PATCH')
         <div class="w-full flex flex-col justify-start items-start gap-2">
-            <div class="text-zinc-800 text-lg font-medium leading-relaxed">Berkas Demontrasi</div>
+            <div class="text-zinc-800 text-lg font-medium leading-relaxed">Berkas Demontrasi (Pdf)</div>
             <div class="flex-shrink-0 w-full flex items-center gap-2.5 bg-neutral-50 rounded-lg border border-gray-300">
                 <label for="file-input-presentasi"
                     class="flex-shrink-0 w-full flex items-center gap-2.5 bg-neutral-50 rounded-lg border border-gray-300 overflow-hidden cursor-pointer">
@@ -27,7 +27,7 @@
             </div>
         </div>
         <div class="w-full flex flex-col justify-start items-start gap-2">
-            <div class="text-zinc-800 text-lg font-medium leading-relaxed">Laporan</div>
+            <div class="text-zinc-800 text-lg font-medium leading-relaxed">Laporan (Pdf)</div>
             <div class="flex-shrink-0 w-full flex items-center gap-2.5 bg-neutral-50 rounded-lg border border-gray-300">
                 <label for="file-input-laporan"
                     class="flex-shrink-0 w-full flex items-center gap-2.5 bg-neutral-50 rounded-lg border border-gray-300 overflow-hidden cursor-pointer">

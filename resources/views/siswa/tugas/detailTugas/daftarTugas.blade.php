@@ -4,6 +4,9 @@
 <div class="w-full">
     @php
         $userAnswers = $tugases->tugas_answers->where('user_id', Auth::user()->id)->first();
+        $users =  Auth::user()->where('id', Auth::user()->id)->with(['members'])->first();
+        $kelompokAnswers = $tugases->tugas_answers->where('kelompok_id', Auth::user()->members->kelompok_id)->first();
+        $answers = $userAnswers ? $userAnswers : $kelompokAnswers;
     @endphp
 
     <div class="flex-col items-center justify-center mb-4 rounded-xl bg-white p-7">
@@ -54,8 +57,8 @@
                 </tr>
             </thead>
             <tbody>
-                @if ($userAnswers)
-                    @foreach($userAnswers?->tugas_jobs as $index => $job)
+                @if ($answers)
+                    @foreach($answers?->tugas_jobs as $index => $job)
                         <tr class="bg-white">
                             <th scope="row" class="px-8 py-4 justify-center items-center text-center">
                                 <div class="flex items-center justify-center">

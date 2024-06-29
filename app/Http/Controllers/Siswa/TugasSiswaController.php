@@ -103,8 +103,6 @@ class TugasSiswaController extends Controller
             'file_laporan' => 'nullable|mimes:pdf|max:8048', // Accepts only PDF files with a max size of 2MB
         ]);
 
-
-
         $tugasAnswers = TugasAnswer::findOrFail($id);
 
         $filePresentasiName = $tugasAnswers->file_presentasi;

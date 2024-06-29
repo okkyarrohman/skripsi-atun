@@ -3,6 +3,9 @@
 @section('section')
     @php
         $userAnswers = $tugases->tugas_answers->where('user_id', Auth::user()->id)->first();
+        $users =  Auth::user()->where('id', Auth::user()->id)->with(['members'])->first();
+        $kelompokAnswers = $tugases->tugas_answers->where('kelompok_id', Auth::user()->members->kelompok_id)->first();
+        $answers = $userAnswers ? $userAnswers : $kelompokAnswers;
     @endphp
 
     <form action="{{ $userAnswers ? route('tugas.update', $userAnswers->id) : '#' }}" method="POST"
@@ -21,7 +24,7 @@
                     </div>
                     <div class="flex-grow text-zinc-800 text-base font-normal leading-snug tracking-tight"
                         id="file-name-presentasi">
-                        {{ $userAnswers ? $userAnswers->file_presentasi : 'Belum ada file yang dipilih' }}
+                        {{ $answers ? $answers->file_presentasi : 'Belum ada file yang dipilih' }}
                     </div>
                 </label>
             </div>
@@ -38,7 +41,7 @@
                     </div>
                     <div class="flex-grow text-zinc-800 text-base font-normal leading-snug tracking-tight"
                         id="file-name-laporan">
-                        {{ $userAnswers ? $userAnswers->file_laporan : 'Belum ada file yang dipilih' }}
+                        {{ $answers ? $answers->file_laporan : 'Belum ada file yang dipilih' }}
                     </div>
                 </label>
             </div>
@@ -50,14 +53,14 @@
                     Sebelumnya
                 </a>
             </div>
-            @if ($userAnswers?->tugas_grades)
+            {{-- @if ($answers?->tugas_grades) --}}
                 <div class="pt-2 flex justify-end">
                     <a href="{{ route('tugas.feedback', $tugases->id) }}"
                         class="text-white bg-custom-orange focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2">
                         Selanjutnya
                     </a>
                 </div>
-            @endif
+            {{-- @endif --}}
         </div>
 
         @php

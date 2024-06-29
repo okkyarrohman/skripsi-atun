@@ -59,20 +59,8 @@
             </div>
             <div class="flex flex-col justify-start items-start gap-2 w-full">
                 <div class="text-zinc-800 text-lg font-medium leading-relaxed">Berkas Presentasi</div>
-                <div class="flex-shrink-0 w-full flex items-center gap-2.5 bg-neutral-50 rounded-lg border border-gray-300">
-                    <div class="px-4 py-3 bg-gray-100 rounded">
-                        <div class="text-zinc-800 text-base font-medium leading-snug">
-                            @if ($tugasAnswers->file_presentasi)
-                                <a href="{{ asset('storage/tugasAnswer/presentasi/' . $tugasAnswers->file_presentasi) }}"
-                                    target="_blank">Lihat File</a>
-                            @else
-                                Belum Mengumpulkan
-                            @endif
-                        </div>
-                    </div>
-                    <div class="flex-grow text-zinc-800 text-base font-normal leading-snug tracking-tight">
-                        {{ $tugasAnswers->file_presentasi ? $tugasAnswers->file_presentasi : 'Belum Mengumpulkan' }}
-                    </div>
+                <div>
+                    <a href="{{ $tugasAnswers->file_presentasi }}" target="_blank">{{ $tugasAnswers->file_presentasi }}</a>
                 </div>
             </div>
             <div class="flex flex-col justify-start items-start gap-2 w-full">

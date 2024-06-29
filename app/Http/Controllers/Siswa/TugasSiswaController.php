@@ -38,21 +38,21 @@ class TugasSiswaController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'file_presentasi' => 'nullable|mimes:pdf|max:8048', // Accepts only PDF files with a max size of 2MB
-            'file_laporan' => 'nullable|mimes:pdf|max:8048', // Accepts only PDF files with a max size of 2MB
+            // 'file_presentasi' => 'nullable|mimes:pdf|max:8048',
+            'file_laporan' => 'nullable|mimes:pdf|max:8048',
         ]);
 
 
 
-        $filePresentasiName = null;
+        // $filePresentasiName = null;
         $fileLaporanName = null;
 
-        if ($request->hasFile('file_presentasi')) {
-            $filePresentasi = $request->file('file_presentasi');
-            $extension = $filePresentasi->getClientOriginalName();
-            $filePresentasiName = date('YmdHis') . "." . $extension;
-            $filePresentasi->move(storage_path('app/public/tugasAnswer/presentasi'), $filePresentasiName);
-        }
+        // if ($request->hasFile('file_presentasi')) {
+        //     $filePresentasi = $request->file('file_presentasi');
+        //     $extension = $filePresentasi->getClientOriginalName();
+        //     $filePresentasiName = date('YmdHis') . "." . $extension;
+        //     $filePresentasi->move(storage_path('app/public/tugasAnswer/presentasi'), $filePresentasiName);
+        // }
 
         if ($request->hasFile('file_laporan')) {
             $fileLaporan = $request->file('file_laporan');
@@ -68,7 +68,7 @@ class TugasSiswaController extends Controller
             'user_id' => Auth::user()->id,
             'kelompok_id' => Auth::user()->members->kelompok_id,
             'rumusan_masalah' => $rumusanMasalah,
-            'file_presentasi' => $filePresentasiName,
+            'file_presentasi' =>  $request->file_presentasi,
             'file_laporan' => $fileLaporanName
         ]);
 
@@ -99,23 +99,23 @@ class TugasSiswaController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'file_presentasi' => 'nullable|mimes:pdf|max:8048', // Accepts only PDF files with a max size of 2MB
-            'file_laporan' => 'nullable|mimes:pdf|max:8048', // Accepts only PDF files with a max size of 2MB
+            // 'file_presentasi' => 'nullable|mimes:pdf|max:8048',
+            'file_laporan' => 'nullable|mimes:pdf|max:8048',
         ]);
 
         $tugasAnswers = TugasAnswer::findOrFail($id);
 
-        $filePresentasiName = $tugasAnswers->file_presentasi;
+        // $filePresentasiName = $tugasAnswers->file_presentasi;
         $fileLaporanName = $tugasAnswers->file_laporan;
 
-        if ($request->hasFile('file_presentasi')) {
-            Storage::delete("public/tugasAnswer/presentasi/" . $filePresentasiName);
+        // if ($request->hasFile('file_presentasi')) {
+        //     Storage::delete("public/tugasAnswer/presentasi/" . $filePresentasiName);
 
-            $filePresentasi = $request->file('file_presentasi');
-            $extension = $filePresentasi->getClientOriginalName();
-            $filePresentasiName = date('YmdHis') . "." . $extension;
-            $filePresentasi->move(storage_path('app/public/tugasAnswer/presentasi'), $filePresentasiName);
-        }
+        //     $filePresentasi = $request->file('file_presentasi');
+        //     $extension = $filePresentasi->getClientOriginalName();
+        //     $filePresentasiName = date('YmdHis') . "." . $extension;
+        //     $filePresentasi->move(storage_path('app/public/tugasAnswer/presentasi'), $filePresentasiName);
+        // }
 
         if ($request->hasFile('file_laporan')) {
             Storage::delete("public/tugasAnswer/laporan/" . $fileLaporanName);
@@ -127,7 +127,7 @@ class TugasSiswaController extends Controller
         }
 
         $tugasAnswersUpdate = $request->all();
-        $tugasAnswersUpdate['file_presentasi'] = $filePresentasiName;
+        // $tugasAnswersUpdate['file_presentasi'] = $filePresentasiName;
         $tugasAnswersUpdate['file_laporan'] = $fileLaporanName;
 
         $tugasAnswers->update($tugasAnswersUpdate);

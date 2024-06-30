@@ -3,6 +3,9 @@
 @section('section')
     @php
         $userAnswers = $tugases->tugas_answers->where('user_id', Auth::user()->id)->first();
+        $users =  Auth::user()->where('id', Auth::user()->id)->with(['members'])->first();
+        $kelompokAnswers = $tugases->tugas_answers->where('kelompok_id', Auth::user()->members->kelompok_id)->first();
+        $answers = $userAnswers ? $userAnswers : $kelompokAnswers;
     @endphp
 
     <div class="self-stretch flex flex-col justify-start items-start gap-2">
@@ -10,8 +13,8 @@
         <div class="flex w-full bg-neutral-50 rounded-lg text-left">
             <div
                 class="block w-full p-4 py-4 text-gray-900 border justify-start border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500">
-                @if (isset($userAnswers->tugas_grades->nilai))
-                    {{ $userAnswers->tugas_grades->nilai }}
+                @if (isset($answers->tugas_grades->nilai))
+                    {{ $answers->tugas_grades->nilai }}
                 @else
                     <span class="text-gray-500">Belum dinilai</span>
                 @endif
@@ -23,8 +26,8 @@
         <div class="flex w-full bg-neutral-50 rounded-lg text-left">
             <div
                 class="block w-full p-4 text-gray-900 border justify-start border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500">
-                @if (isset($userAnswers->tugas_grades->feedback))
-                    {{ $userAnswers->tugas_grades->feedback }}
+                @if (isset($answers->tugas_grades->feedback))
+                    {{ $answers->tugas_grades->feedback }}
                 @else
                     <span class="text-gray-500">Belum ada feedback</span>
                 @endif

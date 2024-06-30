@@ -24,7 +24,7 @@
             <div
                 class="block w-full p-4 text-gray-900 border justify-start border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500">
                 @if (isset($userAnswers->tugas_grades->feedback))
-                    {{ $userAnswers->tugas_grades->feedback }}
+                    {!! $userAnswers->tugas_grades->feedback !!}
                 @else
                     <span class="text-gray-500">Belum ada feedback</span>
                 @endif

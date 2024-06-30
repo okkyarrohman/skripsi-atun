@@ -3,7 +3,10 @@
 @section('section')
     @php
         $userAnswers = $tugases->tugas_answers->where('user_id', Auth::user()->id)->first();
-        $users =  Auth::user()->where('id', Auth::user()->id)->with(['members'])->first();
+        $users = Auth::user()
+            ->where('id', Auth::user()->id)
+            ->with(['members'])
+            ->first();
         $kelompokAnswers = $tugases->tugas_answers->where('kelompok_id', Auth::user()->members->kelompok_id)->first();
         $answers = $userAnswers ? $userAnswers : $kelompokAnswers;
     @endphp
@@ -14,9 +17,11 @@
         @method('PATCH')
         <div class="w-full flex flex-col justify-start items-start gap-2">
             <div class="mb-5 w-full">
-                <label for="file_presentasi" class="text-zinc-800 text-xl font-medium leading-snug mb-2 block">Link Presentasi</label>
-                <input type="text" id="file_presentasi" name="file_presentasi" value="{{ $answers ? $answers->file_presentasi : old('file_presentasi') }}"
-                    placeholder="Masukkan Link Presentasi"
+                <label for="file_presentasi" class="text-zinc-800 text-xl font-medium leading-snug mb-2 block">Link
+                    Demontrasi</label>
+                <input type="text" id="file_presentasi" name="file_presentasi"
+                    value="{{ $answers ? $answers->file_presentasi : old('file_presentasi') }}"
+                    placeholder="Masukkan Link Demontrasi"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
             </div>
         </div>
@@ -45,12 +50,12 @@
                 </a>
             </div>
             {{-- @if ($answers?->tugas_grades) --}}
-                <div class="pt-2 flex justify-end">
-                    <a href="{{ route('tugas.feedback', $tugases->id) }}"
-                        class="text-white bg-custom-orange focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2">
-                        Selanjutnya
-                    </a>
-                </div>
+            <div class="pt-2 flex justify-end">
+                <a href="{{ route('tugas.feedback', $tugases->id) }}"
+                    class="text-white bg-custom-orange focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2">
+                    Selanjutnya
+                </a>
+            </div>
             {{-- @endif --}}
         </div>
 
